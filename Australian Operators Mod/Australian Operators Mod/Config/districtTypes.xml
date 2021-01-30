@@ -1,0 +1,18 @@
+
+	<!-- ==================================================== -->
+	<!-- ============= Incident District Specs  ============= -->
+	<!-- ==================================================== -->
+	
+	<!-- Mod by Sleepy068
+	This mod is released under the Creative Commons Attribution ShareAlike 4.0 International Licence https://creativecommons.org/licenses/by-sa/4.0/
+	--> 
+	
+	<!-- Example
+	    <incident id="rep_illegaldrink" residential="1.2" buisness="0.5" industrial="0.7" park="1.2" slums="2"  />
+	-->
+
+  <districtTypes id="ModAOM_districtTypes"  >
+  
+	<incident id="REP_SLP_BRO_BRIBE1" residential="0.7" buisness="1.0" industrial="1.0" park="0.7" slums="0.3"  />
+
+  </districtTypes>

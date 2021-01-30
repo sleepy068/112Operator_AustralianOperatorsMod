@@ -1,0 +1,13 @@
+{
+    "title": "Australian Operators Mod",
+    "desc": "",
+    "language": "English",
+    "visibility": "public",
+    "itemId": 2257357138,
+    "modTypes": [
+        "INCIDENTS",
+        "LANGUAGES",
+        "VEHICLES"
+    ],
+    "order": 2
+}

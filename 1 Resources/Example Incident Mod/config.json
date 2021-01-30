@@ -1,0 +1,13 @@
+{
+    "title": "Crazy modder",
+    "desc": "Example of mod that adds new incident with custom icons.\n\nTest it with console command:\nSpawnIncident rep_crazy_modder",
+    "language": "",
+    "visibility": "public",
+    "itemId": 2102001605,
+    "modTypes": [
+        "FACES",
+        "INCIDENTS",
+        "LANGUAGES"
+    ],
+    "order": 2
+}

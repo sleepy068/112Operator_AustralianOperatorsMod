@@ -1,0 +1,1515 @@
+	<!-- ========================================== -->
+	<!-- ============= AOM Incidents  ============= -->
+	<!-- ========================================== -->
+	<!-- To spawn incident for testing: ~, entered EnableCheats and SpawnIncident <incident_id> -->
+	<!-- 5 New Incident Types & 23 Total New Incidents (This mod adds subtypes and other variants of a similar/same incident) -->
+	
+	<!-- Mod by Sleepy068
+	This mod is released under the Creative Commons Attribution ShareAlike 4.0 International Licence https://creativecommons.org/licenses/by-sa/4.0/
+	--> 
+	
+	<!-- Info & Data:
+	(Help by Sleepy068)(Content datamined from xml and base code (DLLs))(Might be spelling mistakes and it isn't 100% accurate but it should help)
+	
+	@#$%^&* Helping others to learn to mod needs to come first, the bigger the community and the easier it is to do and the more amazing content we will see. @#$%^&*
+	@#$%^&* Working together, we can all create an even better game for all to enjoy. @#$%^&*
+	
+	Australia Currency Setup      
+	Times all values by 1.75 to get the correct value in game (divide AU value by the same to enter it here).
+	
+	Example ======================================================================================
+	<incident id="rep_crazy_modder"
+        	  properties="type=crime; popularity=1; stage = 1; tag+=night{+2}; tag+=rain{+3};">
+		<scene id="house"
+			   poi="BUILDING"
+			   background="HouseBackground"
+			   properties="timeToReact=600;">
+			<suspect id="modder"
+       				 properties="aggressiveness = 0.5; weapon = [0.5:e_baseball | 0.5:e_pistol]; prison=1; personBuilder.sex=MALE; personBuilder.photoId = crazy_modder; personBuilder.hatType = NONE; personBuilder.name = Martin; spawnArea=inside; isActive=1;"
+       				 actionOnEnd="opinionOnSuccess+=1;"
+       				 actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1;"/>
+			<policeWork id="pc"
+          				properties="workAmount=[200,300];icon=OnSitePic_PC; spawnArea=insideRear;"
+          				actionOnEnd="opinionOnIgnore+=2;opinionOnSuccess+=2;AAR+=pcDone;"/>
+		</scene>
+		<aar>
+			<reportElement id="pcDone"/>
+		</aar>
+	</incident>
+	
+	How localisation works ======================================================================================
+	This is the localisation file for the above example:
+	{
+		"incident.rep_crazy_modder.rep_crazy_modder": "CRAZY MODDER",
+		"incident.rep_crazy_modder.description": "SOMEONE REPORTED A MAN WHO SENDS A HUGE NUMBER OF MODES TO THE OPERATOR'S WORKSHOP 112",
+		"incident.rep_crazy_modder.house.modder": "Crazy modder",
+		"incident.rep_crazy_modder.house.pc": "PC", 
+		"incident.rep_crazy_modder.aar.pcDone": "Modder's PC was secured", (
+	}
+
+	"incident.rep_crazy_modder.rep_crazy_modder": - ignore the second part, it is just naming the localisation string the same as incident.
+	"incident.rep_crazy_modder.description" - The description it shows when you click on the info part of the call (far left tab)
+	"incident.rep_crazy_modder.house.modder": - House points to the scene id, modder points to the suspect id, this is for the 'modders' name.
+	"incident.rep_crazy_modder.house.pc": "PC" - This is the police work description
+	"incident.rep_crazy_modder.aar.pcDone": - AfterActionReport, this is the text that generates in the log when the job is complete, this is where detail can be added.
+	
+	Data ======================================================================================
+	Certain Fields start with a " and end with a ", also all code sentences will end with a ;
+	
+	Field: properties ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		type (type of incident) You can use multiple in a single incident. Presumbly generates the recommended requirements in the info panel of the incident. (e.g. Large Technical Job)
+			StockTypes; crime, road, technical, medical, fire, vandalism, protest, search, drugs, terrorist, earthq (earthquake)
+		Visibility=; (value, 0-1; 1 seem to be most visable where as 0 might not be able to be seen at all normally (patrols might see it instead))
+		stage= ; Possibly career progression and whether this spawns depending on where the player is, either 1, 2, 3
+		Popularity (Value range 0-100, similar to a weighting for how often it may occur, speeding is 25)(up to 2 DC 0.01)
+		
+	Tags: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		Example:
+			tag+=rain{-10}; (the value can be positive or negative(+ more likely, - less likely), it seems to directly effect or buffer the popularity field and hence chance for it to occur)
+		TagTypes: night, rain, snow, wind, cold, hot, hot_night, event_blackout_1, event_blackout_2, event_new_year, event_tornado, event_protest_peacefull, event_protest_aggressive, 
+		event_protest_dontknow, event_vandals, event_planecrash_on_failed
+
+	Scene: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		poi= "PARK" (Where the scene takes place, point of interest, probably for helping the game pick actual places in the map, bridge will happen on actual bridges)
+			SceneTypes: PARK, BUILDING, BANK, TALL_BUILDING, BRIDGE
+		backgrounds= (Should be the actual preview setups)
+			BackgroundTypes: CarBackground, CarHitBackground, CarBumpBackground, WaterpipeBackground, RoaddamageBackground, HouseBackground, HouseCollapseBackground,
+			TrailerFightBackground, PowerBackground, ElevatorBackground, ChemBackground, TruckBackground, PowerDownBackground, ParkBackground, IndustrialBackground,
+			RoadsignBackground, TwoCarBackground, TankerBackground, TreeFallBackground
+		properties= "timeToReact=600;" (Properties needs all content to be inbetween "")
+			timeToReact= (how many ticks the player can respond) 1 tick should = 1 second;
+			onMove=1; (if it is a chase and the incident is moving)
+			vehicle=ve_civil_car; (what vehicle the suspect has)
+			avoidPolice=0.7; (range, 0-1 with 2 decminals, chance that police don't 'see' the crime or how the path finding tries to avoid them)
+			solvableBySpeedCamera=true; (pretty sure it won't spawn in the camera or passing one immediately solves it)
+			roadBlock=0.03; (range, 0 (up to 2 decminals) to 1, most likely how quickly it blocks traffic or the reduction in flow of traffic (1 is complete stop))
+			opinionOnSuccess=1; (as below) (might mean points recieved from just showing up)
+			opinionOnIgnore=-1; (as below)
+			
+			SEARHES NEED A SECOND SCENE ID TO SETUP THE SEARCH LOGIC
+			searchWork= (value, e.g. searchWork=90;, amount of ticks or seconds it takes to complete 1 search I'd imagine (one grid).
+			searchArea= (value, number of grid layers, e.g. 1=one square, 2 = 4 squares, 3 = 9 squares)
+			searchSceneId= the id of the true scene of the incident.
+			iconMap=; (the icon you want to show, you have: police_search, fire_search, medical_search
+			
+			delayedSpawn=true; (might be used in conjuction with seaches so they don't immediately spawn)
+			
+			
+		actionOnEnd=
+			opinionOnSuccess=1; When the player finishes the incident (can be any value and adds/substracts to rep, can be negative or positive)
+			opinionOnIgnore=-1; If the player ignores the incident (can be any value and adds/substracts to rep, can be negative or positive)
+			AAR+= in localisation, incident.INCIDENT_ID.aar.AAR_ID (Displays the blue text in the incident report at the end of duty)
+
+	Injured: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	(you can either pick suspect or injured it seems, i am insure if injured properties can work for a suspect, e.g. at fault hurt driver, worth a try though)q1
+		Example:
+		<injured id="inj_firs" properties="hp=60"  />
+		</scene>	
+
+		properties= ""
+			PropTypes: hp= (how much health the injured has and hence how long it takes to stablise)(can be range:[20,40])
+			needsHospital=true; (Whether they need to be hospitalised or not, default is false)
+			hpchange=[-0.07, -0.03]; (what the health may reduce by overtime)
+			isActive=0.5; (whether they are active or not) (value 0 to 1 with 1 DP)
+			blockedBy+= (what in the scene may block access to this injured person)
+				BlockedTypes: SUSPECT_ID, TECHWORK_ID, 
+			spawnArea= (Specific spawn area, as seen below)
+			
+	Suspect: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		Example:
+			<suspect id="suspect1" properties="bill=[0.33: 200 | 0.33: 400 | 0.34: 600];
+			prison=0;
+			aggressiveness=0;
+			weapon=e_fist;
+			personBuilder.sex=[0.9: FEMALE | 0.1: MALE];"  />
+			
+			
+		Properties=
+			"bill = [1500,2000]; (must be structured as seen, range value for what they will be fined)(can have chance to bill certain values more, probably needs to equal 100% (1)) "bill=[0.33: 200 | 0.33: 400 | 0.34: 600];
+			aggressiveness=0; (value float, 2 decminal point, chance they attack the first responder.
+			prison =0;(value float (think of it as percentage chance to be arrested(can have decimals to 2 points e.g. 0.68) 0-1)(0 appears to mean they will not be arrested, 1 is that definitely will)
+			weapon=e_fist; (The weapon they have) Can be a chance range too, e.g [0.2: e_fist | 0.1: e_knife | 0.3: e_pistol | 0.2: e_rifle | 0.2: e_shotgun]
+				WeaponList: e_fist, e_dogbite, e_baseball, e_knife, e_pistol, e_rifle, e_shotgun
+			
+			hp=[80,90] (the suspects health, having this field means medical will be needed)
+			
+			
+			isCitizen=true; (whether they are just an average joe or the suspect to the incident)
+			reprimandWork=0; (can be a range, reprimandWork=[100,250], seems to be the ticks to resolve the person, e.g. take statement) Can be 0.
+
+			personBuilder.sex= (the sex of the person, either: MALE, FEMALE)(Can be a range: [0.9: MALE | 0.1: FEMALE];
+			personBuilder.photoId= (the photo they use)(the above example has this: Mod\Faces\crazy_modder\modder.png (61px x 61px)(The folder must be the id name, must be unique)
+			personBuilder.hatType = (The hat they use, overlays onto the photoid)(same structure as above, same situation i believe).
+			personBuilder.name = Martin;  (The suspects name)
+			personBuilder.surname='Scott' (The suspects last name)
+			personBuilder.isCriminal= (value, e.g. 0.3; chance they are a known criminal)
+			personBuilder.age= (can be a range [0.7: TEEN | 0.2: ADULT | 0.1: CHILD]), Can be, CHILD, TEEN, ADULT, OLD
+			
+			spawnArea= (where they spawn in a scene) can be a range e.g. [0.3:infront | 0.3:inside | 0.3: insideRear];
+				SpawnTypes: infront, inside, insideRear, leftof, trapped2, trapped1, elevator, engine, barrelWork, work, pipe, water, crack, rubbleWork, cardoor, eleWork
+				car, rearWork, fireWork, nearTree, factory, onTree, park, fire, workTruck, workSpill, doorWork (spawns a door)
+			isActive=1; (0 or 1, whether they react to the scene perhaps,e.g. beecome aggressive, do something, etc)
+			actionOnEnd= (what happens when the scene ends, can be opinionOnSuccess+=1;, AAR+= AAR_ID (for a report just for say catching someone or even heavy detail such as a witness statement)
+			actionOnIgnore= "opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=;" (always these two, assuming sucess is if ignored but still gets solved)
+			
+		After Action Report <aar></aar>
+			<reportElement id=""/> (seem to be something from stock, most likely the audio that runs after a event.
+				ReportTypes: done, caught, solved, pipefix, roadfix, sourcedone, workdone, towed, found, done2, secured, dead, helped, childoc, babydone, exploded
+				timerfinish, spill, ext
+				
+	Work: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		Work Timer
+		EXAMPLE:
+			<timer id="timer" properties="time=450;" actionOnEnd="suicidal.hp=0;
+			AAR+=dead;
+			
+			timer id= (timer ID, good rule of thumb to make ever id unique)
+			properties= ""
+				time=; (time in seconds/ticks until the timer reaches 0 and actives the end cycle)
+				actionOnEnd= (effectively what happens, examples below)
+					suicidal.hp=0; (suicidal is the ID of the suspect/injured, hp=0 means that they will die when the timer hits 0)
+					AAR+=dead; (processed the After Action Report)
+			timer.isActive=0 (structured like this TIMER_ID(the name of the timer).isActive=0 (0 cancels the timer, 1 would activate it)
+
+				
+		PoliceWork
+		
+		
+		FireWork
+		
+		
+		TechWork
+			workAmount; (amount of time it takes the work to complete, in 'ticks' or seconds)
+			spawnArea=; (where the work spawns, e.g. fire in the car 'engine', remember that the site sort of defines this, use existing examples to assist you)
+			onlyFor=FIREFIGHTERS; (prevents technical medical and police from doing this work instead, e.g. MVA (Motor Vehicle Accident))
+			icon= (Site Icon for visual display)
+			iconMap= (Map icon display)
+"  />
+
+
+				
+	-->		
+	
+<incidentTypes id="ModAOM_general_incidents">
+	
+	<!-- =================================== -->
+	<!-- ============= Police  ============= -->
+	<!-- =================================== -->
+	<!-- ****************** Random Breath Testing ****************** -->
+	<!-- No Issue -->
+	<incident id="REP_SLP_RBT_NOISSUE1" 
+		properties="
+		type+= road; 
+		popularity= 30; 
+		stage= 1; 
+		tag+= night{+5}; 
+		tag+= rain{-10}; ">
+		
+		<scene id="RBT_CAR_NI1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					reprimandWork=[120,300];
+					aggressiveness=0; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rbt_noissue1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rbt_noissueignored1;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_noissue1"/>
+				<reportElement id="rbt_noissueignored1"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Low Range Drink Driving (First Time Offence) AR/BIL -->
+	<incident id="REP_SLP_RBT_ISSUE1v1" 
+		properties="
+		type+= road; 
+		popularity= 6; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I1v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,1257];
+					reprimandWork=[120,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rbt_issue1v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue1v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Low Range Drink Driving (Second Time Offence) AR/BIL -->
+	<incident id="REP_SLP_RBT_ISSUE2v1" 
+		properties="
+		type+= road; 
+		popularity= 1; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I2v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,1885];
+					reprimandWork=[120,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=rbt_issue2v1;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue2v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Mid Range Drink Driving (First Time Offence) AR/BIL -->
+	<incident id="REP_SLP_RBT_ISSUE3v1" 
+		properties="
+		type+= road; 
+		popularity= 5; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I3v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,1257];
+					reprimandWork=[120,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rbt_issue3v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue3v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Mid Range Drink Driving (Second Time Offence) AR/BIL -->
+	<incident id="REP_SLP_RBT_ISSUE4v1" 
+		properties="
+		type+= road; 
+		popularity= 1; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I4v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,1885];
+					reprimandWork=[120,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=rbt_issue4v1;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue2v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- High Range Drink Driving (First Time Offence) AR/BIL -->
+	<incident id="REP_SLP_RBT_ISSUE5v1" 
+		properties="
+		type+= road; 
+		popularity= 3; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I5v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,3142];
+					reprimandWork=[120,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=rbt_issue5v1;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue5v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- High Range Drink Driving (Second Time Offence) AR/BIL -->
+		<incident id="REP_SLP_RBT_ISSUE6v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I6v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,3142];
+					reprimandWork=[120,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=3; AAR+=rbt_issue6v1;"
+				actionOnIgnore="opinionOnSuccess+=3; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue6v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Refused to co-operate AR/BIL -->
+	<incident id="REP_SLP_RBT_ISSUE7v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		tag+= night{+1}; ">
+		
+		<scene id="RBT_CAR_I7v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rbt_driver"
+				properties="
+					bill=[326,1885];
+					reprimandWork=[120,480];
+					aggressiveness=0.75; 
+					weapon=e_fist; 
+					prison=1; 
+					personBuilder.sex=[0.87: MALE | 0.13: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=3; AAR+=rbt_issue7v1;"
+				actionOnIgnore="opinionOnSuccess+=3; opinionOnIgnore+=0; AAR+=rbt_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_issue7v1"/>
+				<reportElement id="rbt_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+
+	<!-- ****************** Suspected Drink Driving ****************** -->
+	
+	<!-- No Issue -->
+	
+	<!-- Low Range Drink Driving (First Time Offence) AR/BIL -->
+	
+	<!-- Low Range Drink Driving (Second Time Offence) AR/BIL-->
+	
+	<!-- Mid Range Drink Driving (First Time Offence) AR/BIL -->
+	
+	<!-- Mid Range Drink Driving (Second Time Offence) AR/BIL -->
+	
+	<!-- High Range Drink Driving (First Time Offence) AR/BIL-->
+	
+	<!-- High Range Drink Driving (Second Time Offence) AR/BIL-->
+	
+	<!-- Refused to co-operate AR/BIL -->
+	
+	<!-- ****************** Speeding ****************** -->
+	<!-- Exceed Speed 10 km/h and Under  -->
+	<incident id="REP_SLP_SPEED1v1" 
+		properties="
+		type+= road; 
+		popularity= 25; 
+		stage= 1; 
+		tag+=snow{-20};
+		tag+=rain{-20};
+		tag+=wind{-15};">
+		
+		<scene id="SPEED_CAR_1v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+			<suspect id="speed_driver"
+				properties="
+					bill=205;
+					reprimandWork=[180,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.9: ADULT | 0.1: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=speeding1v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=speeding1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="speeding1v1"/>
+				<reportElement id="speeding1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Exceed speed over 10 km/h   -->
+	<incident id="REP_SLP_SPEED2v1" 
+		properties="
+		type+= road; 
+		popularity= 22; 
+		stage= 1; 
+		tag+=snow{-17};
+		tag+=rain{-17};
+		tag+=wind{-12};">
+		
+		<scene id="SPEED_CAR_2v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+			<suspect id="speed_driver"
+				properties="
+					bill=274;
+					reprimandWork=[180,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.9: ADULT | 0.1: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=speeding2v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=speeding1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="speeding2v1"/>
+				<reportElement id="speeding1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Exceed speed over 20 km/h   -->
+	<incident id="REP_SLP_SPEED3v1" 
+		properties="
+		type+= road; 
+		popularity= 18; 
+		stage= 1; 
+		tag+=snow{-13};
+		tag+=rain{-13};
+		tag+=wind{-8};">
+		
+		<scene id="SPEED_CAR_3v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+			<suspect id="speed_driver"
+				properties="
+					bill=342;
+					reprimandWork=[180,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.9: ADULT | 0.1: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=speeding3v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=speeding1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="speeding3v1"/>
+				<reportElement id="speeding1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Exceed speed over 30 km/h   -->
+	<incident id="REP_SLP_SPEED4v1" 
+		properties="
+		type+= road; 
+		popularity= 12; 
+		stage= 1; 
+		tag+=snow{-9};
+		tag+=rain{-9};
+		tag+=wind{-6};">
+		
+		<scene id="SPEED_CAR_4v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+			<suspect id="speed_driver"
+				properties="
+					bill=823;
+					reprimandWork=[180,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.9: ADULT | 0.1: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=speeding4v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=speeding1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="speeding4v1"/>
+				<reportElement id="speeding1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Exceed speed over 45 km/h   -->
+	<incident id="REP_SLP_SPEED5v1" 
+		properties="
+		type+= road; 
+		popularity= 7; 
+		stage= 1; 
+		tag+=snow{-6};
+		tag+=rain{-6};
+		tag+=wind{-5};">
+		
+		<scene id="SPEED_CAR_5v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+			<suspect id="speed_driver"
+				properties="
+					bill=2149;
+					reprimandWork=[180,300];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.9: ADULT | 0.1: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=speeding5v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=speeding1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="speeding5v1"/>
+				<reportElement id="speeding1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Exceed speed over 45 km/h (Hostile) -->
+	
+	<!-- Exceed speed over 45 km/h (Hostile)(Armed) -->
+	
+	<!-- Exceed speed over 45 km/h (Hostile)(Armed)(Group in Car - Okay) -->
+	
+	<!-- Exceed speed over 45 km/h (Hostile)(Armed)(Group in Car - Hostile) -->
+	
+	<!-- ****************** Driving Offences ****************** -->
+	<!-- Driving an unregistered light vehicle (reasonable excuse) -->
+	<incident id="REP_SLP_DRO_UNREG1v0" 
+		properties="
+		type+= road; 
+		popularity= 1; 
+		stage= 1;
+		visibility=0.3;
+		tag+= night{-1};">
+		
+		<scene id="DRO_CAR_I1v0" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true;">
+			<suspect id="dro_driver"
+				properties="
+					reprimandWork=[120,360];
+					aggressiveness=0; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue1v0;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue1v0"/>
+				<reportElement id="dro_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving an unregistered light vehicle -->
+	<incident id="REP_SLP_DRO_UNREG1v1" 
+		properties="
+		type+= road; 
+		popularity= 5; 
+		stage= 1; 
+		visibility=0.3;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I1v1" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true; avoidPolice=0.2;">
+			<suspect id="dro_driver"
+				properties="
+					bill=392;
+					reprimandWork=[120,360];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue1v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue1v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue1v1"/>
+				<reportElement id="dro_issue1v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving an uninsured light vehicle -->
+	<incident id="REP_SLP_DRO_UNINSUR1v1" 
+		properties="
+		type+= road; 
+		popularity= 5; 
+		stage= 1; 
+		visibility=0.2;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I2v1" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true; avoidPolice=0.2;">
+			<suspect id="dro_driver"
+				properties="
+					bill=392;
+					reprimandWork=[120,360];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue2v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue2v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue2v1"/>
+				<reportElement id="dro_issue2v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving an unregistered & uninsured light vehicle -->
+	<incident id="REP_SLP_DRO_BADVEH1v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		visibility=0.2;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I3v1" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true; avoidPolice=0.2;">
+			<suspect id="dro_driver"
+				properties="
+					bill=784;
+					reprimandWork=[120,360];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue3v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue3v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue3v1"/>
+				<reportElement id="dro_issue3v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving without a Licence (First Offence)-->
+	<incident id="REP_SLP_DRO_LICEN1v1" 
+		properties="
+		type+= road; 
+		popularity= 5; 
+		stage= 1; 
+		visibility=0.1;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I4v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.4;">
+			<suspect id="dro_driver"
+				properties="
+					bill=454;
+					reprimandWork=[120,240];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue4v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue4v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue4v1"/>
+				<reportElement id="dro_issue4v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving without a Licence (Second Offence)-->
+	<incident id="REP_SLP_DRO_LICEN2v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		visibility=0.1;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I5v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.6;">
+			<suspect id="dro_driver"
+				properties="
+					bill=[454, 1885];
+					reprimandWork=[120,240];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=dro_issue5v1;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-1; AAR+=dro_issue4v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue5v1"/>
+				<reportElement id="dro_issue4v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving with a Expired Licence (Expired within 2 Years) -->
+	<incident id="REP_SLP_DRO_LICEN3v1" 
+		properties="
+		type+= road; 
+		popularity= 5; 
+		stage= 1; 
+		visibility=0.1;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I6v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.1;">
+			<suspect id="dro_driver"
+				properties="
+					bill=313;
+					reprimandWork=[120,240];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue6v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue6v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue6v1"/>
+				<reportElement id="dro_issue6v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving with a Expired Licence (Expired after 2 Years) -->
+	<incident id="REP_SLP_DRO_LICEN4v1" 
+		properties="
+		type+= road; 
+		popularity= 3; 
+		stage= 1; 
+		visibility=0.1;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I7v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.1;">
+			<suspect id="dro_driver"
+				properties="
+					bill=356;
+					reprimandWork=[120,240];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue7v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue6v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue7v1"/>
+				<reportElement id="dro_issue6v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Driving with a Suspended Licence -->
+	<incident id="REP_SLP_DRO_LICEN5v1" 
+		properties="
+		type+= road; 
+		popularity= 5; 
+		stage= 1; 
+		visibility=0.1;
+		tag+= night{+1};
+		tag+= rain{-1};">
+		
+		<scene id="DRO_CAR_I8v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.2;">
+			<suspect id="dro_driver"
+				properties="
+					bill=[942, 1885];
+					reprimandWork=[120,240];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=dro_issue8v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=dro_issue6v1ignored;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="dro_issue8v1"/>
+				<reportElement id="dro_issue6v1ignored"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Texting while Driving -->
+	
+	<!-- Using mobile device while driving (not hands free) -->
+	
+	<!-- ****************** Drug Related Offences ****************** -->
+	<!-- Roadside Drug Testing -->
+	<!-- No Issue -->
+	<incident id="REP_SLP_RDT_NOISSUE1" 
+		properties="
+		type+= road; 
+		popularity= 15; 
+		stage= 1; 
+		tag+= night{+3}; 
+		tag+= rain{-10}; ">
+		
+		<scene id="RDT_CAR_NI1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rdt_driver"
+				properties="
+					reprimandWork=[300,500];
+					aggressiveness=0; 
+					weapon=e_fist; 
+					prison=0; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.8: ADULT | 0.2: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_noissue1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rdt_noissue1"/>
+				<reportElement id="rdt_noissueignored1"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Roadside Drug Testing -->
+	<!-- Active THC (Cannabis) -->
+	<incident id="REP_SLP_RDT_ISSUE1v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		tag+= night{+1};
+		tag+= event_new_year{+1};
+		">
+		
+		<scene id="RDT_CAR_I2v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rdt_driver"
+				properties="
+					bill=326;
+					reprimandWork=[300,500];
+					aggressiveness=0.02; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.79: MALE | 0.21: FEMALE];
+					personBuilder.age= [0.95: ADULT | 0.05: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue1v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rdt_issue1v1"/>
+				<reportElement id="rdt_noissueignored1"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Roadside Drug Testing -->
+	<!-- Methylamphetamine (Speed/ice) -->
+	<incident id="REP_SLP_RDT_ISSUE2v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		tag+= night{+1};
+		tag+= event_new_year{+1};
+		">
+		
+		<scene id="RDT_CAR_I2v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rdt_driver"
+				properties="
+					bill=326;
+					reprimandWork=[300,500];
+					aggressiveness=0.3; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.79: MALE | 0.21: FEMALE];
+					personBuilder.age= [0.95: ADULT | 0.05: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue2v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rdt_issue2v1"/>
+				<reportElement id="rdt_noissueignored1"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Roadside Drug Testing -->
+	<!-- Methylenedioxymethylamphetamine (MDMA or 'ecstasy') -->
+	<incident id="REP_SLP_RDT_ISSUE3v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		tag+= night{+1};
+		tag+= event_new_year{+1};
+		">
+		
+		<scene id="RDT_CAR_I3v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rdt_driver"
+				properties="
+					bill=326;
+					reprimandWork=[300,500];
+					aggressiveness=0.13; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.79: MALE | 0.21: FEMALE];
+					personBuilder.age= [0.95: ADULT | 0.05: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue3v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rdt_issue3v1"/>
+				<reportElement id="rdt_noissueignored1"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Roadside Drug Testing -->
+	<!-- Cocaine  -->
+	<incident id="REP_SLP_RDT_ISSUE4v1" 
+		properties="
+		type+= road; 
+		popularity= 2; 
+		stage= 1; 
+		tag+= night{+1};
+		tag+= event_new_year{+1};
+		">
+		
+		<scene id="RDT_CAR_I4v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+			<suspect id="rdt_driver"
+				properties="
+					bill=326;
+					reprimandWork=[300,500];
+					aggressiveness=0.3; 
+					weapon=e_fist; 
+					prison=0.1; 
+					personBuilder.sex=[0.79: MALE | 0.21: FEMALE];
+					personBuilder.age= [0.95: ADULT | 0.05: OLD];
+					personBuilder.isCriminal=false;
+					spawnArea=trapped1; 
+				"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue4v1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="rdt_issue4v1"/>
+				<reportElement id="rdt_noissueignored1"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Smoking in No Smoking Zone -->
+	
+	<!-- Driving under the influence of drugs -->
+	
+	
+	<!-- ****************** Organised Crime Syndicates ****************** -->
+	
+	
+	<!-- ****************** Corporate Criminal Responsibility ****************** -->
+	 
+	 
+	<!-- ****************** Integrity and Security of the International Community and Foreign Governments ****************** -->
+	
+	
+	<!-- ****************** Explosives and Lethal Device Offences ****************** -->
+	<!-- Possession of an Unregistered Firearm (Handgun)(Hm/Scene/GU) -->
+	<incident id="REP_SLP_ELD1_00001" 
+		properties="type+=crime;
+		popularity=0.1;
+		visibility=0.1;
+		stage = 1;
+		">
+	
+		<scene id="house" poi="BUILDING" background="HouseBackground" properties="timeToReact=800;">
+			<suspect id="firearm_owner" 
+				properties="
+					prison=1;
+					aggressiveness=0;
+					weapon=e_fist;
+					spawnArea=inside;
+					personBuilder.isCriminal=0.2;" 
+	
+				actionOnEnd="opinionOnSuccess+=3; AAR+=pol_eld_00001;" 
+				actionOnIgnore="opinionOnSuccess+=3; opinionOnIgnore+=-3; AAR+=pol_eld_00001ignore;"  
+			/>
+			
+			<policeWork id="secure_firearm" 
+				properties="
+					blockedBy+=firearm_owner;
+					workAmount=[100,300];
+					spawnArea=inside;
+					icon=OnSitePic_Firearm;
+			"/>
+			
+		</scene>
+	</incident>
+	
+	<!-- Possession of an Unregistered Firearm (Handgun)(Hm/Scene/GU) -->
+	
+	<!-- Possession of an Unregistered Firearm (Handgun)(Hm/Scene/GU) -->
+	
+	<!-- Aggravated Possession of an Unregistered Firearm (Handgun)(Hm/Scene/GU) -->
+	
+	<!-- Possession of an Unregistered Firearm (Handgun)(Hm/OP/GU) -->
+	
+	<!-- Aggravated Possession of an Unregistered Firearm (Handgun)(Hm/OP/GU) -->
+	
+	<!-- ****************** People Smuggling and Related Offences ****************** -->
+	
+	
+	<!-- ****************** Treason and Related Offences ****************** -->
+	
+	
+	<!-- ****************** Espionage and Related Offences ****************** -->
+	
+	
+	<!-- ****************** Terrorism Related Offences ****************** -->
+	
+	
+	<!-- ****************** Forgery and Related Offences / False or Misleading Statements ****************** -->
+
+
+	<!-- ****************** Unwarranted Demands ****************** -->
+	
+	
+	<!-- ****************** Bribery and Related Offences ****************** -->
+	<!-- Bribery of a Commonwealth Public Offical (Refused)(Non-Hostile) -->
+	<incident id="REP_SLP_BRO_BRIBE1" 
+		properties="
+		type+= crime; 
+		popularity= 0.25; 
+		stage= 1; 
+		visibility=0.3;
+		tag+= night{+0.2};">
+		
+		<scene id="BRO_I1v1" properties="timeToReact=300;">
+			<suspect id="bro_briber"
+				properties="
+					bill=[10000, 12685];
+					reprimandWork=[300,480];
+					aggressiveness=0.1; 
+					weapon=e_fist; 
+					prison=0.95; 
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.isCriminal=0.2; 
+				"
+				actionOnEnd="opinionOnSuccess+=5; AAR+=bro_reporti1v1a;"
+				actionOnIgnore="opinionOnSuccess+=5; opinionOnIgnore+=-1; AAR+=bro_reporti1v1ignored;"
+			/>
+			<suspect id="bro_refusingOffical" 
+				properties="
+				reprimandWork=[120,180];
+				personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+				personBuilder.age= [0.60: ADULT | 0.40: OLD];
+				personBuilder.isCriminal=false;
+				isCitizen=true;				
+				"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=bro_reporti1v1b;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-3; AAR+=bro_reporti1v1ignoreda;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="bro_reporti1v1a"/>
+				<reportElement id="bro_reporti1v1ignored"/>
+				<reportElement id="bro_reporti1v1b"/>
+				<reportElement id="bro_reporti1v1ignoreda"/>
+		</aar>
+		
+	</incident>
+	
+
+	<!-- ****************** Driving Offences ****************** -->
+
+	<!-- ================================= -->
+	<!-- ============= Fire  ============= -->
+	<!-- ================================= -->
+	
+	
+	
+	<!-- ====================================== -->
+	<!-- ============= Technical  ============= -->
+	<!-- ====================================== -->
+	
+	<!-- ============= Rescue ============= -->
+	
+	<!-- ============= Animal Rescue ============= -->
+	
+	<!-- ============= S.E.S. ============= -->
+	
+	<!-- ==================================== -->
+	<!-- ============= Medical  ============= -->
+	<!-- ==================================== -->
+	
+	<!-- ============= Heart Related ============= -->
+	<!-- Arrhythmia (Tachycardia)(Mild) -->
+	<incident id="REP_SLP_MEDI_MISC1A" properties="type+=medical;
+		popularity=3;
+		visibility=0.4;
+		stage = 1;
+		">
+		
+		<scene id="patient1" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=[90,99];
+					needsHospital=false;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.6: ADULT | 0.2: TEEN | 0.2: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportmisc1a;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=medi_reportmisc1aignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- Arrhythmia (Tachycardia)(Serious) -->
+	<incident id="REP_SLP_MEDI_MISC1B" properties="type+=medical;
+		popularity=0.5;
+		visibility=0.4;
+		stage = 1;
+		">
+		
+		<scene id="patient2" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=100;
+					hpchange=[-0.1 , -0.15];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.65: ADULT | 0.05: TEEN | 0.3: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=medi_reportmisc1b;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-4; AAR+=medi_reportmisc1bignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- Ventricular Tachycardia -->
+	<incident id="REP_SLP_MEDI_MISC1C" properties="type+=medical;
+		popularity=0.4;
+		visibility=0.7;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=100;
+					hpchange=[-0.39 , -0.2];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.5: ADULT | 0.5: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=4; AAR+=medi_reportmisc1c;"
+				actionOnIgnore="opinionOnSuccess+=4; opinionOnIgnore+=-6; AAR+=medi_reportmisc1cignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- Ventricular Tachycardia (With Caller Present) -->
+	<incident id="REP_SLP_MEDI_MISC1D" properties="type+=medical;
+		popularity=0.25;
+		visibility=1;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=100;
+					hpchange=[-0.39 , -0.2];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.5: ADULT | 0.5: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=4; AAR+=medi_reportmisc1d;"
+				actionOnIgnore="opinionOnSuccess+=4; opinionOnIgnore+=-6; AAR+=medi_reportmisc1dignore;"
+			/>
+			<suspect id="caller" 
+				properties="
+					reprimandWork=[50,200];
+					isCitizen=true;" 
+				actionOnEnd="opinionOnIgnore+=1; AAR+=medi_reportmisc1dwitness1;" 
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-2; AAR+=medi_reportmisc1dwitness1ignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- Arrhythmia (Bradycardia)(Mild) -->
+	<incident id="REP_SLP_MEDI_MISC2A" properties="type+=medical;
+		popularity=1;
+		visibility=0.4;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=[90,99];
+					needsHospital=false;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.6: ADULT | 0.2: TEEN | 0.2: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportmisc2a;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=medi_reportmisc2aignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- Arrhythmia (Bradycardia)(Serious) -->
+	<incident id="REP_SLP_MEDI_MISC2B" properties="type+=medical;
+		popularity=0.5;
+		visibility=0.4;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=100;
+					hpchange=[-0.1 , -0.05];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.65: ADULT | 0.05: TEEN | 0.3: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=medi_reportmisc2b;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-4; AAR+=medi_reportmisc2bignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- Palpitations (Non-Issue) -->
+	<incident id="REP_SLP_MEDI_MISC3A" properties="type+=medical;
+		popularity=3;
+		visibility=0.3;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=99;
+					needsHospital=false;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.70: ADULT | 0.10: TEEN | 0.2: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportmisc3a;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=medi_reportmisc3aignore;"
+			/>
+		</scene>
+	</incident>
+
+	<!-- Palpitations (Underlying Issue) -->
+	<incident id="REP_SLP_MEDI_MISC3B" properties="type+=medical;
+		popularity=0.1;
+		visibility=0.3;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=100;
+					hpchange=[-0.1 , -0.05];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.65: ADULT | 0.05: TEEN | 0.3: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=5; AAR+=medi_reportmisc3b;"
+				actionOnIgnore="opinionOnSuccess+=5; opinionOnIgnore+=-4; AAR+=medi_reportmisc3bignore;"
+			/>
+		</scene>
+	</incident>
+	
+	<!-- ============= Bleeding & Injury Related ============= -->
+	<!-- Amputated Digit -->
+	
+	<!-- Amputated Hand -->
+	
+	<!-- Amputated Arm -->
+	
+	<!-- Amputated Leg -->
+	
+	<!-- Crushed Digit -->
+	
+	<!-- Crushed Hand -->
+	
+	<!-- Crushed Arm -->
+	
+	<!-- Crushed Leg -->
+	
+	<!-- ============= Breathing Related ============= -->
+	<!-- Allergic Reaction (Mild) -->
+	
+	<!-- Allergic Reaction (Serious) -->
+	
+	<!-- Allergic Reaction (Anaphylaxis) -->
+	
+	<!-- Asthma Attack -->
+
+	
+</incidentTypes>

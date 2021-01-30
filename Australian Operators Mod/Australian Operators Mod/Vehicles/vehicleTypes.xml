@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<ArrayOfVehicletype>
+    
+    <!-- Don't set offroadSpeedModif to 0 -->
+	
+	<!-- Mod by Sleepy068
+	This mod is released under the Creative Commons Attribution ShareAlike 4.0 International Licence https://creativecommons.org/licenses/by-sa/4.0/
+	--> 
+	
+	<!-- Help 
+	id - id of the vehicle. If you want to modify an existing vehicle, chose the line with the desired id, and change it's other properties. To create new vehicle, type a new id.
+	type - type of unit (FIRE/MEDICAL/POLICE). ARMY is currently not used, and CIVILIAN is for vehicles used by running scenes.
+	bonuses - type and value of vehicle's bonus(es) (SEARCH/INJURED/FIRE/TECH/TALL/DYING). Vehicle can have more than one bonus (look ve_fireheli).
+	price - price in euro. Will be converted to your city currency, as all prices are in the game.
+	visibility - 1 means that incidents won't spawn near this vehicle.
+	armour - percentage chance (0-1) that team member using this vehicle will dodge the bullet.
+	maxSpeed - max vehicle speed in km/h.
+	acceleration - how fast vehicle will get to max speed, abstract value.
+	immobilizedBy - what type and value of weather immobilize vehicle
+	offroadSpeedModif - speed penalty for driving offroad. 1 means no modifier, 0.25 means vehicle will go with only 25% of it's maxSpeed.
+	trafficSpeedModif - multiplied by maxSpeed gives value, which is used when unit is going through traffic. 0 means unit will drive with default traffic speed.
+	teammembersSeats - how many team members can be assigned to vehicle (max 4 for default onsiteModel).
+	transportSeats - how many injured or suspects vehicle can take (max 6 for default onsiteModel).
+	upkeep - per duty cost for using this vehicle.
+	terrain - only to determinate if vehicle is moving on road or flying (terrain = "air").
+	patrols - not used parameter.
+	spawnChance - not used parameter.
+	allDrive - if true, then all team members need to be able to drive (need to be humans). Used in bikes, bicycles etc.
+	chaseProficiency - how good the is vehicle at stopping pursuit incidents. Abstract value. 0 means it can't stop scene at all.
+	unlockOnDuty - on with duty vehicle should be unlocked. 1 means it will be unlocked from begining, 2 - on second duty etc. -1 means it will need to be unlocked by console or story module. Note that it is STAGE dependent: first duty on middle counts as 4th duty overall, and first duty on senior/principal counts as 16th duty overall.
+	onsiteModel - which model should vehicle use on on site view. It should be id of any of built in vehicles, and it will have same amount of team member and transport seats as chosen vehicle. For example, if you type "ve_medvan", your vehicle will have 3 team member seats and 2 transport seats. Note that using model that has less member/transport seats than specified in xml may cause errors. "ve_poltrans" is default (4 team member, 6 transport seats max).
+	-->
+	
+	<!-- ===================================== -->
+	<!-- ============= Vehicles  ============= -->
+	<!-- ===================================== -->
+	
+	<!-- ****************** Police ****************** -->
+	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="1" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+
+</ArrayOfVehicletype>
