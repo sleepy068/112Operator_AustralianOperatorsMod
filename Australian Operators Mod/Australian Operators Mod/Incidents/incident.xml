@@ -192,10 +192,15 @@
 	
 <incidentTypes id="ModAOM_general_incidents">
 	
-	<!-- =================================== -->
-	<!-- ============= Police  ============= -->
-	<!-- =================================== -->
-	<!-- ****************** Random Breath Testing ****************** -->
+	<!-- ================================== -->
+	<!-- ============= Police ============= -->
+	<!-- ================================== -->
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Driving Offences ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<!-- ============= Random Breath Testing ============= -->
 	<!-- No Issue -->
 	<incident id="REP_SLP_RBT_NOISSUE1" 
 		properties="
@@ -460,8 +465,7 @@
 		
 	</incident>
 
-	<!-- ****************** Suspected Drink Driving ****************** -->
-	
+	<!-- ============= Suspected Drink Driving ============= -->
 	<!-- No Issue -->
 	
 	<!-- Low Range Drink Driving (First Time Offence) AR/BIL -->
@@ -477,8 +481,9 @@
 	<!-- High Range Drink Driving (Second Time Offence) AR/BIL-->
 	
 	<!-- Refused to co-operate AR/BIL -->
-	
-	<!-- ****************** Speeding ****************** -->
+
+
+	<!-- ============= Speeding ============= -->
 	<!-- Exceed Speed 10 km/h and Under  -->
 	<incident id="REP_SLP_SPEED1v1" 
 		properties="
@@ -662,7 +667,8 @@
 	
 	<!-- Exceed speed over 45 km/h (Hostile)(Armed)(Group in Car - Hostile) -->
 	
-	<!-- ****************** Driving Offences ****************** -->
+	
+	<!-- ============= Vehicle & License Offences ============= -->
 	<!-- Driving an unregistered light vehicle (reasonable excuse) -->
 	<incident id="REP_SLP_DRO_UNREG1v0" 
 		properties="
@@ -980,8 +986,11 @@
 	
 	<!-- Using mobile device while driving (not hands free) -->
 	
-	<!-- ****************** Drug Related Offences ****************** -->
-	<!-- Roadside Drug Testing -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Drug Related Offences ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<!-- ============= Roadside Drug Testing ============= -->
 	<!-- No Issue -->
 	<incident id="REP_SLP_RDT_NOISSUE1" 
 		properties="
@@ -1015,7 +1024,6 @@
 		
 	</incident>
 	
-	<!-- Roadside Drug Testing -->
 	<!-- Active THC (Cannabis) -->
 	<incident id="REP_SLP_RDT_ISSUE1v1" 
 		properties="
@@ -1051,7 +1059,6 @@
 		
 	</incident>
 	
-	<!-- Roadside Drug Testing -->
 	<!-- Methylamphetamine (Speed/ice) -->
 	<incident id="REP_SLP_RDT_ISSUE2v1" 
 		properties="
@@ -1087,7 +1094,6 @@
 		
 	</incident>
 	
-	<!-- Roadside Drug Testing -->
 	<!-- Methylenedioxymethylamphetamine (MDMA or 'ecstasy') -->
 	<incident id="REP_SLP_RDT_ISSUE3v1" 
 		properties="
@@ -1123,7 +1129,6 @@
 		
 	</incident>
 	
-	<!-- Roadside Drug Testing -->
 	<!-- Cocaine  -->
 	<incident id="REP_SLP_RDT_ISSUE4v1" 
 		properties="
@@ -1159,52 +1164,28 @@
 		
 	</incident>
 	
+	<!-- ============= Public Drug Use ============= -->
 	<!-- Smoking in No Smoking Zone -->
 	
-	<!-- Driving under the influence of drugs -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Organised Crime Syndicates ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	
-	<!-- ****************** Organised Crime Syndicates ****************** -->
-	
-	
-	<!-- ****************** Corporate Criminal Responsibility ****************** -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Corporate Criminal Responsibility ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	 
-	 
-	<!-- ****************** Integrity and Security of the International Community and Foreign Governments ****************** -->
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Integrity and Security of the International Community and Foreign Governments ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Explosives and Lethal Device Offences ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<!-- ****************** Explosives and Lethal Device Offences ****************** -->
+	<!-- ============= Illegal Weapon Possession ============= -->
 	<!-- Possession of an Unregistered Firearm (Handgun)(Hm/Scene/GU) -->
-	<incident id="REP_SLP_ELD1_00001" 
-		properties="type+=crime;
-		popularity=0.1;
-		visibility=0.1;
-		stage = 1;
-		">
-	
-		<scene id="house" poi="BUILDING" background="HouseBackground" properties="timeToReact=800;">
-			<suspect id="firearm_owner" 
-				properties="
-					prison=1;
-					aggressiveness=0;
-					weapon=e_fist;
-					spawnArea=inside;
-					personBuilder.isCriminal=0.2;" 
-	
-				actionOnEnd="opinionOnSuccess+=3; AAR+=pol_eld_00001;" 
-				actionOnIgnore="opinionOnSuccess+=3; opinionOnIgnore+=-3; AAR+=pol_eld_00001ignore;"  
-			/>
-			
-			<policeWork id="secure_firearm" 
-				properties="
-					blockedBy+=firearm_owner;
-					workAmount=[100,300];
-					spawnArea=inside;
-					icon=OnSitePic_Firearm;
-			"/>
-			
-		</scene>
-	</incident>
 	
 	<!-- Possession of an Unregistered Firearm (Handgun)(Hm/Scene/GU) -->
 	
@@ -1216,26 +1197,36 @@
 	
 	<!-- Aggravated Possession of an Unregistered Firearm (Handgun)(Hm/OP/GU) -->
 	
-	<!-- ****************** People Smuggling and Related Offences ****************** -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= People Smuggling and Related Offences ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Treason and Related Offences ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<!-- ****************** Treason and Related Offences ****************** -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Espionage and Related Offences ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Terrorism Related Offences ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<!-- ****************** Espionage and Related Offences ****************** -->
-	
-	
-	<!-- ****************** Terrorism Related Offences ****************** -->
-	
-	
-	<!-- ****************** Forgery and Related Offences / False or Misleading Statements ****************** -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Forgery and Related Offences / False or Misleading Statements ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Unwarranted Demands ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<!-- ****************** Unwarranted Demands ****************** -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Bribery and Related Offences ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	
-	<!-- ****************** Bribery and Related Offences ****************** -->
-	<!-- Bribery of a Commonwealth Public Offical (Refused)(Non-Hostile) -->
+	<!-- ============= Public Officials ============= -->
+	<!-- Bribery of a Commonwealth Public Official (Refused)(Non-Hostile) -->
 	<incident id="REP_SLP_BRO_BRIBE1" 
 		properties="
 		type+= crime; 
@@ -1282,12 +1273,9 @@
 	</incident>
 	
 
-	<!-- ****************** Driving Offences ****************** -->
-
 	<!-- ================================= -->
 	<!-- ============= Fire  ============= -->
 	<!-- ================================= -->
-	
 	
 	
 	<!-- ====================================== -->
@@ -1295,16 +1283,24 @@
 	<!-- ====================================== -->
 	
 	<!-- ============= Rescue ============= -->
+	<!-- ================================== -->
 	
 	<!-- ============= Animal Rescue ============= -->
+	<!-- ========================================= -->
 	
 	<!-- ============= S.E.S. ============= -->
+	<!-- ================================== -->
+	
 	
 	<!-- ==================================== -->
 	<!-- ============= Medical  ============= -->
 	<!-- ==================================== -->
 	
+	<!-- +++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ============= Heart Related ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<!-- ============= Rhythm of the Heart ============= -->
 	<!-- Arrhythmia (Tachycardia)(Mild) -->
 	<incident id="REP_SLP_MEDI_MISC1A" properties="type+=medical;
 		popularity=3;
@@ -1324,6 +1320,10 @@
 				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=medi_reportmisc1aignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc1a"/>
+				<reportElement id="medi_reportmisc1aignore"/>
+		</aar>
 	</incident>
 	
 	<!-- Arrhythmia (Tachycardia)(Serious) -->
@@ -1346,6 +1346,10 @@
 				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-4; AAR+=medi_reportmisc1bignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc1b"/>
+				<reportElement id="medi_reportmisc1bignore"/>
+		</aar>
 	</incident>
 	
 	<!-- Ventricular Tachycardia -->
@@ -1368,6 +1372,10 @@
 				actionOnIgnore="opinionOnSuccess+=4; opinionOnIgnore+=-6; AAR+=medi_reportmisc1cignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc1c"/>
+				<reportElement id="medi_reportmisc1cignore"/>
+		</aar>
 	</incident>
 	
 	<!-- Ventricular Tachycardia (With Caller Present) -->
@@ -1397,6 +1405,12 @@
 				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-2; AAR+=medi_reportmisc1dwitness1ignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc1d"/>
+				<reportElement id="medi_reportmisc1dignore"/>
+				<reportElement id="medi_reportmisc1dwitness1"/>
+				<reportElement id="medi_reportmisc1dwitness1ignore"/>
+		</aar>
 	</incident>
 	
 	<!-- Arrhythmia (Bradycardia)(Mild) -->
@@ -1418,6 +1432,10 @@
 				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=medi_reportmisc2aignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc2a"/>
+				<reportElement id="medi_reportmisc2aignore"/>
+		</aar>
 	</incident>
 	
 	<!-- Arrhythmia (Bradycardia)(Serious) -->
@@ -1440,6 +1458,10 @@
 				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-4; AAR+=medi_reportmisc2bignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc2b"/>
+				<reportElement id="medi_reportmisc2bignore"/>
+		</aar>
 	</incident>
 	
 	<!-- Palpitations (Non-Issue) -->
@@ -1461,6 +1483,10 @@
 				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=medi_reportmisc3aignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc3a"/>
+				<reportElement id="medi_reportmisc3aignore"/>
+		</aar>
 	</incident>
 
 	<!-- Palpitations (Underlying Issue) -->
@@ -1483,9 +1509,18 @@
 				actionOnIgnore="opinionOnSuccess+=5; opinionOnIgnore+=-4; AAR+=medi_reportmisc3bignore;"
 			/>
 		</scene>
+		<aar>
+				<reportElement id="medi_reportmisc3b"/>
+				<reportElement id="medi_reportmisc3bignore"/>
+		</aar>
 	</incident>
 	
-	<!-- ============= Bleeding & Injury Related ============= -->
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Bleeding & Injury Related  ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<!-- ============= Amputated & Crush Injury ============= -->
 	<!-- Amputated Digit -->
 	
 	<!-- Amputated Hand -->
@@ -1502,7 +1537,156 @@
 	
 	<!-- Crushed Leg -->
 	
-	<!-- ============= Breathing Related ============= -->
+	<!-- ============= Common Injuries ============= -->
+	<!-- Injury (Animal Bite)(Dog)(Not on Site) -->
+	
+	<!-- Injury (Animal Bite)(Dog)(On Site) -->
+	
+	<!-- Injury (Minor Bruise)(Non Emergency) -->
+	
+	<!-- Injury (Heavy Brusie)(Non Emergency) -->
+	
+	<!-- Injury (Burns)(First-Degree)(Non Emergency) -->
+	<incident id="REP_SLP_MEDI_IBURN1A" properties="type+=medical;
+		popularity=10;
+		visibility=0.8;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=[98,99];
+					needsHospital=false;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.5: ADULT | 0.25: TEEN | 0.1: CHILD | 0.15: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=0; AAR+=medi_reportiburn1a;"
+				actionOnIgnore="opinionOnSuccess+=0; opinionOnIgnore+=1; AAR+=medi_reportiburn1aignore;"
+			/>
+		</scene>
+		<aar>
+				<reportElement id="medi_reportiburn1a"/>
+				<reportElement id="medi_reportiburn1aignore"/>
+		</aar>
+	</incident>
+	
+	<!-- Injury (Burns)(Second-Degree) -->
+	<incident id="REP_SLP_MEDI_IBURN2A" properties="type+=medical;
+		popularity=7;
+		visibility=0.9;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=[60,80];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.5: ADULT | 0.25: TEEN | 0.1: CHILD | 0.15: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=medi_reportiburn2a;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-2; AAR+=medi_reportiburn2aignore;"
+			/>
+		</scene>
+		<aar>
+				<reportElement id="medi_reportiburn2a"/>
+				<reportElement id="medi_reportiburn2aignore"/>
+		</aar>
+	</incident>
+	
+	<!-- Injury (Burns)(Third-Degree) -->
+	<incident id="REP_SLP_MEDI_IBURN3A" properties="type+=medical;
+		popularity=4;
+		visibility=1;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=500;"  >
+			<injured id="injured" 
+				properties="
+					hp=[50,80];
+					hpchange=[-0.02,-0.10];
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.5: ADULT | 0.25: TEEN | 0.1: CHILD | 0.15: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=medi_reportiburn3a;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-2; AAR+=medi_reportiburn3aignore;"
+			/>
+		</scene>
+		<aar>
+				<reportElement id="medi_reportiburn3a"/>
+				<reportElement id="medi_reportiburn3aignore"/>
+		</aar>
+	</incident>
+	
+	<!-- Injury (Burns)(Third-Degree)(Active Fire)(Witness) -->
+	<incident id="REP_SLP_MEDI_IBURN3B" properties="type+=medical; type+=fire;
+		popularity=3;
+		visibility=1;
+		stage = 1;
+		">
+		
+		<scene id="patient" properties="timeToReact=1250;" poi="BUILDING" background="HouseBackground" >
+			<injured id="injured" 
+				properties="
+					blockedBy+=fire;
+					hp=[50,80];
+					hpchange=[-0.06,-0.10];
+					spawnArea=insideRear;
+					needsHospital=true;
+					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+					personBuilder.age=[0.5: ADULT | 0.25: TEEN | 0.1: CHILD | 0.15: OLD];
+			"
+				actionOnEnd="opinionOnSuccess+=2; AAR+=medi_reportiburn3b;"
+				actionOnIgnore="opinionOnSuccess+=2; opinionOnIgnore+=-5; AAR+=medi_reportiburn3bignore;"
+			/>
+			<suspect id="caller" 
+				properties="
+					reprimandWork=[50,200];
+					isCitizen=true;
+					spawnArea=infront;"
+				actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportiburn3bwitness1;" 
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-3; AAR+=medi_reportiburn3bwitness1ignore;"
+			/>
+			
+			<fireWork id="fire" properties="workAmount=50; workChange=0.1; spawnArea=insideWork; icon=SLP_FIRE1;" actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportiburn3bFire1a; injuredsmokedout.isActive=0;"/>
+			<timer id="injuredsmokedout" properties="time=500;" actionOnEnd="injured.hp=0; AAR+=patientdied1a; opinionOnSuccess+=-1;" />
+			
+		</scene>
+		<aar>
+				<reportElement id="medi_reportiburn3b"/>
+				<reportElement id="medi_reportiburn3bignore"/>
+				<reportElement id="patientdied1a"/>
+				<reportElement id="medi_reportiburn3bFire1a"/>
+				<reportElement id="medi_reportiburn3bwitness1"/>
+				<reportElement id="medi_reportiburn3bwitness1ignore"/>
+		</aar>
+	</incident>
+	
+	<!-- Injury (Burns)(Friction Burn) -->
+	
+	<!-- Injury (Burns)(Cold Burn) -->
+	
+	<!-- Injury (Burns)(Thermal Burn) -->
+	
+	<!-- Injury (Burns)(Radiation Burn) -->
+	
+	<!-- Injury (Burns)(Radiation Burn)(Hazmat) -->
+	
+	<!-- Injury (Burns)(Chemical Burn) -->
+	
+	<!-- Injury (Burns)(Chemical Burn)(Hazmat) -->
+	
+	<!-- Injury (Burns)(Electrical Burn) -->
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Respiratory Related  ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<!-- ============= Allergy ============= -->
 	<!-- Allergic Reaction (Mild) -->
 	
 	<!-- Allergic Reaction (Serious) -->

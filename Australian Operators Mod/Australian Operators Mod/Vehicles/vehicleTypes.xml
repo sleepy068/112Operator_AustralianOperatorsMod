@@ -22,8 +22,8 @@
 	teammembersSeats - how many team members can be assigned to vehicle (max 4 for default onsiteModel).
 	transportSeats - how many injured or suspects vehicle can take (max 6 for default onsiteModel).
 	upkeep - per duty cost for using this vehicle.
-	terrain - only to determinate if vehicle is moving on road or flying (terrain = "air").
-	patrols - not used parameter.
+	terrain - only to determinate if vehicle is moving on road or flying (terrain = "air" or "water").
+	patrols - not used parameter. (I am pretty sure this is used, it is whether they patrol or not).
 	spawnChance - not used parameter.
 	allDrive - if true, then all team members need to be able to drive (need to be humans). Used in bikes, bicycles etc.
 	chaseProficiency - how good the is vehicle at stopping pursuit incidents. Abstract value. 0 means it can't stop scene at all.
@@ -36,6 +36,13 @@
 	<!-- ===================================== -->
 	
 	<!-- ****************** Police ****************** -->
-	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="1" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+
+	<!-- ****************** Ambulance ****************** -->
+	<Vehicletype id="SLP_AU_AMB_MercSprinter_mk1" type="MEDICAL" bonuses="INJURED=0.5" price="51500" visibility="0.8" armour="0" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="4" transportSeats="1" upkeep="4250" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+
+	<!-- ****************** Ambulance ****************** -->
+	<Vehicletype id="SLP_AU_FIR_Scania_CL3" type="FIRE" bonuses="FIRE=0.7, TALL=0.1" price="94000" visibility="0.8" armour="0" maxSpeed="110" acceleration="2" immobilizedBy="NONE" offroadSpeedModif="0.5" trafficSpeedModif="0" teammembersSeats="4" transportSeats="0" upkeep="6000" terrain="road" patrols="false" waterCapacity="12" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_firetruck"/>
+    
 
 </ArrayOfVehicletype>
