@@ -239,4 +239,12 @@
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1": "The Caller made their report with the local police at the scene, while nothing seemed out of the ordinary, the Caller did seem visibly shaken that they could not help in the situation. Police reassured the Caller that their safety in these situations needs to take priority and that both their action of calling for help and their precise communication to the dispatcher is why emergency services could even arrive to help this patient.",
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1ignore": "The caller has issued an official complaint to the Australian Ambulance Service and Australian Fire Service from failing to respond to the emergency they reported in time. The report details that the patient died at the scene and the heavy toll it has taken on the caller. Confidential reports indicate are taking legal action against the Australian Government (Ambulance & Fire Services) along with the family of the deceased. The report will surely reflect poorly on us.",
 
+  "text.names.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "AU Scania P320 Class 3 Pumper",
+  "text.descriptions.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "Australian Scania P320 Class 3 Pumper (Heavy Fire Engine). A common fire response vehicle in Australia. Class 3 Pumpers (heavy fire engines) are designed for both metropolitan and regional areas and can be configured as either primary rescue or hazmat vehicles with Compressed Air Foam Systems (CAFS). The pump capacity is a minimum of 3700 litres per minute but the Scania CL3 Pumper lacks the ability to sustain a drawn out fight without hydrant support.",
+ 
+  "incident.REP_SLP_FIRE_GEN1.REP_SLP_FIRE_GEN1": "Small Grass Fire",
+  "incident.REP_SLP_FIRE_GEN1.description": "Dispatch has confirmed a report of a small grass fire. Grass fires can start quickly and spread rapidly, catching people off-guard. Grass fires are very hot and can produce huge amounts of heat that can kill anyone caught out in the open if they get big enough. Immediate fire fighting support is required to prevent the fire growing. Code 1.",
+  "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1a": "Fire fighters arrived at the scene and quickly extingished the fire before it could get out of control or threaten people or property.",
+  "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1ignored": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. ",
+
 }

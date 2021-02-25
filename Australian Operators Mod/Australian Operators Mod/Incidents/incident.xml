@@ -1276,7 +1276,47 @@
 	<!-- ================================= -->
 	<!-- ============= Fire  ============= -->
 	<!-- ================================= -->
-	
+	<!-- Typical Small Grass Fire -->
+	<incident id="REP_SLP_FIRE_GEN1" 
+		properties="type+=fire;
+		popularity=1;
+		visibility=1;
+		stage = 1;
+		tag+=hot{+6};
+		tag+=snow{-20};
+		tag+=rain{-10};"  >
+		
+		<scene id="FIREGEN1_I1v1" background="ParkBackground" properties="timeToReact=900;
+			opinionOnSuccess=2;
+			opinionOnIgnore=-3"  
+			
+			actionOnEnd="opinionOnSuccess+=1; AAR+=firegen1_I1v1a;"
+			actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-2; AAR+=firegen1_I1v1ignored;"
+			>
+			<fireWork id="fire1" 
+			properties="workAmount=50;
+			workChange=1;
+			spawnArea=fireWork;"  />
+			
+			<fireWork id="fire2" 
+			properties="workAmount=50;
+			workChange=1;
+			spawnArea=fireWork;"  />
+			
+			<fireWork id="fire3" 
+			properties="isActive=0.5;
+			workAmount=50;
+			workChange=1;
+			spawnArea=fireWork;"  />
+			
+			
+		</scene>
+		
+		<aar>
+				<reportElement id="firegen1_I1v1a"/>
+				<reportElement id="firegen1_I1v1ignored"/>
+		</aar>
+	</incident>
 	
 	<!-- ====================================== -->
 	<!-- ============= Technical  ============= -->

@@ -42,7 +42,7 @@
 	<Vehicletype id="SLP_AU_AMB_MercSprinter_mk1" type="MEDICAL" bonuses="INJURED=0.5" price="51500" visibility="0.8" armour="0" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="4" transportSeats="1" upkeep="4250" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
 	<!-- ****************** Ambulance ****************** -->
-	<Vehicletype id="SLP_AU_FIR_Scania_CL3" type="FIRE" bonuses="FIRE=0.7, TALL=0.1" price="94000" visibility="0.8" armour="0" maxSpeed="110" acceleration="2" immobilizedBy="NONE" offroadSpeedModif="0.5" trafficSpeedModif="0" teammembersSeats="4" transportSeats="0" upkeep="6000" terrain="road" patrols="false" waterCapacity="12" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_firetruck"/>
+	<Vehicletype id="SLP_AU_FIR_SCANIA_NSWClass3Pumper" type="FIRE" bonuses="FIRE=0.7, TALL=0.1" price="94000" visibility="0.8" armour="0" maxSpeed="110" acceleration="2" immobilizedBy="NONE" offroadSpeedModif="0.5" trafficSpeedModif="0" teammembersSeats="4" transportSeats="0" upkeep="6000" terrain="road" patrols="false" waterCapacity="12" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_firetruck"/>
     
 
 </ArrayOfVehicletype>
