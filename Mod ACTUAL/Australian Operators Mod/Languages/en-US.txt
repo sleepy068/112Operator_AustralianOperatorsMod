@@ -125,10 +125,7 @@
   "incident.REP_SLP_SPEED5v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED5v1.SPEED_CAR_5v1.speed_driver": "Driver",
   "incident.REP_SLP_SPEED5v1.aar.speeding4v1": "The driver was detected going at least 45km/hr over the speed limit. They will be charged with Exceed speed over 45 km/h , be fined $3762 AUD and lose 6 demerit points. The driver will also have their license suspended for at least 6 months.",
-  
-  "text.names.SLP_AU_POL_FordRanger": "AU Ford Ranger",
-  "text.descriptions.SLP_AU_POL_FordRanger": "Australian Police Ford Ranger, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases.",
-  
+ 
   "incident.REP_SLP_RDT_NOISSUE1.REP_SLP_RDT_NOISSUE1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_NOISSUE1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
   "incident.REP_SLP_RDT_NOISSUE1.RDT_CAR_NI1.rdt_driver": "Driver",
@@ -224,9 +221,6 @@
   "incident.REP_SLP_MEDI_IBURN3A.aar.medi_reportiburn3a": "Paramedics assessed the situation and assisted the patient. The situation was very serious and patient needed to be hospitalised immediately. While not painful to the patient due to the nerve endings been destroyed by the burn, third degree burns are extremely vulnerable to a range of complications such as burn infections, hypovolemia, deep vein thrombosis or pulmonary embolism. Is was critical that paramedics intervened when they did.",
   "incident.REP_SLP_MEDI_IBURN3A.aar.medi_reportiburn3aignore": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. Operations was alerted that the patient had a life-threatening condition. They were later hospitalised during a visit to the emergency room but the situation had seriously worsened. The patient is scheduled in for emergency surgery and is currently in the ICU. Confidential reports indicate the prognosis is poor and the patient may not survive. The incident has not reflected well on this department and an investigation is been called into action to determine what went wrong.",
 
-  "text.names.SLP_AU_AMB_MercSprinter_mk1": "AU Mercedes Benz Sprinter",
-  "text.descriptions.SLP_AU_AMB_MercSprinter_mk1": "Australian Ambulance Mercedes Benz Sprinter. One of the most common medical response vehicles in Australia, performs exceptionally well in both Rural and Metro areas. This vehicle can respond well, with a sizable group of paramedics and quickly but this model lacks off-road performance as well as patient transport capacity. The Mercedes Benz Sprinter is one of the most environmentally friendly ambulance options on the market, meaning the ambulance service can care not only for their patients but also the environment. This also leads to reduced running costs making them a cost effective vehicle.",
- 
   "incident.REP_SLP_MEDI_IBURN3B.REP_SLP_MEDI_IBURN3B": "Injury (Burn)",
   "incident.REP_SLP_MEDI_IBURN3B.description": "Dispatch has received a call that someone appears badly burnt and is trapped by a fire. The caller isn't able to assist the person due to the smoke. Immediate medical attention is required. Code 1.",
   "incident.REP_SLP_MEDI_IBURN3B.patient.injured": "Patient",
@@ -238,13 +232,29 @@
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bFire1a": "Fire fighters have reported that the fire has been dealt with. There were no signs of arson or that the fire was set deliberately and while small, the smoke it was generating would have caused serious issues for the patient and first responders.",
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1": "The Caller made their report with the local police at the scene, while nothing seemed out of the ordinary, the Caller did seem visibly shaken that they could not help in the situation. Police reassured the Caller that their safety in these situations needs to take priority and that both their action of calling for help and their precise communication to the dispatcher is why emergency services could even arrive to help this patient.",
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1ignore": "The caller has issued an official complaint to the Australian Ambulance Service and Australian Fire Service from failing to respond to the emergency they reported in time. The report details that the patient died at the scene and the heavy toll it has taken on the caller. Confidential reports indicate are taking legal action against the Australian Government (Ambulance & Fire Services) along with the family of the deceased. The report will surely reflect poorly on us.",
-
-  "text.names.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "AU Scania P320 Class 3 Pumper",
-  "text.descriptions.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "Australian Scania P320 Class 3 Pumper (Heavy Fire Engine). A common fire response vehicle in Australia. Class 3 Pumpers (heavy fire engines) are designed for both metropolitan and regional areas and can be configured as either primary rescue or hazmat vehicles with Compressed Air Foam Systems (CAFS). The pump capacity is a minimum of 3700 litres per minute but the Scania CL3 Pumper lacks the ability to sustain a drawn out fight without hydrant support.",
  
   "incident.REP_SLP_FIRE_GEN1.REP_SLP_FIRE_GEN1": "Small Grass Fire",
   "incident.REP_SLP_FIRE_GEN1.description": "Dispatch has confirmed a report of a small grass fire. Grass fires can start quickly and spread rapidly, catching people off-guard. Grass fires are very hot and can produce huge amounts of heat that can kill anyone caught out in the open if they get big enough. Immediate fire fighting support is required to prevent the fire growing. Code 1.",
-  "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1a": "Fire fighters arrived at the scene and quickly extingished the fire before it could get out of control or threaten people or property.",
+  "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1a": "Fire fighters arrived at the scene and quickly extinguished the fire before it could get out of control or threaten people or property.",
   "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1ignored": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. ",
 
+
+  "text.names.SLP_AU_POL_FordRanger": "AU NSW Ford Ranger",
+  "text.descriptions.SLP_AU_POL_FordRanger": "Australian New South Wales Police Ford Ranger, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases.",
+  
+  "text.names.SLP_AU_AMB_MercSprinter_mk1": "AU Mercedes Benz Sprinter",
+  "text.descriptions.SLP_AU_AMB_MercSprinter_mk1": "Australian Ambulance Mercedes Benz Sprinter. One of the most common medical response vehicles in Australia, performs exceptionally well in both Rural and Metro areas. This vehicle can respond well, with a sizeable group of paramedics and quickly but this model lacks off-road performance as well as patient transport capacity. The Mercedes Benz Sprinter is one of the most environmentally friendly ambulance options on the market, meaning the ambulance service can care not only for their patients but also the environment. This also leads to reduced running costs making them a cost effective vehicle.",
+ 
+  "text.names.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "AU Scania P320 Class 3 Pumper",
+  "text.descriptions.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "Australian Scania P320 Class 3 Pumper (Heavy Fire Engine). A common fire response vehicle in Australia. Class 3 Pumpers (heavy fire engines) are designed for both metropolitan and regional areas and can be configured as either primary rescue or hazmat vehicles with Compressed Air Foam Systems (CAFS). The pump capacity is a minimum of 3700 litres per minute but the Scania CL3 Pumper lacks the ability to sustain a drawn out fight without hydrant support.",
+
+  "text.names.SLP_AU_POL_VIC_HoldenColorado": "AU VIC Holden Colorado",
+  "text.descriptions.SLP_AU_POL_VIC_HoldenColorado": "Australian Victorian Police Holden Colorado, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases. Unlike its neighbour state, the Colorado has slightly better protection at the slight cost of speed.",
+  
+  "text.names.SLP_AU_POL_VIC_HoldenCommodoreUte": "AU VIC Holden Commodore Ute",
+  "text.descriptions.SLP_AU_POL_VIC_HoldenCommodoreUte": "Australian Victorian Police Holden Commodore VE Omega Ute, a fast and versatile unit. While it lacks the capacity to transport suspects it makes up for it in speed and pursuit. Designed to chase targets and support with searches, roadside events and tactical engagements.",
+  
+  "text.names.SLP_AU_POL_NSW_HighwayFordFalcon": "AU NSW HWP Ford Falcon",
+  "text.descriptions.SLP_AU_POL_NSW_HighwayFordFalcon": "Australian New South Wales Police Ford Falcon Highway Patrol vehicle, a very fast highway safety and tactical response unit. Capable of transporting a suspect, this vehicle excels in lower operating cost, high speed engagements and remote road surveillance. Suffers with less ideal offroad performance and lacks the protection to take on serious fights.",
+  
 }
