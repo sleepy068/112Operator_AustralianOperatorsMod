@@ -46,6 +46,8 @@
     
 	<Vehicletype id="SLP_AU_POL_NSW_HighwayFordFalcon" type="POLICE" bonuses="NONE" price="80000" visibility="0.25" armour="0.3" maxSpeed="255" acceleration="8" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="11600" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="18" unlockOnDuty="1" onsiteModel="ve_polcar"/>
     
+	<Vehicletype id="SLP_AU_POL_QLD_BMWR1250RTP" type="POLICE" bonuses="NONE" price="21900" visibility="0.60" armour="0" maxSpeed="180" acceleration="5" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="1950" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_polbike"/>
+    
 	<!-- ****************** Ambulance ****************** -->
 	<Vehicletype id="SLP_AU_AMB_MercSprinter_mk1" type="MEDICAL" bonuses="INJURED=0.5" price="51500" visibility="0.8" armour="0" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="4" transportSeats="1" upkeep="4250" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 

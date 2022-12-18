@@ -238,7 +238,6 @@
   "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1a": "Fire fighters arrived at the scene and quickly extinguished the fire before it could get out of control or threaten people or property.",
   "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1ignored": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. ",
 
-
   "text.names.SLP_AU_POL_FordRanger": "AU NSW Ford Ranger",
   "text.descriptions.SLP_AU_POL_FordRanger": "Australian New South Wales Police Ford Ranger, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases.",
   
@@ -259,5 +258,8 @@
   
   "text.names.SLP_AU_POL_NSW_HighwayFordFalcon": "AU NSW HWP Ford Falcon",
   "text.descriptions.SLP_AU_POL_NSW_HighwayFordFalcon": "Australian New South Wales Police Ford Falcon Highway Patrol vehicle, a very fast highway safety and tactical response unit. Capable of transporting a suspect, this vehicle excels in lower operating cost, high speed engagements and remote road surveillance. Suffers with less ideal offroad performance and lacks the protection to take on serious fights.",
+  
+  "text.names.SLP_AU_POL_QLD_BMWR1250RTP": "AU QLD BMW R1250 RT-P",
+  "text.descriptions.SLP_AU_POL_QLD_BMWR1250RTP": "Australian Queensland Police BMW R1250 RT-P Police Motorbike. Fast and cheap, efficient in traffic jams, but can't carry passengers/injured.",
   
 }
