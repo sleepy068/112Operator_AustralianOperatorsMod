@@ -242,6 +242,9 @@
   "text.names.SLP_AU_POL_FordRanger": "AU NSW Ford Ranger",
   "text.descriptions.SLP_AU_POL_FordRanger": "Australian New South Wales Police Ford Ranger, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases.",
   
+  "text.names.SLP_AU_POL_NSW_FordHilux": "AU NSW Ford Hilux",
+  "text.descriptions.SLP_AU_POL_NSW_FordHilux": "Australian New South Wales Police Ford Hilux, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases. Slightly better performance for less protection for the officers.",
+  
   "text.names.SLP_AU_AMB_MercSprinter_mk1": "AU Mercedes Benz Sprinter",
   "text.descriptions.SLP_AU_AMB_MercSprinter_mk1": "Australian Ambulance Mercedes Benz Sprinter. One of the most common medical response vehicles in Australia, performs exceptionally well in both Rural and Metro areas. This vehicle can respond well, with a sizeable group of paramedics and quickly but this model lacks off-road performance as well as patient transport capacity. The Mercedes Benz Sprinter is one of the most environmentally friendly ambulance options on the market, meaning the ambulance service can care not only for their patients but also the environment. This also leads to reduced running costs making them a cost effective vehicle.",
  

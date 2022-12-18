@@ -38,6 +38,8 @@
 	<!-- ****************** Police ****************** -->
 	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
+    <Vehicletype id="SLP_AU_POL_NSW_FordHilux" type="POLICE" bonuses="SEARCH=0.25" price="70000" visibility="0.8" armour="0.17" maxSpeed="148" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.70" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+
 	<Vehicletype id="SLP_AU_POL_VIC_HoldenColorado" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.25" maxSpeed="132" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
 	<Vehicletype id="SLP_AU_POL_VIC_HoldenCommodoreUte" type="POLICE" bonuses="SEARCH=0.25" price="44500" visibility="0.8" armour="0.1" maxSpeed="200" acceleration="6" immobilizedBy="NONE" offroadSpeedModif="0.80" trafficSpeedModif="0" teammembersSeats="2" transportSeats="0" upkeep="4200" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="16" unlockOnDuty="1" onsiteModel="ve_polpickup"/>
