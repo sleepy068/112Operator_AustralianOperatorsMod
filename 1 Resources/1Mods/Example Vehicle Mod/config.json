@@ -1,0 +1,12 @@
+{
+    "title": "Tandem bicycle",
+    "desc": "Twice useless. Created as an example of vehicle mod.",
+    "language": "",
+    "visibility": "public",
+    "itemId": 2095880281,
+    "modTypes": [
+        "LANGUAGES",
+        "VEHICLES"
+    ],
+    "order": 2
+}

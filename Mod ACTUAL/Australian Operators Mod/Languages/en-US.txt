@@ -129,28 +129,28 @@
   "incident.REP_SLP_RDT_NOISSUE1.REP_SLP_RDT_NOISSUE1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_NOISSUE1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
   "incident.REP_SLP_RDT_NOISSUE1.RDT_CAR_NI1.rdt_driver": "Driver",
-  "incident.REP_SLP_RDT_NOISSUE1.aar.rdt_noissue1": "The driver subjected to random breath testing returned negative for all illicit substances tested for. They are cleared to proceed.",
+  "incident.REP_SLP_RDT_NOISSUE1.aar.rdt_noissue1": "The driver subjected to random drug testing returned negative for all illicit substances tested for. They are cleared to proceed.",
   "incident.REP_SLP_RDT_NOISSUE1.aar.rdt_noissueignored1": "Local dispatch decided to ignore the Roadside Drug Testing request and redirected police resources elsewhere. Performing RDTs is critical to reducing the number of drug related motor vehicle incidents.",
 
   "incident.REP_SLP_RDT_ISSUE1v1.REP_SLP_RDT_ISSUE1v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE1v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
   "incident.REP_SLP_RDT_ISSUE1v1.RDT_CAR_I1v1.rdt_driver": "Driver",
-  "incident.REP_SLP_RDT_ISSUE1v1.aar.rdt_issue1v1": "The driver subjected to random breath testing returned positive for Active THC (Cannabis). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
+  "incident.REP_SLP_RDT_ISSUE1v1.aar.rdt_issue1v1": "The driver subjected to random drug testing returned positive for Active THC (Cannabis). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
   
   "incident.REP_SLP_RDT_ISSUE2v1.REP_SLP_RDT_ISSUE2v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE2v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
   "incident.REP_SLP_RDT_ISSUE2v1.RDT_CAR_I2v1.rdt_driver": "Driver",
-  "incident.REP_SLP_RDT_ISSUE2v1.aar.rdt_issue2v1": "The driver subjected to random breath testing returned positive for Methylamphetamine (Speed/ice). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
+  "incident.REP_SLP_RDT_ISSUE2v1.aar.rdt_issue2v1": "The driver subjected to random drug testing returned positive for Methylamphetamine (Speed/ice). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
   
   "incident.REP_SLP_RDT_ISSUE3v1.REP_SLP_RDT_ISSUE3v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE3v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
   "incident.REP_SLP_RDT_ISSUE3v1.RDT_CAR_I3v1.rdt_driver": "Driver",
-  "incident.REP_SLP_RDT_ISSUE3v1.aar.rdt_issue3v1": "The driver subjected to random breath testing returned positive for Methylenedioxymethylamphetamine (MDMA or 'ecstasy'). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
+  "incident.REP_SLP_RDT_ISSUE3v1.aar.rdt_issue3v1": "The driver subjected to random drug testing returned positive for Methylenedioxymethylamphetamine (MDMA or 'ecstasy'). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
   
   "incident.REP_SLP_RDT_ISSUE4v1.REP_SLP_RDT_ISSUE4v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE4v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
   "incident.REP_SLP_RDT_ISSUE4v1.RDT_CAR_I4v1.rdt_driver": "Driver",
-  "incident.REP_SLP_RDT_ISSUE4v1.aar.rdt_issue4v1": "The driver subjected to random breath testing returned positive for Cocaine. If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
+  "incident.REP_SLP_RDT_ISSUE4v1.aar.rdt_issue4v1": "The driver subjected to random drug testing returned positive for Cocaine. If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
   
   "incident.REP_SLP_MEDI_MISC1A.REP_SLP_MEDI_MISC1A": "Tachycardia (Mild)",
   "incident.REP_SLP_MEDI_MISC1A.description": "A person is suffering from mild Arrhythmia, specifically Tachycardia. Tachycardia is the medical term for a heart rate over 100 beats per minute but is out of proportion to age and level of exertion or activity. Sometimes, especially when mild, it can be normal for someone to have a fast heartbeat. Code 3.",
@@ -261,5 +261,11 @@
   
   "text.names.SLP_AU_POL_QLD_BMWR1250RTP": "AU QLD BMW R1250 RT-P",
   "text.descriptions.SLP_AU_POL_QLD_BMWR1250RTP": "Australian Queensland Police BMW R1250 RT-P Police Motorbike. Fast and cheap, efficient in traffic jams, but can't carry passengers/injured.",
+  
+  "text.names.SLP_AU_POL_AFP_ToyotaLC70S": "AFP Toyota Land Cruiser 70S",
+  "text.descriptions.SLP_AU_POL_AFP_ToyotaLC70S": "Australian Federal Police Toyota Land Cruiser 70 Series off-road search and rescue vehicle. Very effective search vehicle and all australian federal police vehicles are better equipped to deal with hostile situations. Lacks speed and the ability to chase suspects, has a high cost but lower upkeep.",
+  
+  "text.names.SLP_AU_POL_TAS_Bearcat": "AU TAS Bearcat",
+  "text.descriptions.SLP_AU_POL_TAS_Bearcat": "Australian Tasmanian Police Special Emergency Response Team Bearcat vehicle. Designed for the most dangerous of engagements and is decent tackling offroad areas.",
   
 }

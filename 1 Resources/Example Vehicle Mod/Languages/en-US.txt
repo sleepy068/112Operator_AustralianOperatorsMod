@@ -1,4 +1,0 @@
-{
-  "text.names.ve_poltandem": "Police tandem",
-  "text.descriptions.ve_poltandem": "Like regular two bicycles... but better."
-}

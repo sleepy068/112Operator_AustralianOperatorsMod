@@ -48,6 +48,10 @@
     
 	<Vehicletype id="SLP_AU_POL_QLD_BMWR1250RTP" type="POLICE" bonuses="NONE" price="21900" visibility="0.60" armour="0" maxSpeed="180" acceleration="5" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="1950" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_polbike"/>
     
+	<Vehicletype id="SLP_AU_POL_AFP_ToyotaLC70S" type="POLICE" bonuses="SEARCH=0.50,INJURED=0.1" price="99000" visibility="0.8" armour="0.25" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="1" trafficSpeedModif="0" teammembersSeats="2" transportSeats="2" upkeep="5250" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+    
+	<Vehicletype id="SLP_AU_POL_TAS_Bearcat" type="POLICE" bonuses="NONE" price="155000" visibility="0.8" armour="0.9" maxSpeed="100" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.40" trafficSpeedModif="0" teammembersSeats="4" transportSeats="4" upkeep="18500" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_swatvan"/>
+    
 	<!-- ****************** Ambulance ****************** -->
 	<Vehicletype id="SLP_AU_AMB_MercSprinter_mk1" type="MEDICAL" bonuses="INJURED=0.5" price="51500" visibility="0.8" armour="0" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="4" transportSeats="1" upkeep="4250" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
