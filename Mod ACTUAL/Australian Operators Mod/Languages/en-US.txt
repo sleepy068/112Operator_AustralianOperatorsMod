@@ -238,6 +238,18 @@
   "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1a": "Fire fighters arrived at the scene and quickly extinguished the fire before it could get out of control or threaten people or property.",
   "incident.REP_SLP_FIRE_GEN1.aar.firegen1_I1v1ignored": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. ",
 
+  "incident.REP_SLP_RBT_STATIC1.REP_SLP_RBT_STATIC1": "Roadside Breath Testing",
+  "incident.REP_SLP_RBT_STATIC1.description": "Police command has requested a static RBT site be deployed to this location.",
+  "incident.REP_SLP_RBT_STATIC1.aar.rbt_static1": "The police processed as much traffic as they could flowing through the area, without causing traffic backlog. Testing was able to check the Blood Alcohol Content of many drivers, helping keep the roads safer. Police command is satisfied with the results and has diverted funds to assist the department.",
+  "incident.REP_SLP_RBT_STATIC1.aar.rbt_staticignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside breath testing site. Command will not be happy their request wasn't followed...",
+
+  "incident.REP_SLP_RDT_STATIC1.REP_SLP_RDT_STATIC1": "Roadside Drug Testing",
+  "incident.REP_SLP_RDT_STATIC1.description": "Police command has requested a static RDT site be deployed to this location.",
+  "incident.REP_SLP_RDT_STATIC1.aar.pts_static1": "The police processed as much traffic as they could flowing through the area, without causing traffic backlog. Testing was able to prevent those under the influence of drugs from staying on the road. Police command is satisfied with the results and has diverted funds to assist the department.",
+  "incident.REP_SLP_RDT_STATIC1.aar.pts_static1ignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside drug testing site. Command will not be happy their request wasn't followed...",
+
+
+
   "text.names.SLP_AU_POL_FordRanger": "AU NSW Ford Ranger",
   "text.descriptions.SLP_AU_POL_FordRanger": "Australian New South Wales Police Ford Ranger, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases.",
   

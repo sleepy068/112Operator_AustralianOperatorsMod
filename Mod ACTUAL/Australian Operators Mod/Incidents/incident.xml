@@ -2,7 +2,7 @@
 	<!-- ============= AOM Incidents  ============= -->
 	<!-- ========================================== -->
 	<!-- To spawn incident for testing: ~, entered EnableCheats and SpawnIncident <incident_id> -->
-	<!-- 5 New Incident Types & 23 Total New Incidents (This mod adds subtypes and other variants of a similar/same incident) -->
+	<!--  -->
 	
 	<!-- Mod by Sleepy068
 	This mod is released under the Creative Commons Attribution ShareAlike 4.0 International Licence https://creativecommons.org/licenses/by-sa/4.0/
@@ -37,6 +37,8 @@
 		</aar>
 	</incident>
 	
+	backgroundTypes: 
+	
 	How localisation works ======================================================================================
 	This is the localisation file for the above example:
 	{
@@ -61,21 +63,27 @@
 			StockTypes; crime, road, technical, medical, fire, vandalism, protest, search, drugs, terrorist, earthq (earthquake)
 		Visibility=; (value, 0-1; 1 seem to be most visable where as 0 might not be able to be seen at all normally (patrols might see it instead))
 		stage= ; Possibly career progression and whether this spawns depending on where the player is, either 1, 2, 3
-		Popularity (Value range 0-100, similar to a weighting for how often it may occur, speeding is 25)(up to 2 DC 0.01)
+		Popularity (Value range 0-100, similar to a weighting for how often it may occur, speeding is 25)(the number is a float so up to any decimal point, probably aim for two though)
 		
 	Tags: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		Example:
 			tag+=rain{-10}; (the value can be positive or negative(+ more likely, - less likely), it seems to directly effect or buffer the popularity field and hence chance for it to occur)
-		TagTypes: night, rain, snow, wind, cold, hot, hot_night, event_blackout_1, event_blackout_2, event_new_year, event_tornado, event_protest_peacefull, event_protest_aggressive, 
+		TagTypes: none, day, night, rain, snow, wind, cold, hot, hot_night, event_blackout_1, event_blackout_2, event_new_year, event_tornado, event_protest_peacefull, event_protest_aggressive, 
 		event_protest_dontknow, event_vandals, event_planecrash_on_failed
 
+	Tags are also independly added it seems, you can make a tag of anything if you choose but without code modding you wont be able to link them to situations.
+	
 	Scene: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		poi= "PARK" (Where the scene takes place, point of interest, probably for helping the game pick actual places in the map, bridge will happen on actual bridges)
-			SceneTypes: PARK, BUILDING, BANK, TALL_BUILDING, BRIDGE
+			SceneTypes: 
+				NONE, BANK, BRIDGE, BORDER_ROAD, BUILDING, COASTLINE, CONSTRUCTION, FIRE_STATION, HOSPITAL, PARK, POLICE_STATION, RAIL_CROSSING, RESTAURANT, ROAD,
+				SCHOOL, DAUGHTER_SCHOOL, TALL_BUILDING, AIRPORT, WATER_COAST, WATER_DEEP, WATER_SEA, PORT, BEACH
+				
 		backgrounds= (Should be the actual preview setups)
 			BackgroundTypes: CarBackground, CarHitBackground, CarBumpBackground, WaterpipeBackground, RoaddamageBackground, HouseBackground, HouseCollapseBackground,
 			TrailerFightBackground, PowerBackground, ElevatorBackground, ChemBackground, TruckBackground, PowerDownBackground, ParkBackground, IndustrialBackground,
 			RoadsignBackground, TwoCarBackground, TankerBackground, TreeFallBackground
+			
 		properties= "timeToReact=600;" (Properties needs all content to be inbetween "")
 			timeToReact= (how many ticks the player can respond) 1 tick should = 1 second;
 			onMove=1; (if it is a chase and the incident is moving)
@@ -172,13 +180,17 @@
 			timer.isActive=0 (structured like this TIMER_ID(the name of the timer).isActive=0 (0 cancels the timer, 1 would activate it)
 
 				
-		PoliceWork
+		policeWork
 		
+		fireWork
 		
-		FireWork
+		medicalWork
 		
+		searchWork
 		
-		TechWork
+		defuseBombWork
+		
+		techWork
 			workAmount; (amount of time it takes the work to complete, in 'ticks' or seconds)
 			spawnArea=; (where the work spawns, e.g. fire in the car 'engine', remember that the site sort of defines this, use existing examples to assist you)
 			onlyFor=FIREFIGHTERS; (prevents technical medical and police from doing this work instead, e.g. MVA (Motor Vehicle Accident))
@@ -192,15 +204,35 @@
 	
 <incidentTypes id="ModAOM_general_incidents">
 	
-	<!-- ================================== -->
-	<!-- ============= Police ============= -->
-	<!-- ================================== -->
+	<!-- ====================================================================================================================================================================================================== -->
+	<!-- ========================================================================================== POLICE  =================================================================================================== -->
+	<!-- ====================================================================================================================================================================================================== -->
 	
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ============= Driving Offences ============= -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	
 	<!-- ============= Random Breath Testing ============= -->
+	<!-- Static Site -->
+	<incident id="REP_SLP_RBT_STATIC1" 
+		properties="
+		type+= road; 
+		popularity= 1; 
+		stage= 1; 
+		tag+= night{+0.5}; 
+		tag+= rain{-0.25}; ">
+		
+		<scene id="RBT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RBT_CAR_1.AAR+=rbt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RBT_CAR_1.AAR+=rbt_staticignored1;">
+			<policeWork id="work" properties="workAmount=1800; icon=SLP_POL_RBT1; bill=[0.5: 1500|0.5: 3000];"  />
+		</scene>
+		
+		<aar>
+				<reportElement id="rbt_static1"/>
+				<reportElement id="rbt_staticignored1"/>
+		</aar>
+		
+	</incident>
+	
 	<!-- No Issue -->
 	<incident id="REP_SLP_RBT_NOISSUE1" 
 		properties="
@@ -242,7 +274,7 @@
 		stage= 1; 
 		tag+= night{+1}; ">
 		
-		<scene id="RBT_CAR_I1v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
+		<scene id="RBT_CAR_I1v1" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
 				properties="
 					bill=[326,1257];
@@ -494,7 +526,7 @@
 		tag+=rain{-20};
 		tag+=wind{-15};">
 		
-		<scene id="SPEED_CAR_1v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+		<scene id="SPEED_CAR_1v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
 				properties="
 					bill=205;
@@ -529,7 +561,7 @@
 		tag+=rain{-17};
 		tag+=wind{-12};">
 		
-		<scene id="SPEED_CAR_2v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+		<scene id="SPEED_CAR_2v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
 				properties="
 					bill=274;
@@ -564,7 +596,7 @@
 		tag+=rain{-13};
 		tag+=wind{-8};">
 		
-		<scene id="SPEED_CAR_3v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+		<scene id="SPEED_CAR_3v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
 				properties="
 					bill=342;
@@ -599,7 +631,7 @@
 		tag+=rain{-9};
 		tag+=wind{-6};">
 		
-		<scene id="SPEED_CAR_4v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+		<scene id="SPEED_CAR_4v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
 				properties="
 					bill=823;
@@ -634,7 +666,7 @@
 		tag+=rain{-6};
 		tag+=wind{-5};">
 		
-		<scene id="SPEED_CAR_5v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25;">
+		<scene id="SPEED_CAR_5v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
 				properties="
 					bill=2149;
@@ -991,6 +1023,26 @@
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<!-- ============= Roadside Drug Testing ============= -->
+	<!-- Static Site -->
+	<incident id="REP_SLP_RDT_STATIC1" 
+		properties="
+		type+= road; 
+		popularity= 1; 
+		stage= 1; 
+		tag+= night{+0.5}; 
+		tag+= rain{-0.25}; ">
+		
+		<scene id="RDT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RDT_CAR_1.AAR+=rdt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RDT_CAR_1.AAR+=rdt_staticignored1;">
+			<policeWork id="work" properties="workAmount=1800; icon=SLP_POL_RDT1; bill=[0.5: 1500|0.5: 3000];"  />
+		</scene>
+		
+		<aar>
+				<reportElement id="rdt_static1"/>
+				<reportElement id="rdt_staticignored1"/>
+		</aar>
+		
+	</incident>
+	
 	<!-- No Issue -->
 	<incident id="REP_SLP_RDT_NOISSUE1" 
 		properties="
@@ -1013,7 +1065,7 @@
 					spawnArea=trapped1; 
 				"
 				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_noissue1;"
-				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=rdt_noissueignored1;"
 			/>
 		</scene>
 		
@@ -1048,7 +1100,7 @@
 					spawnArea=trapped1; 
 				"
 				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue1v1;"
-				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=rdt_noissueignored1;"
 			/>
 		</scene>
 		
@@ -1083,7 +1135,7 @@
 					spawnArea=trapped1; 
 				"
 				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue2v1;"
-				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=rdt_noissueignored1;"
 			/>
 		</scene>
 		
@@ -1118,7 +1170,7 @@
 					spawnArea=trapped1; 
 				"
 				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue3v1;"
-				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=rdt_noissueignored1;"
 			/>
 		</scene>
 		
@@ -1153,7 +1205,7 @@
 					spawnArea=trapped1; 
 				"
 				actionOnEnd="opinionOnSuccess+=1; AAR+=rdt_issue4v1;"
-				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=rdt_noissueignored1;"
+				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=rdt_noissueignored1;"
 			/>
 		</scene>
 		
@@ -1243,7 +1295,7 @@
 					weapon=e_fist; 
 					prison=0.95; 
 					personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
-					personBuilder.age= [0.85: ADULT | 0.15: OLD];
+					personBuilder.age=[0.85: ADULT | 0.15: OLD];
 					personBuilder.isCriminal=0.2; 
 				"
 				actionOnEnd="opinionOnSuccess+=5; AAR+=bro_reporti1v1a;"
@@ -1271,17 +1323,184 @@
 		
 	</incident>
 	
-
-	<!-- ================================= -->
-	<!-- ============= Fire  ============= -->
-	<!-- ================================= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Community Service & Public Education ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ============= Neutral/Negative Public Opinion Actions ============= -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Unlawfully Ringing Doorbells (Adult)(Fined) -->
+	<incident id="REP_SLP_NPOA001" 
+		properties="
+		type+= crime; 
+		popularity= 0.5; 
+		stage= 1; 
+		visibility=0.2;">
+		
+		<scene id="search_scene" properties="searchWork=40;
+			searchArea=5;
+			timeToReact=700;
+			searchSceneId=searched_scene;
+			opinionOnSuccess=0;
+			opinionOnIgnore=0;
+			iconMap=police_search;"  >
+		</scene>
+		
+		<scene id="searched_scene" background="HouseBackground" properties="delayedSpawn=true;"  >
+			<suspect id="suspect" properties="
+			bill=142;
+			reprimandWork=[300,480];
+			prison=0;
+			aggressiveness=0.01;
+			weapon=e_fist;;
+			spawnArea=insideRear;" 
+			actionOnEnd="opinionOnSuccess+=0; AAR+=slp_npoa0001_1;" 
+			actionOnIgnore="opinionOnSuccess+=0; opinionOnIgnore+=0; AAR+=slp_npoa0001_ignored1;"
+			/>
+		</scene>
+		
+		<scene id="victimscene" background="HouseBackground" properties="timeToReact=300;">
+			<suspect id="caller" 
+				properties="
+				reprimandWork=[120,180];
+				personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+				personBuilder.age=[0.60: ADULT | 0.40: OLD];
+				personBuilder.isCriminal=false;
+				isCitizen=true;				
+				"
+				actionOnEnd="opinionOnSuccess+=0; AAR+=slp_npoa0001_2;"
+				actionOnIgnore="opinionOnSuccess+=0; opinionOnIgnore+=0; AAR+=slp_npoa0001_ignored2;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="slp_npoa0001_1"/>
+				<reportElement id="slp_npoa0001_ignored1"/>
+				<reportElement id="slp_npoa0001_2"/>
+				<reportElement id="slp_npoa0001_ignored2"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Unlawfully Ringing Doorbells (Child)(Fined) -->
+	<incident id="REP_SLP_NPOA002" 
+		properties="
+		type+= crime; 
+		popularity= 0.5; 
+		stage= 1; 
+		visibility=0.2;">
+		
+		<scene id="search_scene" properties="searchWork=40;
+			searchArea=5;
+			timeToReact=700;
+			searchSceneId=searched_scene;
+			opinionOnSuccess=0;
+			opinionOnIgnore=0;
+			iconMap=police_search;"  >
+		</scene>
+		
+		<scene id="searched_scene" background="HouseBackground" properties="delayedSpawn=true;"  >
+			<suspect id="suspect" properties="
+			bill=142;
+			reprimandWork=[300,480];
+			personBuilder.age=CHILD;
+			prison=0;
+			aggressiveness=0;
+			weapon=e_fist;;
+			spawnArea=insideRear;" 
+			actionOnEnd="opinionOnSuccess+=-3; AAR+=slp_npoa0002_1;" 
+			actionOnIgnore="opinionOnSuccess+=-3; opinionOnIgnore+=+1; AAR+=slp_npoa0002_ignored1;"
+			/>
+		</scene>
+		
+		<scene id="victimscene" background="HouseBackground" properties="timeToReact=300;">
+			<suspect id="caller" 
+				properties="
+				reprimandWork=[120,180];
+				personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+				personBuilder.age= [0.60: ADULT | 0.40: OLD];
+				personBuilder.isCriminal=false;
+				isCitizen=true;				
+				"
+				actionOnEnd="opinionOnSuccess+=0; AAR+=slp_npoa0002_2;"
+				actionOnIgnore="opinionOnSuccess+=0; opinionOnIgnore+=0; AAR+=slp_npoa0002_ignored2;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="slp_npoa0001_1"/>
+				<reportElement id="slp_npoa0001_ignored1"/>
+				<reportElement id="slp_npoa0001_2"/>
+				<reportElement id="slp_npoa0001_ignored2"/>
+		</aar>
+		
+	</incident>
+	
+	<!-- Unlawfully Ringing Doorbells (Child)(Politely Warned) -->
+	<incident id="REP_SLP_NPOA003" 
+		properties="
+		type+= crime; 
+		popularity= 0.5; 
+		stage= 1; 
+		visibility=0.2;">
+		
+		<scene id="search_scene" properties="searchWork=40;
+			searchArea=5;
+			timeToReact=700;
+			searchSceneId=searched_scene;
+			opinionOnSuccess=0;
+			opinionOnIgnore=0;
+			iconMap=police_search;"  >
+		</scene>
+		
+		<scene id="searched_scene" background="HouseBackground" properties="delayedSpawn=true;"  >
+			<suspect id="suspect" properties="
+			reprimandWork=[300,480];
+			personBuilder.age=CHILD;
+			prison=0;
+			aggressiveness=0;
+			weapon=e_fist;;
+			spawnArea=insideRear;" 
+			actionOnEnd="opinionOnSuccess+=+1 AAR+=slp_npoa0003_1;" 
+			actionOnIgnore="opinionOnSuccess+=+1; opinionOnIgnore+=0; AAR+=slp_npoa0003_ignored1;"
+			/>
+		</scene>
+		
+		<scene id="victimscene" background="HouseBackground" properties="timeToReact=300;">
+			<suspect id="caller" 
+				properties="
+				reprimandWork=[120,180];
+				personBuilder.sex=[0.5: MALE | 0.5: FEMALE];
+				personBuilder.age= [0.60: ADULT | 0.40: OLD];
+				personBuilder.isCriminal=false;
+				isCitizen=true;				
+				"
+				actionOnEnd="opinionOnSuccess+=0; AAR+=slp_npoa0003_2;"
+				actionOnIgnore="opinionOnSuccess+=0; opinionOnIgnore+=0; AAR+=slp_npoa0003_ignored2;"
+			/>
+		</scene>
+		
+		<aar>
+				<reportElement id="slp_npoa0003_1"/>
+				<reportElement id="slp_npoa0003_ignored1"/>
+				<reportElement id="slp_npoa0003_2"/>
+				<reportElement id="slp_npoa0003_ignored2"/>
+		</aar>
+		
+	</incident>
+	
+	
+	<!-- ==================================================================================================================================================================================================== -->
+	<!-- ========================================================================================== Fire  =================================================================================================== -->
+	<!-- ==================================================================================================================================================================================================== -->
 	<!-- Typical Small Grass Fire -->
 	<incident id="REP_SLP_FIRE_GEN1" 
 		properties="type+=fire;
 		popularity=1;
 		visibility=1;
 		stage = 1;
-		tag+=hot{+6};
+		tag+=hot{+10};
 		tag+=snow{-20};
 		tag+=rain{-10};"  >
 		
@@ -1295,18 +1514,21 @@
 			<fireWork id="fire1" 
 			properties="workAmount=50;
 			workChange=1;
-			spawnArea=fireWork;"  />
+			spawnArea=fireWork;
+			icon=SLP_FIRE_S1;"  />
 			
 			<fireWork id="fire2" 
 			properties="workAmount=50;
 			workChange=1;
-			spawnArea=fireWork;"  />
+			spawnArea=fireWork;
+			icon=SLP_FIRE_S1;"  />
 			
 			<fireWork id="fire3" 
 			properties="isActive=0.5;
 			workAmount=50;
 			workChange=1;
-			spawnArea=fireWork;"  />
+			spawnArea=fireWork;
+			icon=SLP_FIRE_S1;"  />
 			
 			
 		</scene>
@@ -1331,9 +1553,9 @@
 	<!-- ================================== -->
 	
 	
-	<!-- ==================================== -->
-	<!-- ============= Medical  ============= -->
-	<!-- ==================================== -->
+	<!-- ======================================================================================================================================================================================================= -->
+	<!-- ========================================================================================== MEDICAL  =================================================================================================== -->
+	<!-- ======================================================================================================================================================================================================= -->
 	
 	<!-- +++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ============= Heart Related ============= -->
@@ -1722,7 +1944,7 @@
 	<!-- Injury (Burns)(Electrical Burn) -->
 	
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- ============= Respiratory Related  ============= -->
+	<!-- =============    Respiratory Related     ============= -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<!-- ============= Allergy ============= -->
@@ -1734,5 +1956,31 @@
 	
 	<!-- Asthma Attack -->
 
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- =============       Misc Medical         ============= -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Pill Testing Site -->
+	<!-- Static Site -->
+	<incident id="REP_SLP_PTS_STATIC1" 
+		properties="
+		type+= medical; 
+		popularity= 1.5; 
+		stage= 1; 
+		tag+= night{+0.5}; 
+		tag+= event_new_year{+1.5};
+		tag+= event_protest_peacefull{+0.5};
+		">
+		
+		<scene id="SLP_SCENE_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; SLP_SCENE_1.AAR+=pts_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-8; SLP_SCENE_1.AAR+=pts_static1ignored1;">
+			<medicalWork id="work" properties="workAmount=1800; icon=SLP_MED_PILLT1; bill=[0.5: 2250|0.5: 4000];"  />
+		</scene>
+		
+		<aar>
+				<reportElement id="pts_static1"/>
+				<reportElement id="pts_static1ignored1"/>
+		</aar>
+		
+	</incident>
+	
 	
 </incidentTypes>
