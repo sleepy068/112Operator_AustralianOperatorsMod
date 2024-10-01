@@ -109,22 +109,22 @@
   "incident.REP_SLP_SPEED2v1.REP_SLP_SPEED2v1": "Speeding",
   "incident.REP_SLP_SPEED2v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED2v1.SPEED_CAR_2v1.speed_driver": "Driver",
-  "incident.REP_SLP_SPEED2v1.aar.speeding2v1": "The driver was detected going at least 10km/hr over the speed limit. They will be charged with Exceed speed over 10 km/h , be fined $486 AUD and lose 3 demerit points.",
+  "incident.REP_SLP_SPEED2v1.aar.speeding2v1": "The driver was detected going at least 10km/hr over the speed limit. They will be charged with Exceed speed over 10 km/h, be fined $486 AUD and lose 3 demerit points.",
   
   "incident.REP_SLP_SPEED3v1.REP_SLP_SPEED3v1": "Speeding",
   "incident.REP_SLP_SPEED3v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED3v1.SPEED_CAR_3v1.speed_driver": "Driver",
-  "incident.REP_SLP_SPEED3v1.aar.speeding3v1": "The driver was detected going at least 20km/hr over the speed limit. They will be charged with Exceed speed over 20 km/h , be fined $599 AUD and lose 4 demerit points.",
+  "incident.REP_SLP_SPEED3v1.aar.speeding3v1": "The driver was detected going at least 20km/hr over the speed limit. They will be charged with Exceed speed over 20 km/h, be fined $599 AUD and lose 4 demerit points.",
   
   "incident.REP_SLP_SPEED4v1.REP_SLP_SPEED4v1": "Speeding",
   "incident.REP_SLP_SPEED4v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED4v1.SPEED_CAR_4v1.speed_driver": "Driver",
-  "incident.REP_SLP_SPEED4v1.aar.speeding4v1": "The driver was detected going at least 30km/hr over the speed limit. They will be charged with Exceed speed over 30 km/h , be fined $1441 AUD and lose 5 demerit points. The driver will also have their license suspended for at least 3 months.",
+  "incident.REP_SLP_SPEED4v1.aar.speeding4v1": "The driver was detected going at least 30km/hr over the speed limit. They will be charged with Exceed speed over 30 km/h, be fined $1441 AUD and lose 5 demerit points. The driver will also have their license suspended for at least 3 months.",
   
   "incident.REP_SLP_SPEED5v1.REP_SLP_SPEED5v1": "Speeding",
   "incident.REP_SLP_SPEED5v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED5v1.SPEED_CAR_5v1.speed_driver": "Driver",
-  "incident.REP_SLP_SPEED5v1.aar.speeding4v1": "The driver was detected going at least 45km/hr over the speed limit. They will be charged with Exceed speed over 45 km/h , be fined $3762 AUD and lose 6 demerit points. The driver will also have their license suspended for at least 6 months.",
+  "incident.REP_SLP_SPEED5v1.aar.speeding4v1": "The driver was detected going at least 45km/hr over the speed limit. They will be charged with Exceed speed over 45 km/h, be fined $3762 AUD and lose 6 demerit points. The driver will also have their license suspended for at least 6 months.",
  
   "incident.REP_SLP_RDT_NOISSUE1.REP_SLP_RDT_NOISSUE1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_NOISSUE1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory testing before charges can be laid.",
