@@ -223,7 +223,7 @@
 		tag+= rain{-0.25}; ">
 		
 		<scene id="RBT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RBT_CAR_1.AAR+=rbt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RBT_CAR_1.AAR+=rbt_staticignored1;">
-			<policeWork id="work" properties="workAmount=1800; icon=SLP_POL_RBT1; bill=[0.5: 1500|0.5: 3000];"  />
+			<policeWork id="work" properties="workAmount=1800; icon=SLPPOLRBT1; bill=[0.5: 1500|0.5: 3000];"  />
 		</scene>
 		
 		<aar>
@@ -1033,7 +1033,7 @@
 		tag+= rain{-0.25}; ">
 		
 		<scene id="RDT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RDT_CAR_1.AAR+=rdt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RDT_CAR_1.AAR+=rdt_staticignored1;">
-			<policeWork id="work" properties="workAmount=1800; icon=SLP_POL_RDT1; bill=[0.5: 1500|0.5: 3000];"  />
+			<policeWork id="work" properties="workAmount=1800; icon=SLPPOLRDT1; bill=[0.5: 1500|0.5: 3000];"  />
 		</scene>
 		
 		<aar>
@@ -1402,7 +1402,7 @@
 		
 		<scene id="searched_scene" background="HouseBackground" properties="delayedSpawn=true;"  >
 			<suspect id="suspect" properties="
-			bill=142;
+			bill=112;
 			reprimandWork=[300,480];
 			personBuilder.age=CHILD;
 			prison=0;
@@ -1410,7 +1410,7 @@
 			weapon=e_fist;;
 			spawnArea=insideRear;" 
 			actionOnEnd="opinionOnSuccess+=-3; AAR+=slp_npoa0002_1;" 
-			actionOnIgnore="opinionOnSuccess+=-3; opinionOnIgnore+=+1; AAR+=slp_npoa0002_ignored1;"
+			actionOnIgnore="opinionOnSuccess+=-3; opinionOnIgnore+=1; AAR+=slp_npoa0002_ignored1;"
 			/>
 		</scene>
 		
@@ -1429,10 +1429,10 @@
 		</scene>
 		
 		<aar>
-				<reportElement id="slp_npoa0001_1"/>
-				<reportElement id="slp_npoa0001_ignored1"/>
-				<reportElement id="slp_npoa0001_2"/>
-				<reportElement id="slp_npoa0001_ignored2"/>
+				<reportElement id="slp_npoa0002_1"/>
+				<reportElement id="slp_npoa0002_ignored1"/>
+				<reportElement id="slp_npoa0002_2"/>
+				<reportElement id="slp_npoa0002_ignored2"/>
 		</aar>
 		
 	</incident>
@@ -1462,8 +1462,8 @@
 			aggressiveness=0;
 			weapon=e_fist;;
 			spawnArea=insideRear;" 
-			actionOnEnd="opinionOnSuccess+=+1 AAR+=slp_npoa0003_1;" 
-			actionOnIgnore="opinionOnSuccess+=+1; opinionOnIgnore+=0; AAR+=slp_npoa0003_ignored1;"
+			actionOnEnd="opinionOnSuccess+=1; AAR+=slp_npoa0003_1;" 
+			actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=0; AAR+=slp_npoa0003_ignored1;"
 			/>
 		</scene>
 		
@@ -1515,20 +1515,20 @@
 			properties="workAmount=50;
 			workChange=1;
 			spawnArea=fireWork;
-			icon=SLP_FIRE_S1;"  />
+			icon=SLPFIRES1;"  />
 			
 			<fireWork id="fire2" 
 			properties="workAmount=50;
 			workChange=1;
 			spawnArea=fireWork;
-			icon=SLP_FIRE_S1;"  />
+			icon=SLPFIRES1;"  />
 			
 			<fireWork id="fire3" 
 			properties="isActive=0.5;
 			workAmount=50;
 			workChange=1;
 			spawnArea=fireWork;
-			icon=SLP_FIRE_S1;"  />
+			icon=SLPFIRES1;"  />
 			
 			
 		</scene>
@@ -1913,7 +1913,7 @@
 				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-3; AAR+=medi_reportiburn3bwitness1ignore;"
 			/>
 			
-			<fireWork id="fire" properties="workAmount=50; workChange=0.1; spawnArea=insideWork; icon=SLP_FIRE1;" actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportiburn3bFire1a; injuredsmokedout.isActive=0;"/>
+			<fireWork id="fire" properties="workAmount=50; workChange=0.1; spawnArea=insideWork; icon=SLPFIRES1;" actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportiburn3bFire1a; injuredsmokedout.isActive=0;"/>
 			<timer id="injuredsmokedout" properties="time=500;" actionOnEnd="injured.hp=0; AAR+=patientdied1a; opinionOnSuccess+=-1;" />
 			
 		</scene>
@@ -1972,7 +1972,7 @@
 		">
 		
 		<scene id="SLP_SCENE_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; SLP_SCENE_1.AAR+=pts_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-8; SLP_SCENE_1.AAR+=pts_static1ignored1;">
-			<medicalWork id="work" properties="workAmount=1800; icon=SLP_MED_PILLT1; bill=[0.5: 2250|0.5: 4000];"  />
+			<medicalWork id="work" properties="workAmount=1800; icon=SLPMEDPILLT1; bill=[0.5: 2250|0.5: 4000];"  />
 		</scene>
 		
 		<aar>

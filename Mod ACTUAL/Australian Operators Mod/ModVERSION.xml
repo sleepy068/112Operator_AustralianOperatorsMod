@@ -3,16 +3,34 @@
 Update v1.0.12 Build 16/01/24 | Post 
 
 Additions:
-N/A
+9 New Vehicles
+- 3 Police
+- 3 Medical
+
+3 New Incidents
+
+Added Hats for Australia (Only overrides the hats for country code Australia AU)
 
 Changes:
 N/A
 
 Localisation:
-N/A
+Fixed up a bunch of incident descriptions to ensure the text doesn't get cut off.
+Fixed a few After Action Report to be more accurate to the real law. 
 
 Bug Fixes:
 N/A
+
+Tally:
+Vehicles
+- 11 Police
+- 4 Medical
+- 1 Fire
+
+Incidents
+- 33 Police
+- 13 Medical
+- 1 Fire
 
 -->
 
