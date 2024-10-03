@@ -15,31 +15,37 @@
   "incident.REP_SLP_RBT_ISSUE2v1.description": "Dispatch has selected a non-specific car for random breath testing. Random breath testing (RBT) is a test given by the police to drivers chosen by chance to measure the amount of alcohol they may have consumed.",
   "incident.REP_SLP_RBT_ISSUE2v1.RBT_CAR_I2v1.rbt_driver": "Driver",
   "incident.REP_SLP_RBT_ISSUE2v1.aar.rbt_issue2v1": "The driver subjected to random breath testing returned a result of between 0.05 - 0.08 BAC (Blood Alcohol Content). This is the second time police have caught this person with an elevated BAC while driving. They will be charged with Low Range PCA (Prescribed Content of Alcohol). The driver faces a up to $3300 AUD fine and will have their licence automatically suspended for 12 months. They will be subject to an alcohol interlock order for driving a car in the future.",
+  "incident.REP_SLP_RBT_ISSUE2v1.aar.rbt_issue2v1ignored": "Local dispatch decided to ignore the RBT request and redirected police resources elsewhere. Performing RBTs is critical to reducing the number of alcohol related motor vehicle incidents.",
 
   "incident.REP_SLP_RBT_ISSUE3v1.REP_SLP_RBT_ISSUE3v1": "Random Breath Testing",
   "incident.REP_SLP_RBT_ISSUE3v1.description": "Dispatch has selected a non-specific car for random breath testing. Random breath testing (RBT) is a test given by the police to drivers chosen by chance to measure the amount of alcohol they may have consumed.",
   "incident.REP_SLP_RBT_ISSUE3v1.RBT_CAR_I3v1.rbt_driver": "Driver",
   "incident.REP_SLP_RBT_ISSUE3v1.aar.rbt_issue3v1": "The driver subjected to random breath testing returned a result of between 0.08 - 0.15 BAC (Blood Alcohol Content). They will be charged with Mid Range PCA (Prescribed Content of Alcohol). The driver faces a up to $2200 AUD fine, will have their license automatically suspended for 12 months and could face a maximum prison sentence of 9 months. They will be subject to an alcohol interlock order for driving a car in the future.",
+  "incident.REP_SLP_RBT_ISSUE3v1.aar.rbt_issue3v1ignored": "Local dispatch decided to ignore the RBT request and redirected police resources elsewhere. Performing RBTs is critical to reducing the number of alcohol related motor vehicle incidents.",
 
   "incident.REP_SLP_RBT_ISSUE4v1.REP_SLP_RBT_ISSUE4v1": "Random Breath Testing",
   "incident.REP_SLP_RBT_ISSUE4v1.description": "Dispatch has selected a non-specific car for random breath testing. Random breath testing (RBT) is a test given by the police to drivers chosen by chance to measure the amount of alcohol they may have consumed.",
   "incident.REP_SLP_RBT_ISSUE4v1.RBT_CAR_I4v1.rbt_driver": "Driver",
   "incident.REP_SLP_RBT_ISSUE4v1.aar.rbt_issue4v1": "The driver subjected to random breath testing returned a result of between 0.08 - 0.15 BAC (Blood Alcohol Content). This is the second time police have caught this person with an elevated BAC while driving. They will be charged with Mid Range PCA (Prescribed Content of Alcohol). The driver faces a up to $3300 AUD fine, will have their license automatically suspended for 3 years and could face a maximum prison sentence of 12 months. They will be subject to an alcohol interlock order for driving a car in the future.",
+  "incident.REP_SLP_RBT_ISSUE4v1.aar.rbt_issue4v1ignored": "Local dispatch decided to ignore the RBT request and redirected police resources elsewhere. Performing RBTs is critical to reducing the number of alcohol related motor vehicle incidents.",
 
   "incident.REP_SLP_RBT_ISSUE5v1.REP_SLP_RBT_ISSUE5v1": "Random Breath Testing",
   "incident.REP_SLP_RBT_ISSUE5v1.description": "Dispatch has selected a non-specific car for random breath testing. Random breath testing (RBT) is a test given by the police to drivers chosen by chance to measure the amount of alcohol they may have consumed.",
   "incident.REP_SLP_RBT_ISSUE5v1.RBT_CAR_I5v1.rbt_driver": "Driver",
   "incident.REP_SLP_RBT_ISSUE5v1.aar.rbt_issue5v1": "The driver subjected to random breath testing returned a result above 0.15 BAC (Blood Alcohol Content). They will be charged with High Range PCA (Prescribed Content of Alcohol). The driver faces a up to $5500 AUD fine, will have their license automatically suspended for 3 years and could face a maximum prison sentence of 18 months. They will be subject to an alcohol interlock order for driving a car in the future.",
+  "incident.REP_SLP_RBT_ISSUE5v1.aar.rbt_issue5v1ignored": "Local dispatch decided to ignore the RBT request and redirected police resources elsewhere. Performing RBTs is critical to reducing the number of alcohol related motor vehicle incidents.",
 
   "incident.REP_SLP_RBT_ISSUE6v1.REP_SLP_RBT_ISSUE6v1": "Random Breath Testing",
   "incident.REP_SLP_RBT_ISSUE6v1.description": "Dispatch has selected a non-specific car for random breath testing. Random breath testing (RBT) is a test given by the police to drivers chosen by chance to measure the amount of alcohol they may have consumed.",
   "incident.REP_SLP_RBT_ISSUE6v1.RBT_CAR_I6v1.rbt_driver": "Driver",
   "incident.REP_SLP_RBT_ISSUE6v1.aar.rbt_issue6v1": "The driver subjected to random breath testing returned a result above 0.15 BAC (Blood Alcohol Content). This is the second time police have caught this person with an elevated BAC while driving. They will be charged with High Range PCA (Prescribed Content of Alcohol). The driver faces a up to $5500 AUD fine, will have their license automatically suspended for 5 years and could face a maximum prison sentence of 24 months. They will be subject to an alcohol interlock order for driving a car in the future.",
+  "incident.REP_SLP_RBT_ISSUE6v1.aar.rbt_issue6v1ignored": "Local dispatch decided to ignore the RBT request and redirected police resources elsewhere. Performing RBTs is critical to reducing the number of alcohol related motor vehicle incidents.",
 
   "incident.REP_SLP_RBT_ISSUE7v1.REP_SLP_RBT_ISSUE7v1": "Random Breath Testing",
   "incident.REP_SLP_RBT_ISSUE7v1.description": "Dispatch has selected a non-specific car for random breath testing. Random breath testing (RBT) is a test given by the police to drivers chosen by chance to measure the amount of alcohol they may have consumed.",
   "incident.REP_SLP_RBT_ISSUE7v1.RBT_CAR_I7v1.rbt_driver": "Driver",
   "incident.REP_SLP_RBT_ISSUE7v1.aar.rbt_issue7v1": "The driver subjected to random breath testing refused to co-operate and provide a sample. The suspect was arrested on site. They will be charged with Refusal Or Failure To Provide Samples Or Prevent Sample Taking . The driver faces a up to $3300 AUD fine and will have their license automatically suspended for 3 years. They will be subject to an alcohol interlock order for driving a car in the future.",
+  "incident.REP_SLP_RBT_ISSUE7v1.aar.rbt_issue7v1ignored": "Local dispatch decided to ignore the RBT request and redirected police resources elsewhere. Performing RBTs is critical to reducing the number of alcohol related motor vehicle incidents.",
 
   "incident.REP_SLP_DRO_UNREG1v1.REP_SLP_DRO_UNREG1v1": "Driving Unregistered Vehicle",
   "incident.REP_SLP_DRO_UNREG1v1.description": "A caller has reported that someone is driving a vehicle that is not registered or missing its number plates.",
@@ -51,6 +57,7 @@
   "incident.REP_SLP_DRO_UNREG1v0.description": "A caller has reported that someone is driving a vehicle that is not registered or missing its number plates.",
   "incident.REP_SLP_DRO_UNREG1v0.DRO_CAR_I1v0.rbt_driver": "Driver",
   "incident.REP_SLP_DRO_UNREG1v0.aar.dro_issue1v0": "The driver was indeed driving an unregistered vehicle but was able to provide reasonable evidence as to why they were driving it, such as providing proof of taking it to a mechanic for a pink slip inspection (Also known as a E-Safety Check or Roadworthy Inspection, which is needed to register a vehicle in Australia although specifics differ per state) or providing a unregistered vehicle permit. The driver will not be charged with any offences.",
+  "incident.REP_SLP_DRO_UNREG1v0.aar.dro_issue1v0ignored": "Local dispatch decided to ignore the call concerning the use of an unregistered vehicle and redirected police resources elsewhere.",
   
   "incident.REP_SLP_DRO_UNINSUR1v1.REP_SLP_DRO_UNINSUR1v1": "Driving Uninsured Vehicle",
   "incident.REP_SLP_DRO_UNINSUR1v1.description": "A caller has tipped off police that someone is driving a vehicle that isn't insured. Compulsory Third Party Insurance (CTP) is a mandatory insurance in Australia, it covers the driver's liability and the liability of anyone else who drives the vehicle for injuries that may have been caused to other road users in a motor accident.",
@@ -74,6 +81,7 @@
   "incident.REP_SLP_DRO_LICEN2v1.description": "Police have been tipped off that someone is driving without a driver's license.",
   "incident.REP_SLP_DRO_LICEN2v1.DRO_CAR_I5v1.rbt_driver": "Driver",
   "incident.REP_SLP_DRO_LICEN2v1.aar.dro_issue5v1": "The driver has admitted that they have never had a driver's license and failed to give a good reason as to why they were driving. This is the second time they have been caught driving without a license. The driver will be charged with Driving whilst Never Licensed, face a fine up to $3300 AUD, be disqualification from getting a license for the next 12 months and could face a maximum prison sentence of 6 months.",
+  "incident.REP_SLP_DRO_LICEN2v1.aar.dro_issue5v1ignored": "Local dispatch decided to ignore the call concerning an unlicensed driver and directed police resources elsewhere.",
 
   "incident.REP_SLP_DRO_LICEN3v1.REP_SLP_DRO_LICEN3v1": "Driving with a Expired License",
   "incident.REP_SLP_DRO_LICEN3v1.description": "Police have been tipped off that someone is driving with a expired driver's license.",
@@ -85,11 +93,13 @@
   "incident.REP_SLP_DRO_LICEN4v1.description": "Police have been tipped off that someone is driving with a expired driver's license.",
   "incident.REP_SLP_DRO_LICEN4v1.DRO_CAR_I7v1.rbt_driver": "Driver",
   "incident.REP_SLP_DRO_LICEN4v1.aar.dro_issue7v1": "The driver provided their driver's license to police and was questioned why they were driving with a expired license. The license had expired at least 2 years ago. The driver will receive a plenty notice for driving with a licence that had expired more than two years before.",
+  "incident.REP_SLP_DRO_LICEN4v1.aar.dro_issue7v1ignored": "Local dispatch decided to ignore the call concerning license issues with a driver and directed police resources elsewhere.",
   
   "incident.REP_SLP_DRO_LICEN5v1.REP_SLP_DRO_LICEN5v1": "Driving with a Suspended License",
   "incident.REP_SLP_DRO_LICEN5v1.description": "Police have been tipped off that someone is driving with a suspended driver's license.",
   "incident.REP_SLP_DRO_LICEN5v1.DRO_CAR_I8v1.rbt_driver": "Driver",
   "incident.REP_SLP_DRO_LICEN5v1.aar.dro_issue8v1": "The driver provided their driver's license to police and was questioned why they were driving with a suspended license. The driver will be charged with Driving whilst Suspended under the Fines Act 1996 and be fined up to $3300 AUD. They will also be disqualified from getting their license suspension lifted for the next 3 months.",
+  "incident.REP_SLP_DRO_LICEN5v1.aar.dro_issue8v1ignored": "Local dispatch decided to ignore the call concerning license issues with a driver and directed police resources elsewhere.",
   
   "incident.REP_SLP_BRO_BRIBE1.REP_SLP_BRO_BRIBE1": "Attempted Bribery of a Commonwealth Official",
   "incident.REP_SLP_BRO_BRIBE1.description": "Someone is attempting to bribe a Commonwealth Official, the Official has refused the bribe and contacted the police to intervene.",
@@ -110,22 +120,26 @@
   "incident.REP_SLP_SPEED2v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED2v1.SPEED_CAR_2v1.speed_driver": "Driver",
   "incident.REP_SLP_SPEED2v1.aar.speeding2v1": "The driver was detected going at least 10km/hr over the speed limit. They will be charged with Exceed speed over 10 km/h, be fined $486 AUD and lose 3 demerit points.",
-  
+  "incident.REP_SLP_SPEED2v1.aar.speeding2v1ignored": "Local dispatch decided to ignore the call concerning a speeding car and directed police resources elsewhere.",
+
   "incident.REP_SLP_SPEED3v1.REP_SLP_SPEED3v1": "Speeding",
   "incident.REP_SLP_SPEED3v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED3v1.SPEED_CAR_3v1.speed_driver": "Driver",
   "incident.REP_SLP_SPEED3v1.aar.speeding3v1": "The driver was detected going at least 20km/hr over the speed limit. They will be charged with Exceed speed over 20 km/h, be fined $599 AUD and lose 4 demerit points.",
+  "incident.REP_SLP_SPEED3v1.aar.speeding3v1ignored": "Local dispatch decided to ignore the call concerning a speeding car and directed police resources elsewhere.",
   
   "incident.REP_SLP_SPEED4v1.REP_SLP_SPEED4v1": "Speeding",
   "incident.REP_SLP_SPEED4v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED4v1.SPEED_CAR_4v1.speed_driver": "Driver",
   "incident.REP_SLP_SPEED4v1.aar.speeding4v1": "The driver was detected going at least 30km/hr over the speed limit. They will be charged with Exceed speed over 30 km/h, be fined $1441 AUD and lose 5 demerit points. The driver will also have their license suspended for at least 3 months.",
-  
+  "incident.REP_SLP_SPEED4v1.aar.speeding4v1ignored": "Local dispatch decided to ignore the call concerning a speeding car and directed police resources elsewhere.",
+
   "incident.REP_SLP_SPEED5v1.REP_SLP_SPEED5v1": "Speeding",
   "incident.REP_SLP_SPEED5v1.description": "A speeding car was reported.",
   "incident.REP_SLP_SPEED5v1.SPEED_CAR_5v1.speed_driver": "Driver",
   "incident.REP_SLP_SPEED5v1.aar.speeding4v1": "The driver was detected going at least 45km/hr over the speed limit. They will be charged with Exceed speed over 45 km/h, be fined $3762 AUD and lose 6 demerit points. The driver will also have their license suspended for at least 6 months.",
- 
+  "incident.REP_SLP_SPEED5v1.aar.speeding5v1ignored": "Local dispatch decided to ignore the call concerning a speeding car and directed police resources elsewhere.",
+
   "incident.REP_SLP_RDT_NOISSUE1.REP_SLP_RDT_NOISSUE1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_NOISSUE1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory.",
   "incident.REP_SLP_RDT_NOISSUE1.RDT_CAR_NI1.rdt_driver": "Driver",
@@ -136,21 +150,25 @@
   "incident.REP_SLP_RDT_ISSUE1v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory.",
   "incident.REP_SLP_RDT_ISSUE1v1.RDT_CAR_I1v1.rdt_driver": "Driver",
   "incident.REP_SLP_RDT_ISSUE1v1.aar.rdt_issue1v1": "The driver subjected to random drug testing returned positive for Active THC (Cannabis). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
-  
+  "incident.REP_SLP_RDT_ISSUE1v1.aar.rdt_issue1v1ignored": "Local dispatch decided to ignore the Roadside Drug Testing request and redirected police resources elsewhere. Performing RDTs is critical to reducing the number of drug related motor vehicle incidents.",
+
   "incident.REP_SLP_RDT_ISSUE2v1.REP_SLP_RDT_ISSUE2v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE2v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory.",
   "incident.REP_SLP_RDT_ISSUE2v1.RDT_CAR_I2v1.rdt_driver": "Driver",
   "incident.REP_SLP_RDT_ISSUE2v1.aar.rdt_issue2v1": "The driver subjected to random drug testing returned positive for Methylamphetamine (Speed/ice). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
-  
+  "incident.REP_SLP_RDT_ISSUE2v1.aar.rdt_issue2v1ignored": "Local dispatch decided to ignore the Roadside Drug Testing request and redirected police resources elsewhere. Performing RDTs is critical to reducing the number of drug related motor vehicle incidents.",
+
   "incident.REP_SLP_RDT_ISSUE3v1.REP_SLP_RDT_ISSUE3v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE3v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory.",
   "incident.REP_SLP_RDT_ISSUE3v1.RDT_CAR_I3v1.rdt_driver": "Driver",
   "incident.REP_SLP_RDT_ISSUE3v1.aar.rdt_issue3v1": "The driver subjected to random drug testing returned positive for Methylenedioxymethylamphetamine (MDMA or 'ecstasy'). If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
-  
+  "incident.REP_SLP_RDT_ISSUE3v1.aar.rdt_issue3v1ignored": "Local dispatch decided to ignore the Roadside Drug Testing request and redirected police resources elsewhere. Performing RDTs is critical to reducing the number of drug related motor vehicle incidents.",
+
   "incident.REP_SLP_RDT_ISSUE4v1.REP_SLP_RDT_ISSUE4v1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_ISSUE4v1.description": "Dispatch has selected a suspected car for roadside drug testing. Specially-trained police officers take a sample of the driver's saliva, using an absorbent collector placed in the mouth or on the tongue. This test takes around 3 minutes. If the test is positive, it must be confirmed by laboratory.",
   "incident.REP_SLP_RDT_ISSUE4v1.RDT_CAR_I4v1.rdt_driver": "Driver",
   "incident.REP_SLP_RDT_ISSUE4v1.aar.rdt_issue4v1": "The driver subjected to random drug testing returned positive for Cocaine. If a positive roadside test is confirmed in the laboratory and it is a driver’s first offence, they may receive a fine of $572 and have their driver's license suspended for up to 3 months.",
+  "incident.REP_SLP_RDT_ISSUE4v1.aar.rdt_issue4v1ignored": "Local dispatch decided to ignore the Roadside Drug Testing request and redirected police resources elsewhere. Performing RDTs is critical to reducing the number of drug related motor vehicle incidents.",
   
   "incident.REP_SLP_MEDI_MISC1A.REP_SLP_MEDI_MISC1A": "Tachycardia (Mild)",
   "incident.REP_SLP_MEDI_MISC1A.description": "A person is suffering from mild Arrhythmia, specifically Tachycardia. Tachycardia is the medical term for a heart rate over 100 beats per minute but is out of proportion to age and level of exertion or activity. Sometimes, especially when mild, it can be normal for someone to have a fast heartbeat. Code 3.",
@@ -231,7 +249,7 @@
   "incident.REP_SLP_MEDI_IBURN3B.aar.patientdied1a": "The smoke from the fire has caused the patient to asphyxiate. If we could of dealt with the fire sooner this would not have happen...",
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bFire1a": "Fire fighters have reported that the fire has been dealt with. There were no signs of arson or that the fire was set deliberately and while small, the smoke it was generating would have caused serious issues for the patient and first responders.",
   "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1": "The Caller made their report with the local police at the scene, while nothing seemed out of the ordinary, the Caller did seem visibly shaken that they could not help in the situation. Police reassured the Caller that their safety in these situations needs to take priority and that both their action of calling for help and their precise communication to the dispatcher is why emergency services could even arrive to help this patient.",
-  "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1ignore": "The caller has issued an official complaint to the Australian Ambulance Service and Australian Fire Service from failing to respond to the emergency they reported in time. The report details that the patient died at the scene and the heavy toll it has taken on the caller. Confidential reports indicate are taking legal action against the Australian Government (Ambulance & Fire Services) along with the family of the deceased. The report will surely reflect poorly on us.",
+  "incident.REP_SLP_MEDI_IBURN3B.aar.medi_reportiburn3bwitness1ignore": "The caller has issued an official complaint to the Australian Ambulance Service and Australian Fire Service from failing to respond to the emergency they reported in time. The report details that the patient died at the scene and the heavy toll it has taken on the caller. Confidential reports indicate they are taking legal action against the Australian Government (Ambulance & Fire Services) along with the family of the deceased. The report will surely reflect poorly on us.",
  
   "incident.REP_SLP_FIRE_GEN1.REP_SLP_FIRE_GEN1": "Small Grass Fire",
   "incident.REP_SLP_FIRE_GEN1.description": "Dispatch has confirmed a report of a small grass fire. Grass fires can start quickly and spread rapidly, catching people off-guard. Grass fires are very hot and can produce huge amounts of heat that can kill anyone caught out in the open if they get big enough. Immediate fire fighting support is required to prevent the fire growing. Code 1.",
