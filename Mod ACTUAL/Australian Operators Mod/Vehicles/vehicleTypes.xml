@@ -8,6 +8,13 @@
 	--> 
 	
 	<!-- Help 
+	
+	Pricing:
+	Price (Times price by 1.75 for AUD value)
+	Upkeep (10% of cost)
+	
+	Factor
+	
 	id - id of the vehicle. If you want to modify an existing vehicle, chose the line with the desired id, and change it's other properties. To create new vehicle, type a new id.
 	type - type of unit (FIRE/MEDICAL/POLICE). ARMY is currently not used, and CIVILIAN is for vehicles used by running scenes.
 	bonuses - type and value of vehicle's bonus(es) (SEARCH/INJURED/FIRE/TECH/TALL/DYING). Vehicle can have more than one bonus (look ve_fireheli).
@@ -21,13 +28,13 @@
 	trafficSpeedModif - multiplied by maxSpeed gives value, which is used when unit is going through traffic. 0 means unit will drive with default traffic speed.
 	teammembersSeats - how many team members can be assigned to vehicle (max 4 for default onsiteModel).
 	transportSeats - how many injured or suspects vehicle can take (max 6 for default onsiteModel).
-	upkeep - per duty cost for using this vehicle.
+	upkeep - Means nothing apparently, upkeep is always 10% of the cost of the vehicle.
 	terrain - only to determinate if vehicle is moving on road or flying (terrain = "air" or "water").
-	patrols - not used parameter. (I am pretty sure this is used, it is whether they patrol or not).
+	patrols - not used parameter.
 	spawnChance - not used parameter.
 	allDrive - if true, then all team members need to be able to drive (need to be humans). Used in bikes, bicycles etc.
 	chaseProficiency - how good the is vehicle at stopping pursuit incidents. Abstract value. 0 means it can't stop scene at all.
-	unlockOnDuty - on with duty vehicle should be unlocked. 1 means it will be unlocked from begining, 2 - on second duty etc. -1 means it will need to be unlocked by console or story module. Note that it is STAGE dependent: first duty on middle counts as 4th duty overall, and first duty on senior/principal counts as 16th duty overall.
+	unlockOnDuty - on with duty vehicle should be unlocked. 1 means it will be unlocked from beginning, 2 - on second duty etc. -1 means it will need to be unlocked by console or story module. Note that it is STAGE dependent: first duty on middle counts as 4th duty overall, and first duty on senior/principal counts as 16th duty overall.
 	onsiteModel - which model should vehicle use on on site view. It should be id of any of built in vehicles, and it will have same amount of team member and transport seats as chosen vehicle. For example, if you type "ve_medvan", your vehicle will have 3 team member seats and 2 transport seats. Note that using model that has less member/transport seats than specified in xml may cause errors. "ve_poltrans" is default (4 team member, 6 transport seats max).
 	-->
 	
@@ -36,42 +43,75 @@
 	<!-- ===================================== -->
 	
 
-	<!-- ================  Police  ================ -->
+	<!-- =====================================================  Police  ===================================================== -->
+	<!-- ==================================================================================================================== -->
 	<!-- ****************** General Purpose ****************** -->
-	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+	<!-- AU NSW Ford Ranger -->
+	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
-    <Vehicletype id="SLP_AU_POL_NSW_FordHilux" type="POLICE" bonuses="SEARCH=0.25" price="70000" visibility="0.8" armour="0.17" maxSpeed="148" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.70" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+    <!-- AU NSW Ford Hilux -->
+    <Vehicletype id="SLP_AU_POL_NSW_FordHilux" type="POLICE" bonuses="SEARCH=0.25" price="70000" visibility="0.8" armour="0.17" maxSpeed="148" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.70" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
-	<Vehicletype id="SLP_AU_POL_VIC_HoldenColorado" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.25" maxSpeed="132" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="6000" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+	<!-- AU VIC Holden Colorado -->
+	<Vehicletype id="SLP_AU_POL_VIC_HoldenColorado" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.25" maxSpeed="132" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.60" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
-	<Vehicletype id="SLP_AU_POL_VIC_HoldenCommodoreUte" type="POLICE" bonuses="SEARCH=0.25" price="44500" visibility="0.8" armour="0.1" maxSpeed="200" acceleration="6" immobilizedBy="NONE" offroadSpeedModif="0.80" trafficSpeedModif="0" teammembersSeats="2" transportSeats="0" upkeep="4200" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="16" unlockOnDuty="1" onsiteModel="ve_polpickup"/>
+	<!-- AU VIC Holden Commodore Ute -->
+	<Vehicletype id="SLP_AU_POL_VIC_HoldenCommodoreUte" type="POLICE" bonuses="SEARCH=0.25" price="44500" visibility="0.8" armour="0.1" maxSpeed="200" acceleration="6" immobilizedBy="NONE" offroadSpeedModif="0.50" trafficSpeedModif="0" teammembersSeats="2" transportSeats="0" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="16" unlockOnDuty="1" onsiteModel="ve_polpickup"/>
     
-	<Vehicletype id="SLP_AU_POL_NSW_HighwayFordFalcon" type="POLICE" bonuses="NONE" price="80000" visibility="0.25" armour="0.3" maxSpeed="255" acceleration="8" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="11600" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="18" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+	<!-- AU NSW HWP Ford Falcon -->
+	<Vehicletype id="SLP_AU_POL_NSW_HighwayFordFalcon" type="POLICE" bonuses="NONE" price="80000" visibility="0.25" armour="0.3" maxSpeed="255" acceleration="8" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="18" unlockOnDuty="1" onsiteModel="ve_polcar"/>
     
-	<Vehicletype id="SLP_AU_POL_AFP_ToyotaLC70S" type="POLICE" bonuses="SEARCH=0.50,INJURED=0.1" price="99000" visibility="0.8" armour="0.25" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="1" trafficSpeedModif="0" teammembersSeats="2" transportSeats="2" upkeep="5250" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+	<!-- AFP Toyota Land Cruiser 70S -->
+	<Vehicletype id="SLP_AU_POL_AFP_ToyotaLC70S" type="POLICE" bonuses="SEARCH=0.50,INJURED=0.1" price="99000" visibility="0.8" armour="0.35" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="1" trafficSpeedModif="0" teammembersSeats="2" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+    
+	<!-- AU NT Toyota HWP Land Cruiser GX -->
+	<Vehicletype id="SLP_AU_POL_NT_ToyotaLCGX_HWP" type="POLICE" bonuses="SEARCH=0.30,INJURED=0.05" price="86600" visibility="0.8" armour="0.25" maxSpeed="110" acceleration="2.5" immobilizedBy="NONE" offroadSpeedModif="1" trafficSpeedModif="0" teammembersSeats="2" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+	
+	<!-- AU VIC HWP BMW530d -->
+	<Vehicletype id="SLP_AU_POL_VIC_BMW530d_HWP" type="POLICE" bonuses="NONE" price="77600" visibility="0.25" armour="0.25" maxSpeed="250" acceleration="7" immobilizedBy="NONE" offroadSpeedModif="0.23" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="18" unlockOnDuty="1" onsiteModel="ve_polcar"/>
     
 	<!-- ****************** Motorbike ****************** -->
-	<Vehicletype id="SLP_AU_POL_QLD_BMWR1250RTP" type="POLICE" bonuses="NONE" price="21900" visibility="0.60" armour="0" maxSpeed="180" acceleration="5" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="1950" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_polbike"/>
+	<!-- AU QLD BMW R1250 RT-P -->
+	<Vehicletype id="SLP_AU_POL_QLD_BMWR1250RTP" type="POLICE" bonuses="NONE" price="21900" visibility="0.60" armour="0" maxSpeed="180" acceleration="5" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_polbike"/>
     
 	<!-- ****************** Air ****************** -->
 	
 	<!-- ****************** Water ****************** -->
 	
 	<!-- ****************** Special ****************** -->
-	<Vehicletype id="SLP_AU_POL_TAS_Bearcat" type="POLICE" bonuses="NONE" price="155000" visibility="0.8" armour="0.9" maxSpeed="100" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.40" trafficSpeedModif="0" teammembersSeats="4" transportSeats="4" upkeep="18500" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_swatvan"/>
+	<!-- Bearcat Special Response Armoured Vehicle -->
+	<Vehicletype id="SLP_AU_POL_TAS_Bearcat" type="POLICE" bonuses="NONE" price="155000" visibility="0.8" armour="0.9" maxSpeed="100" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.40" trafficSpeedModif="0" teammembersSeats="4" transportSeats="4" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_swatvan"/>
     
-	<!-- ================  Medical  ================ -->
+	<!-- AU Unmarked Honda Civic 2017  -->
+	<Vehicletype id="SLP_AU_POL_HondaCivic2017UC" type="POLICE" bonuses="NONE" price="37000" visibility="0" armour="0.05" maxSpeed="140" acceleration="6" immobilizedBy="NONE" offroadSpeedModif="0.20" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="17" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+    
+	<!-- ****************** Secondary Services ****************** -->
+	
+	<!-- =====================================================  Medical  ===================================================== -->
+	<!-- ===================================================================================================================== -->
 	<!-- ****************** General Purpose ****************** -->
-	<Vehicletype id="SLP_AU_AMB_MercSprinter_mk1" type="MEDICAL" bonuses="INJURED=0.5" price="51500" visibility="0.8" armour="0" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="4" transportSeats="1" upkeep="4250" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+	<!-- AU Mercedes Benz Sprinter -->
+	<Vehicletype id="SLP_AU_AMB_MercSprinter_mk1" type="MEDICAL" bonuses="INJURED=0.5" price="51500" visibility="0.8" armour="0" maxSpeed="120" acceleration="3" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="4" transportSeats="1" upkeep="100" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_polvan"/>
+
+	<!-- AU NSW Skoda Octiva Operations Commander -->
+	<Vehicletype id="SLP_AU_AMB_NSW_SkodaOctOpCar" type="MEDICAL" bonuses="SEARCH=0.50,INJURED=0.25" price="54000" visibility="0.8" armour="0" maxSpeed="180" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.25" trafficSpeedModif="0" teammembersSeats="2" transportSeats="0" upkeep="100" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_medcar"/>
 
     <!-- ****************** Motorbike ****************** -->
-	
+	<!-- AU NSW Yamaha FJR1300AE -->
+	<Vehicletype id="SLP_AU_AMB_NSW_FJR1300AE" type="MEDICAL" bonuses="NONE" price="19960" visibility="0.60" armour="0" maxSpeed="180" acceleration="6" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_polbike"/>
+    
 	<!-- ****************** Air ****************** -->
 	
 	<!-- ****************** Special ****************** -->
+	<!-- AU SA Iveco SB50 -->
+	<Vehicletype id="SLP_AU_AMB_SA_IvecoSB50" type="MEDICAL" bonuses="INJURED=0.75" price="129120" visibility="0.8" armour="0" maxSpeed="100" acceleration="1.5" immobilizedBy="NONE" offroadSpeedModif="0.20" trafficSpeedModif="0" teammembersSeats="4" transportSeats="6" upkeep="100" terrain="road" patrols="false" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_poltrans"/>
 
-    <!-- ================  Fire  ================ -->
+	<!-- ****************** Secondary Services ****************** -->
+
+    <!-- =====================================================  Fire  ===================================================== -->
+	<!-- ================================================================================================================== -->
 	<!-- ****************** Water Tankers ****************** -->
+	<!-- AU Scania P320 Class 3 Pumper -->
 	<Vehicletype id="SLP_AU_FIR_SCANIA_NSWClass3Pumper" type="FIRE" bonuses="FIRE=0.7, TALL=0.1" price="94000" visibility="0.8" armour="0" maxSpeed="110" acceleration="2" immobilizedBy="NONE" offroadSpeedModif="0.5" trafficSpeedModif="0" teammembersSeats="4" transportSeats="0" upkeep="6000" terrain="road" patrols="false" waterCapacity="12" spawnChance="1" allDrive="false" chaseProficiency="0" unlockOnDuty="1" onsiteModel="ve_firetruck"/>
     
 	<!-- ****************** Motorbike ****************** -->
@@ -80,8 +120,7 @@
 	
 	<!-- ****************** Water ****************** -->
 	
-	<!-- ****************** SES ****************** -->
-	
-	<!-- ****************** VRA ****************** -->
+	<!-- ****************** Secondary Services ****************** -->
+
 
 </ArrayOfVehicletype>

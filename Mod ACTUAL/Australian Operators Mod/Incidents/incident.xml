@@ -59,9 +59,9 @@
 	Certain Fields start with a " and end with a ", also all code sentences will end with a ;
 	
 	Field: properties ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		type (type of incident) You can use multiple in a single incident. Presumbly generates the recommended requirements in the info panel of the incident. (e.g. Large Technical Job)
+		type (type of incident) You can use multiple in a single incident. Presumably generates the recommended requirements in the info panel of the incident. (e.g. Large Technical Job)
 			StockTypes; crime, road, technical, medical, fire, vandalism, protest, search, drugs, terrorist, earthq (earthquake)
-		Visibility=; (value, 0-1; 1 seem to be most visable where as 0 might not be able to be seen at all normally (patrols might see it instead))
+		Visibility=; (value, 0-1; 1 seem to be most visible where as 0 might not be able to be seen at all normally (patrols might see it instead))
 		stage= ; Possibly career progression and whether this spawns depending on where the player is, either 1, 2, 3
 		Popularity (Value range 0-100, similar to a weighting for how often it may occur, speeding is 25)(the number is a float so up to any decimal point, probably aim for two though)
 		
@@ -71,7 +71,7 @@
 		TagTypes: none, day, night, rain, snow, wind, cold, hot, hot_night, event_blackout_1, event_blackout_2, event_new_year, event_tornado, event_protest_peacefull, event_protest_aggressive, 
 		event_protest_dontknow, event_vandals, event_planecrash_on_failed
 
-	Tags are also independly added it seems, you can make a tag of anything if you choose but without code modding you wont be able to link them to situations.
+	Tags are also independently added it seems, you can make a tag of anything if you choose but without code modding you wont be able to link them to situations.
 	
 	Scene: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		poi= "PARK" (Where the scene takes place, point of interest, probably for helping the game pick actual places in the map, bridge will happen on actual bridges)
@@ -84,14 +84,14 @@
 			TrailerFightBackground, PowerBackground, ElevatorBackground, ChemBackground, TruckBackground, PowerDownBackground, ParkBackground, IndustrialBackground,
 			RoadsignBackground, TwoCarBackground, TankerBackground, TreeFallBackground
 			
-		properties= "timeToReact=600;" (Properties needs all content to be inbetween "")
+		properties= "timeToReact=600;" (Properties needs all content to be in between "")
 			timeToReact= (how many ticks the player can respond) 1 tick should = 1 second;
 			onMove=1; (if it is a chase and the incident is moving)
 			vehicle=ve_civil_car; (what vehicle the suspect has)
-			avoidPolice=0.7; (range, 0-1 with 2 decminals, chance that police don't 'see' the crime or how the path finding tries to avoid them)
+			avoidPolice=0.7; (range, 0-1 with 2 decimals, chance that police don't 'see' the crime or how the path finding tries to avoid them)
 			solvableBySpeedCamera=true; (pretty sure it won't spawn in the camera or passing one immediately solves it)
-			roadBlock=0.03; (range, 0 (up to 2 decminals) to 1, most likely how quickly it blocks traffic or the reduction in flow of traffic (1 is complete stop))
-			opinionOnSuccess=1; (as below) (might mean points recieved from just showing up)
+			roadBlock=0.03; (range, 0 (up to 2 decimals) to 1, most likely how quickly it blocks traffic or the reduction in flow of traffic (1 is complete stop))
+			opinionOnSuccess=1; (as below) (might mean points received from just showing up)
 			opinionOnIgnore=-1; (as below)
 			
 			SEARHES NEED A SECOND SCENE ID TO SETUP THE SEARCH LOGIC
@@ -100,12 +100,12 @@
 			searchSceneId= the id of the true scene of the incident.
 			iconMap=; (the icon you want to show, you have: police_search, fire_search, medical_search
 			
-			delayedSpawn=true; (might be used in conjuction with seaches so they don't immediately spawn)
+			delayedSpawn=true; (might be used in conjunction with searches so they don't immediately spawn)
 			
 			
 		actionOnEnd=
-			opinionOnSuccess=1; When the player finishes the incident (can be any value and adds/substracts to rep, can be negative or positive)
-			opinionOnIgnore=-1; If the player ignores the incident (can be any value and adds/substracts to rep, can be negative or positive)
+			opinionOnSuccess=1; When the player finishes the incident (can be any value and adds/subtracts to rep, can be negative or positive)
+			opinionOnIgnore=-1; If the player ignores the incident (can be any value and adds/subtracts to rep, can be negative or positive)
 			AAR+= in localisation, incident.INCIDENT_ID.aar.AAR_ID (Displays the blue text in the incident report at the end of duty)
 
 	Injured: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -134,10 +134,10 @@
 			
 		Properties=
 			"bill = [1500,2000]; (must be structured as seen, range value for what they will be fined)(can have chance to bill certain values more, probably needs to equal 100% (1)) "bill=[0.33: 200 | 0.33: 400 | 0.34: 600];
-			aggressiveness=0; (value float, 2 decminal point, chance they attack the first responder.
+			aggressiveness=0; (value float, 2 decimal point, chance they attack the first responder.
 			prison =0;(value float (think of it as percentage chance to be arrested(can have decimals to 2 points e.g. 0.68) 0-1)(0 appears to mean they will not be arrested, 1 is that definitely will)
 			weapon=e_fist; (The weapon they have) Can be a chance range too, e.g [0.2: e_fist | 0.1: e_knife | 0.3: e_pistol | 0.2: e_rifle | 0.2: e_shotgun]
-				WeaponList: e_fist, e_dogbite, e_baseball, e_knife, e_pistol, e_rifle, e_shotgun
+				WeaponList: e_fist, e_dogbite, e_baseball, e_knife, e_pistol, e_rifle, e_shotgun, e_crossbow, 
 			
 			hp=[80,90] (the suspects health, having this field means medical will be needed)
 			
@@ -150,7 +150,7 @@
 			personBuilder.hatType = (The hat they use, overlays onto the photoid)(same structure as above, same situation i believe).
 			personBuilder.name = Martin;  (The suspects name)
 			personBuilder.surname='Scott' (The suspects last name)
-			personBuilder.isCriminal= (value, e.g. 0.3; chance they are a known criminal)
+			personBuilder.isCriminal= (value, e.g. 0.3; Literally just adds 'Criminal' to the description of the person in game if true)
 			personBuilder.age= (can be a range [0.7: TEEN | 0.2: ADULT | 0.1: CHILD]), Can be, CHILD, TEEN, ADULT, OLD
 			
 			spawnArea= (where they spawn in a scene) can be a range e.g. [0.3:infront | 0.3:inside | 0.3: insideRear];
@@ -223,7 +223,7 @@
 		tag+= rain{-0.25}; ">
 		
 		<scene id="RBT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RBT_CAR_1.AAR+=rbt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RBT_CAR_1.AAR+=rbt_staticignored1;">
-			<policeWork id="work" properties="workAmount=1800; icon=SLPPOLRBT1; bill=[0.5: 1500|0.5: 3000];"  />
+			<policeWork id="work" properties="workAmount=2400; icon=SLPPOLRBT1; bill=[0.5: 1500|0.5: 3000];"  />
 		</scene>
 		
 		<aar>
@@ -1033,7 +1033,7 @@
 		tag+= rain{-0.25}; ">
 		
 		<scene id="RDT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RDT_CAR_1.AAR+=rdt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RDT_CAR_1.AAR+=rdt_staticignored1;">
-			<policeWork id="work" properties="workAmount=1800; icon=SLPPOLRDT1; bill=[0.5: 1500|0.5: 3000];"  />
+			<policeWork id="work" properties="workAmount=2400; icon=SLPPOLRDT1; bill=[0.5: 1500|0.5: 3000];"  />
 		</scene>
 		
 		<aar>
@@ -1660,7 +1660,6 @@
 			/>
 			<suspect id="caller" 
 				properties="
-					reprimandWork=[50,200];
 					isCitizen=true;" 
 				actionOnEnd="opinionOnIgnore+=1; AAR+=medi_reportmisc1dwitness1;" 
 				actionOnIgnore="opinionOnSuccess+=1; opinionOnIgnore+=-2; AAR+=medi_reportmisc1dwitness1ignore;"
@@ -1906,7 +1905,6 @@
 			/>
 			<suspect id="caller" 
 				properties="
-					reprimandWork=[50,200];
 					isCitizen=true;
 					spawnArea=infront;"
 				actionOnEnd="opinionOnSuccess+=1; AAR+=medi_reportiburn3bwitness1;" 
@@ -1972,7 +1970,7 @@
 		">
 		
 		<scene id="SLP_SCENE_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; SLP_SCENE_1.AAR+=pts_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-8; SLP_SCENE_1.AAR+=pts_static1ignored1;">
-			<medicalWork id="work" properties="workAmount=1800; icon=SLPMEDPILLT1; bill=[0.5: 2250|0.5: 4000];"  />
+			<medicalWork id="work" properties="workAmount=2400; icon=SLPMEDPILLT1; bill=[0.5: 2250|0.4: 4000|0.1: 6500];"  />
 		</scene>
 		
 		<aar>

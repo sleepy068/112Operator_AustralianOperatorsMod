@@ -171,13 +171,13 @@
   "incident.REP_SLP_RDT_ISSUE4v1.aar.rdt_issue4v1ignored": "Local dispatch decided to ignore the Roadside Drug Testing request and redirected police resources elsewhere. Performing RDTs is critical to reducing the number of drug related motor vehicle incidents.",
   
   "incident.REP_SLP_MEDI_MISC1A.REP_SLP_MEDI_MISC1A": "Tachycardia (Mild)",
-  "incident.REP_SLP_MEDI_MISC1A.description": "A person is suffering from mild Arrhythmia, specifically Tachycardia. Tachycardia is the medical term for a heart rate over 100 beats per minute but is out of proportion to age and level of exertion or activity. Sometimes, especially when mild, it can be normal for someone to have a fast heartbeat. Code 3.",
+  "incident.REP_SLP_MEDI_MISC1A.description": "A person is suffering from mild Arrhythmia, specifically Tachycardia. Tachycardia is the medical term for a heart rate over 100 beats per minute but is out of proportion to age and level of exertion. Sometimes, especially when mild, it can be normal for someone to have a fast heartbeat. Code 3.",
   "incident.REP_SLP_MEDI_MISC1A.patient1.injured": "Patient",
   "incident.REP_SLP_MEDI_MISC1A.aar.medi_reportmisc1a": "Paramedics assessed the situation and assisted the patient. Hospitalisation wasn't deemed necessary but paramedics made it clear that the patient should visit the doctor as soon as they can and call emergency services if the issue gets worse.",
   "incident.REP_SLP_MEDI_MISC1A.aar.medi_reportmisc1aignore": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. Fortunately the incident was not life threatening and the patient was okay without medical assistance but responding in these situations is highly recommended, if the situation was more serious, the patient could have been in trouble.",
 
   "incident.REP_SLP_MEDI_MISC1B.REP_SLP_MEDI_MISC1B": "Tachycardia (Serious)",
-  "incident.REP_SLP_MEDI_MISC1B.description": "A person is suffering from serious Arrhythmia, specifically Tachycardia. Tachycardia is the medical term for a heart rate over 100 beats per minute but is out of proportion to age and level of exertion or activity. The patient has difficulty breathing, immediate medical attention is required. Code 1.",
+  "incident.REP_SLP_MEDI_MISC1B.description": "A person is suffering from serious Arrhythmia, specifically Tachycardia. Tachycardia is the medical term for a heart rate over 100 beats per minute but is out of proportion to age and level of exertion. The patient has difficulty breathing, immediate medical attention is required. Code 1.",
   "incident.REP_SLP_MEDI_MISC1B.patient1.injured": "Patient",
   "incident.REP_SLP_MEDI_MISC1B.aar.medi_reportmisc1b": "Paramedics assessed the situation and assisted the patient. Hospitalisation was required and the patient is receiving treatment from the emergency department. This condition could of led to a stroke or various other serious issues, it is a good thing the paramedics were able to get to the patient in time.",
   "incident.REP_SLP_MEDI_MISC1B.aar.medi_reportmisc1bignore": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. Unfortunately the incident was life threatening and reports are mixed, it seems that the patient may have died but there other reports that the patient received urgent medical attention when they eventually went to the doctor. The incident definitely has not reflected well on this department.",
@@ -259,12 +259,12 @@
   "incident.REP_SLP_RBT_STATIC1.REP_SLP_RBT_STATIC1": "Roadside Breath Testing",
   "incident.REP_SLP_RBT_STATIC1.description": "Police command has requested a static RBT site be deployed to this location.",
   "incident.REP_SLP_RBT_STATIC1.aar.rbt_static1": "The police processed as much traffic as they could flowing through the area, without causing traffic backlog. Testing was able to check the Blood Alcohol Content of many drivers, helping keep the roads safer. Police command is satisfied with the results and has diverted funds to assist the department.",
-  "incident.REP_SLP_RBT_STATIC1.aar.rbt_staticignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside breath testing site. Command will not be happy their request wasn't followed...",
+  "incident.REP_SLP_RBT_STATIC1.aar.rbt_staticignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside breath testing site. Command will not be happy dispatch ignored their request...",
 
   "incident.REP_SLP_RDT_STATIC1.REP_SLP_RDT_STATIC1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_STATIC1.description": "Police command has requested a static RDT site be deployed to this location.",
   "incident.REP_SLP_RDT_STATIC1.aar.pts_static1": "The police processed as much traffic as they could flowing through the area, without causing traffic backlog. Testing was able to prevent those under the influence of drugs from staying on the road. Police command is satisfied with the results and has diverted funds to assist the department.",
-  "incident.REP_SLP_RDT_STATIC1.aar.pts_static1ignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside drug testing site. Command will not be happy their request wasn't followed...",
+  "incident.REP_SLP_RDT_STATIC1.aar.pts_static1ignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside drug testing site. Command will not be happy dispatch ignored their request...",
 
   "incident.REP_SLP_NPOA001.REP_SLP_NPOA001": "Unlawfully Ringing Doorbells",
   "incident.REP_SLP_NPOA001.description": "Dispatch has received a non emergency call that an adult in the area has been ringing door bells and running away. Code 3.",
@@ -302,6 +302,11 @@
   "incident.REP_SLP_NPOA003.aar.slp_npoa0003_2": "The caller praised the dispatcher and police for taking action and stopping the disturbance.",
   "incident.REP_SLP_NPOA003.aar.slp_npoa0003_ignored2": "While the doorknocking appears to have stopped, comments found later online suggest the caller was upset that the police ignored their request to stop the disturbance. Although other commenters noted that police action against a child's 'prank' would have been excessive and have praised the inaction.",
 
+  "incident.REP_SLP_PTS_STATIC1.REP_SLP_PTS_STATIC1": "Pill Testing Site",
+  "incident.REP_SLP_PTS_STATIC1.description": "Medical command has requested a static pill testing site be deployed to this location to support a local event.",
+  "incident.REP_SLP_PTS_STATIC1.aar.pts_static1": "The paramedics and medical staff processed as much many people as they could flowing through the area. Testing was able to identify dangerous chemicals that may have been mixed in drugs that people where in possession of. Using this information, the staff could give the person advice concerning the use of the drug in an effort to reduce the harm it could cause. Medical command is satisfied with the results and has diverted funds to assist the department.",
+  "incident.REP_SLP_PTS_STATIC1.aar.pts_static1ignored1": "Local dispatch decided to ignore the request from medical command to establish a static static pill testing site. Command will not be happy dispatch ignored their request...",
+
   "text.names.SLP_AU_POL_FordRanger": "AU NSW Ford Ranger",
   "text.descriptions.SLP_AU_POL_FordRanger": "Australian New South Wales Police Ford Ranger, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases.",
   
@@ -309,10 +314,10 @@
   "text.descriptions.SLP_AU_POL_NSW_FordHilux": "Australian New South Wales Police Ford Hilux, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases. Slightly better performance for less protection for the officers.",
   
   "text.names.SLP_AU_AMB_MercSprinter_mk1": "AU Mercedes Benz Sprinter",
-  "text.descriptions.SLP_AU_AMB_MercSprinter_mk1": "Australian Ambulance Mercedes Benz Sprinter. One of the most common medical response vehicles in Australia, performs exceptionally well in both Rural and Metro areas. This vehicle can respond well, with a sizeable group of paramedics and quickly but this model lacks off-road performance as well as patient transport capacity. The Mercedes Benz Sprinter is one of the most environmentally friendly ambulance options on the market, meaning the ambulance service can care not only for their patients but also the environment. This also leads to reduced running costs making them a cost effective vehicle.",
+  "text.descriptions.SLP_AU_AMB_MercSprinter_mk1": "Australian Ambulance Mercedes Benz Sprinter. One of the most common medical response vehicles in Australia, performs exceptionally well in both Rural and Metro areas. This vehicle can respond well, with a sizeable group of paramedics and quickly but this model lacks off-road performance as well as patient transport capacity. The Mercedes Benz Sprinter is one of the most environmentally friendly ambulance options on the market, meaning the ambulance service can care not only for their patients but also the environment.",
  
   "text.names.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "AU Scania P320 Class 3 Pumper",
-  "text.descriptions.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "Australian Scania P320 Class 3 Pumper (Heavy Fire Engine). A common fire response vehicle in Australia. Class 3 Pumpers (heavy fire engines) are designed for both metropolitan and regional areas and can be configured as either primary rescue or hazmat vehicles with Compressed Air Foam Systems (CAFS). The pump capacity is a minimum of 3700 litres per minute but the Scania CL3 Pumper lacks the ability to sustain a drawn out fight without hydrant support.",
+  "text.descriptions.SLP_AU_FIR_SCANIA_NSWClass3Pumper": "Australian Scania P320 Class 3 Pumper (Heavy Fire Engine). A common fire response vehicle in Australia. Class 3 Pumpers (heavy fire engines) are designed for both metropolitan and regional areas and can be configured as either primary rescue or hazmat vehicles with Compressed Air Foam Systems (CAFS). With an impressive pump capacity of 4750L per minute the Scania CL3 Pumper can hold its own against large fires but it lacks the ability to sustain a drawn out fight without hydrant support.",
 
   "text.names.SLP_AU_POL_VIC_HoldenColorado": "AU VIC Holden Colorado",
   "text.descriptions.SLP_AU_POL_VIC_HoldenColorado": "Australian Victorian Police Holden Colorado, also locally known as a police 'Paddy Wagon'. Works well as the force's work horse with a decent personnel capacity and criminal capacity as well as off-road performance. Good for getting a decent amount of officers to where you need but lacks the ability to sustain long chases. Unlike its neighbour state, the Colorado has slightly better protection at the slight cost of speed.",
@@ -321,15 +326,33 @@
   "text.descriptions.SLP_AU_POL_VIC_HoldenCommodoreUte": "Australian Victorian Police Holden Commodore VE Omega Ute, a fast and versatile unit. While it lacks the capacity to transport suspects it makes up for it in speed and pursuit. Designed to chase targets and support with searches, roadside events and tactical engagements.",
   
   "text.names.SLP_AU_POL_NSW_HighwayFordFalcon": "AU NSW HWP Ford Falcon",
-  "text.descriptions.SLP_AU_POL_NSW_HighwayFordFalcon": "Australian New South Wales Police Ford Falcon Highway Patrol vehicle, a very fast highway safety and tactical response unit. Capable of transporting a suspect, this vehicle excels in lower operating cost, high speed engagements and remote road surveillance. Suffers with less ideal offroad performance and lacks the protection to take on serious fights.",
+  "text.descriptions.SLP_AU_POL_NSW_HighwayFordFalcon": "Australian New South Wales Police Ford Falcon Highway Patrol vehicle, a very fast highway safety and tactical response unit. Capable of transporting a suspect, this vehicle excels in high speed engagements and remote road surveillance. Suffers with less ideal offroad performance and lacks the protection to take on serious fights.",
   
   "text.names.SLP_AU_POL_QLD_BMWR1250RTP": "AU QLD BMW R1250 RT-P",
   "text.descriptions.SLP_AU_POL_QLD_BMWR1250RTP": "Australian Queensland Police BMW R1250 RT-P Police Motorbike. Fast and cheap, efficient in traffic jams, but can't carry passengers/injured.",
   
   "text.names.SLP_AU_POL_AFP_ToyotaLC70S": "AFP Toyota Land Cruiser 70S",
-  "text.descriptions.SLP_AU_POL_AFP_ToyotaLC70S": "Australian Federal Police Toyota Land Cruiser 70 Series off-road search and rescue vehicle. Very effective search vehicle and all Australian federal police vehicles are better equipped to deal with hostile situations. Lacks speed and the ability to chase suspects, has a high cost but lower upkeep.",
+  "text.descriptions.SLP_AU_POL_AFP_ToyotaLC70S": "Australian Federal Police Toyota Land Cruiser 70 Series off-road search and rescue vehicle. Very effective search vehicle and all Australian federal police vehicles are better equipped to deal with hostile situations. Lacks speed and has a reduced ability to chase suspects.",
   
   "text.names.SLP_AU_POL_TAS_Bearcat": "AU TAS Bearcat",
-  "text.descriptions.SLP_AU_POL_TAS_Bearcat": "Australian Tasmanian Police Special Emergency Response Team Bearcat vehicle. Designed for the most dangerous of engagements and is decent tackling offroad areas.",
+  "text.descriptions.SLP_AU_POL_TAS_Bearcat": "Australian Tasmanian Police Special Emergency Response Team Bearcat vehicle. Designed for the most dangerous of engagements and is decent at tackling offroad areas.",
+  
+  "text.names.SLP_AU_POL_HondaCivic2017UC": "AU Unmarked Honda Civic 2017",
+  "text.descriptions.SLP_AU_POL_HondaCivic2017UC": "An unmarked police vehicle. Has a larger chance to spot road violations and very cost effective but lacks the protections and efficiency afforded to marked police vehicles. ",
+  
+  "text.names.SLP_AU_POL_NT_ToyotaLCGX_HWP": "AU NT HWP Toyota Land Cruiser GX",
+  "text.descriptions.SLP_AU_POL_NT_ToyotaLCGX_HWP": "Australian Northern Territory Toyota Land Cruiser GX Series off-road highway patrol vehicle. Effective search and rescue vehicle. Lacks speed and has a reduced ability to chase suspects.",
+  
+  "text.names.SLP_AU_POL_VIC_BMW530d_HWP": "AU VIC HWP BMW530d",
+  "text.descriptions.SLP_AU_POL_VIC_BMW530d_HWP": "Australian Victorian Police BMW530d Highway Patrol vehicle, a very fast highway safety and tactical response unit. Capable of transporting a suspect, this vehicle excels in high speed engagements and remote road surveillance. Suffers with less ideal offroad performance and lacks the protection to take on serious fights. Slightly reduced performance compared to its NSW counterpart for slightly reduced cost.",
+  
+  "text.names.SLP_AU_AMB_NSW_FJR1300AE": "AU NSW Yamaha FJR1300AE",
+  "text.descriptions.SLP_AU_AMB_NSW_FJR1300AE": "Australian New South Whales Ambulance Service Yamaha FJR1300AE rapid response medical motorbike. Very cost effective, it is a pivotal resource in minimising response times in congested areas and special events but cannot transport patients.",
+  
+  "text.names.SLP_AU_AMB_SA_IvecoSB50": "AU SA Iveco SB50 Ambulance Bus",
+  "text.descriptions.SLP_AU_AMB_SA_IvecoSB50": "Australian South Australia Ambulance Service Iveco SB50 ambulance bus. Able to transport a significant number of both paramedics and patients while also very effective at treating injured on scene. Slow response times and a heavily reduced offroad capability limits the buses effectiveness.",
+  
+  "text.names.SLP_AU_AMB_NSW_SkodaOctOpCar": "AU NSW Skoda Octavia OP CMDR",
+  "text.descriptions.SLP_AU_AMB_NSW_SkodaOctOpCar": "Australian New South Whales Ambulance Service Skoda Octavia Operations Commander rapid response unit. Excels at getting to sites quickly and having significant injured support and search capabilities but it cannot transport patients.",
   
 }
