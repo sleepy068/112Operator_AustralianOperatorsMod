@@ -1,52 +1,55 @@
-[h2]Australian Operators Mod (v0.1.0.3)[/h2]
-
-[b][u]BETA PERIOD ACTIVE[/u][/b]
-This mod is in its very early stages, while testing is done rather thoroughly, there may be issues present. This mod is currently lacking the content I'd consider to make it acceptable as a true release but I really love this game and I want others to be able to enjoy what I've added so far. I do want player feedback, if you want anything added, ask away!
-Content is constantly been added and jumping in now you'll be able to see this mod grow.
+[h2]Australian Operators Mod (v0.1.0.6)[/h2]
 
 [b][u]What Does This Mod Add?[/u][/b]
-- New Police & Medical Incidents (Fire are planned but not added yet sorry!)
-- 9 New Incident Types (6 Police & 3 Medical)
-- Total of 36 New Incidents (This mod adds many sub-types and variants of a single incident, to keep things interesting)
-- 1 New Vehicle
+- New Police, Fire & Medical Incidents 
+- 41 New Incidents (This mod adds many sub-types and variants of a single incident, to keep things interesting)
+- 10 New Vehicles
 - Highly Detailed and Accurate to the Law After Action Reports (I really want reading those to be fun for the player)
-
-[b][u]Current Focus as of 14/10/20[/u][/b]
-- Add enough content to consider mod for initial release (probably at around that 100 incident mark and several vehicles before I'd consider it a full mod, support will never end however.)
+- Complex Incidents (Timers and scripts help make incidents more complex & unique, progress over time and react to certain situations).
 
 [b][u]About this Mod[/u][/b]
 This mod is designed by an Australian, a Programmer (Experienced in Modding and Unity Game Design) and an Australian Accredited Rescue Operator. Elements are been added with my own experience as an emergency first responder in mind.
 This mod aims to add Australian elements to the game from similar incidents based on AU law, Australian Service Vehicles and 000 emergency calls. Anyone anywhere can add these though to add more content to their game.
 I've aimed to try and always keep people guessing, I want every incident that looks the same to have the chance to throw something new at the player. This has been done through incident sub-types (these act and look like a normal incident but when you arrive they can be very different). This mod is designed to realistically reflect Australian crimes and emergencies as well as accurate costs (including fines). It is intended to fill the void in the sense and make things like shootings a lot less common compared to speeding or driving offences. 
 
-[b][u]Language Support[/u][/b]
-Translations are welcome!
+Elements added by this mod are normally rare, I have tried to realistically match the real life Australian statistical chance of the player having one of the incidents in this mod. They are also less often seen as I do not want this mod to drown out the stock incidents or other mods, rather compliment them and feel apart of the game.
+Please note however, After Action Reports & Calls are designed for Australia and make reference to Australian organisations and laws. This may conflict with how you may enjoy the game.
 
-[b][u]Full Support[/u][/b] (Latest Locale Version: v0.1.0.3)
-[b]English[/b] - (Developed in this language)
-
-[b][u]Roadmap:[/u][/b]
+[img]https://i.imgur.com/ss8ZNXk.png[/img]
+[b]Roadmap:[/b]
 - Continue to Add More Incidents (Police, Fire and Medical are all planned)
 - Add Fully Voice Acted '000' Calls (These calls will be structured to blend into the game and the 112 Operator voice actor and have full English voice acting support)
 - Add more Australian Service Vehicles
 
-[b][u]Compatibility[/u][/b]
-[b]Fully Blended[/b]
-- This mod is structured in a special way to ensure it conflicts with no existing vehicle or incident mods.
 
-[b]Editless[/b]
-- This mod does not touch any stock content (nor will it ever do so).
+[img]https://i.imgur.com/YySbEPN.png[/img]
+[b]Compatibility[/b]
+[b]On Going Games:[/b]
+- Safe to add to an ongoing game
+- It will cause issues if removed from an existing save (consider starting a new game to see if you are happy with the content).
 
-[b]No reported issues with:[/b]
-- Any Vehicle Mod
-- Any Incident Mod
-- Any Calls Mod
+[b]Compatibility[/b]
+No issues with existing mods.
 
-[b][u]Known Issues[/u][/b]
+[b]Integrated Compatibility:[/b]
+None at the moment.
+
+[img]https://i.imgur.com/gghc3iQ.png[/img]
+[b]Conflicts[/b]
+No know conflicts.
+
+[img]https://i.imgur.com/31kQWwH.png[/img]
+[b]Known Issues[/b]
 - None currently detected.
 
-[b][u]-==== IMPORTANT ====-[/u][/b]
-While this mod has been undergoing quite a lot of testing there may still be issues with it (bugs or balance issues), please, ensure you backup your saves before you install and use this mod on any existing saves. If a game breaking or persistent bug does occurs, please comment below or create an issue on the mods github. I will correct any problems as soon as possible but you still need to backup your save to ensure you can revert if necessary.
+[b][u]FAQ[/u][/b]
 
-Latest Version:
-COMING SOON TO GITHUB!
+[img]https://i.imgur.com/WokZwPP.png[/img]
+[b]Language Support[/b]
+Translations are welcome!
+
+[b][u]Full Support[/u][/b]
+[b]English[/b] - (Developed in this language)
+
+Github:
+https://github.com/sleepy068/112Operator_AustralianOperatorsMod
