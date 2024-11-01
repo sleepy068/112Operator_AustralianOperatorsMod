@@ -156,9 +156,9 @@
 			spawnArea= (where they spawn in a scene) can be a range e.g. [0.3:infront | 0.3:inside | 0.3: insideRear];
 				SpawnTypes: infront, inside, insideRear, leftof, trapped2, trapped1, elevator, engine, barrelWork, work, pipe, water, crack, rubbleWork, cardoor, eleWork
 				car, rearWork, fireWork, nearTree, factory, onTree, park, fire, workTruck, workSpill, doorWork (spawns a door)
-			isActive=1; (0 or 1, whether they react to the scene perhaps,e.g. beecome aggressive, do something, etc)
+			isActive=1; (0 or 1, whether they react to the scene perhaps,e.g. become aggressive, do something, etc)
 			actionOnEnd= (what happens when the scene ends, can be opinionOnSuccess+=1;, AAR+= AAR_ID (for a report just for say catching someone or even heavy detail such as a witness statement)
-			actionOnIgnore= "opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=;" (always these two, assuming sucess is if ignored but still gets solved)
+			actionOnIgnore= "opinionOnSuccess+=1; opinionOnIgnore+=-1; AAR+=;" (always these two, assuming success is if ignored but still gets solved)
 			
 		After Action Report <aar></aar>
 			<reportElement id=""/> (seem to be something from stock, most likely the audio that runs after a event.
@@ -171,7 +171,7 @@
 			<timer id="timer" properties="time=450;" actionOnEnd="suicidal.hp=0;
 			AAR+=dead;
 			
-			timer id= (timer ID, good rule of thumb to make ever id unique)
+			timer id= (timer ID, good rule of thumb to make every id unique)
 			properties= ""
 				time=; (time in seconds/ticks until the timer reaches 0 and actives the end cycle)
 				actionOnEnd= (effectively what happens, examples below)
@@ -216,11 +216,12 @@
 	<!-- Static Site -->
 	<incident id="REP_SLP_RBT_STATIC1" 
 		properties="
-		type+= road; 
-		popularity= 1; 
-		stage= 1; 
-		tag+= night{+0.5}; 
-		tag+= rain{-0.25}; ">
+		type+=road;
+		type+=drugs;
+		popularity=1;
+		stage=1;
+		tag+=night{+0.5};
+		tag+=rain{-0.5}; ">
 		
 		<scene id="RBT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RBT_CAR_1.AAR+=rbt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RBT_CAR_1.AAR+=rbt_staticignored1;">
 			<policeWork id="work" properties="workAmount=2400; icon=SLPPOLRBT1; bill=[0.5: 1500|0.5: 3000];"  />
@@ -236,11 +237,12 @@
 	<!-- No Issue -->
 	<incident id="REP_SLP_RBT_NOISSUE1" 
 		properties="
-		type+= road; 
-		popularity= 30; 
-		stage= 1; 
-		tag+= night{+5}; 
-		tag+= rain{-10}; ">
+		type+=road;
+		type+=drugs;
+		popularity=30;
+		stage=1;
+		tag+=night{+5}; 
+		tag+=rain{-15}; ">
 		
 		<scene id="RBT_CAR_NI1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -269,10 +271,12 @@
 	<!-- Low Range Drink Driving (First Time Offence) AR/BIL -->
 	<incident id="REP_SLP_RBT_ISSUE1v1" 
 		properties="
-		type+= road; 
-		popularity= 6; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+=road;
+		type+=drugs;
+		popularity=6;
+		stage=1;
+		tag+=night{+1};
+		tag+=rain{-3};">
 		
 		<scene id="RBT_CAR_I1v1" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -302,10 +306,12 @@
 	<!-- Low Range Drink Driving (Second Time Offence) AR/BIL -->
 	<incident id="REP_SLP_RBT_ISSUE2v1" 
 		properties="
-		type+= road; 
-		popularity= 1; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+=road;
+		type+=drugs;
+		popularity=1;
+		stage=1;
+		tag+=night{+1};
+		tag+=rain{-0.5};">
 		
 		<scene id="RBT_CAR_I2v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -335,10 +341,12 @@
 	<!-- Mid Range Drink Driving (First Time Offence) AR/BIL -->
 	<incident id="REP_SLP_RBT_ISSUE3v1" 
 		properties="
-		type+= road; 
-		popularity= 5; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+=road;
+		type+=drugs;
+		popularity=5;
+		stage=1;
+		tag+=night{+1}; 
+		tag+=rain{-2.5};">
 		
 		<scene id="RBT_CAR_I3v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -368,10 +376,12 @@
 	<!-- Mid Range Drink Driving (Second Time Offence) AR/BIL -->
 	<incident id="REP_SLP_RBT_ISSUE4v1" 
 		properties="
-		type+= road; 
-		popularity= 1; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+=road;
+		type+=drugs;
+		popularity=1;
+		stage=1;
+		tag+=night{+1}; 
+		tag+=rain{-0.5};">
 		
 		<scene id="RBT_CAR_I4v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -401,10 +411,12 @@
 	<!-- High Range Drink Driving (First Time Offence) AR/BIL -->
 	<incident id="REP_SLP_RBT_ISSUE5v1" 
 		properties="
-		type+= road; 
-		popularity= 3; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+=road;
+		type+=drugs;
+		popularity=3;
+		stage=1;
+		tag+=night{+1}; 
+		tag+=rain{-1.5};">
 		
 		<scene id="RBT_CAR_I5v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -434,10 +446,12 @@
 	<!-- High Range Drink Driving (Second Time Offence) AR/BIL -->
 		<incident id="REP_SLP_RBT_ISSUE6v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+= road;
+		type+=drugs;
+		popularity=2;
+		stage=1;
+		tag+=night{+1}; 
+		tag+=rain{-1};">
 		
 		<scene id="RBT_CAR_I6v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -467,10 +481,12 @@
 	<!-- Refused to co-operate AR/BIL -->
 	<incident id="REP_SLP_RBT_ISSUE7v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
-		tag+= night{+1}; ">
+		type+= road;
+		type+=drugs;
+		popularity=2;
+		stage=1;
+		tag+=night{+1}; 
+		tag+=rain{-1};">
 		
 		<scene id="RBT_CAR_I7v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rbt_driver"
@@ -519,12 +535,11 @@
 	<!-- Exceed Speed 10 km/h and Under  -->
 	<incident id="REP_SLP_SPEED1v1" 
 		properties="
-		type+= road; 
-		popularity= 25; 
-		stage= 1; 
+		type+=road; 
+		popularity=25; 
+		stage=1; 
 		tag+=snow{-20};
-		tag+=rain{-20};
-		tag+=wind{-15};">
+		tag+=rain{-20};">
 		
 		<scene id="SPEED_CAR_1v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
@@ -554,12 +569,11 @@
 	<!-- Exceed speed over 10 km/h   -->
 	<incident id="REP_SLP_SPEED2v1" 
 		properties="
-		type+= road; 
-		popularity= 22; 
-		stage= 1; 
+		type+=road; 
+		popularity=22; 
+		stage=1; 
 		tag+=snow{-17};
-		tag+=rain{-17};
-		tag+=wind{-12};">
+		tag+=rain{-17};">
 		
 		<scene id="SPEED_CAR_2v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
@@ -589,12 +603,11 @@
 	<!-- Exceed speed over 20 km/h   -->
 	<incident id="REP_SLP_SPEED3v1" 
 		properties="
-		type+= road; 
-		popularity= 18; 
-		stage= 1; 
+		type+=road; 
+		popularity=18; 
+		stage=1; 
 		tag+=snow{-13};
-		tag+=rain{-13};
-		tag+=wind{-8};">
+		tag+=rain{-13};">
 		
 		<scene id="SPEED_CAR_3v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
@@ -624,12 +637,11 @@
 	<!-- Exceed speed over 30 km/h   -->
 	<incident id="REP_SLP_SPEED4v1" 
 		properties="
-		type+= road; 
-		popularity= 12; 
-		stage= 1; 
+		type+=road; 
+		popularity=12; 
+		stage=1; 
 		tag+=snow{-9};
-		tag+=rain{-9};
-		tag+=wind{-6};">
+		tag+=rain{-9};">
 		
 		<scene id="SPEED_CAR_4v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
@@ -659,12 +671,11 @@
 	<!-- Exceed speed over 45 km/h   -->
 	<incident id="REP_SLP_SPEED5v1" 
 		properties="
-		type+= road; 
-		popularity= 7; 
-		stage= 1; 
+		type+=road; 
+		popularity=7; 
+		stage=1; 
 		tag+=snow{-6};
-		tag+=rain{-6};
-		tag+=wind{-5};">
+		tag+=rain{-6};">
 		
 		<scene id="SPEED_CAR_5v1" background="CarBackground" properties="timeToReact=600; onMove=1; avoidPolice=0.25; solvableBySpeedCamera=true;">
 			<suspect id="speed_driver"
@@ -704,11 +715,11 @@
 	<!-- Driving an unregistered light vehicle (reasonable excuse) -->
 	<incident id="REP_SLP_DRO_UNREG1v0" 
 		properties="
-		type+= road; 
-		popularity= 1; 
-		stage= 1;
+		type+=road; 
+		popularity=1; 
+		stage=1;
 		visibility=0.3;
-		tag+= night{-1};">
+		tag+=night{-1};">
 		
 		<scene id="DRO_CAR_I1v0" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true;">
 			<suspect id="dro_driver"
@@ -737,12 +748,12 @@
 	<!-- Driving an unregistered light vehicle -->
 	<incident id="REP_SLP_DRO_UNREG1v1" 
 		properties="
-		type+= road; 
-		popularity= 5; 
-		stage= 1; 
+		type+=road; 
+		popularity=5; 
+		stage=1; 
 		visibility=0.3;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I1v1" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true; avoidPolice=0.2;">
 			<suspect id="dro_driver"
@@ -772,12 +783,12 @@
 	<!-- Driving an uninsured light vehicle -->
 	<incident id="REP_SLP_DRO_UNINSUR1v1" 
 		properties="
-		type+= road; 
-		popularity= 5; 
-		stage= 1; 
+		type+=road; 
+		popularity=5; 
+		stage=1; 
 		visibility=0.2;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I2v1" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true; avoidPolice=0.2;">
 			<suspect id="dro_driver"
@@ -807,12 +818,12 @@
 	<!-- Driving an unregistered & uninsured light vehicle -->
 	<incident id="REP_SLP_DRO_BADVEH1v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
+		type+=road; 
+		popularity=2; 
+		stage=1; 
 		visibility=0.2;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I3v1" background="CarBackground" properties="timeToReact=480; onMove=1; solvableBySpeedCamera=true; avoidPolice=0.2;">
 			<suspect id="dro_driver"
@@ -843,11 +854,11 @@
 	<incident id="REP_SLP_DRO_LICEN1v1" 
 		properties="
 		type+= road; 
-		popularity= 5; 
-		stage= 1; 
+		popularity=5; 
+		stage=1; 
 		visibility=0.1;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I4v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.4;">
 			<suspect id="dro_driver"
@@ -877,12 +888,12 @@
 	<!-- Driving without a Licence (Second Offence)-->
 	<incident id="REP_SLP_DRO_LICEN2v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
+		type+=road; 
+		popularity=2; 
+		stage=1; 
 		visibility=0.1;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I5v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.6;">
 			<suspect id="dro_driver"
@@ -912,12 +923,12 @@
 	<!-- Driving with a Expired Licence (Expired within 2 Years) -->
 	<incident id="REP_SLP_DRO_LICEN3v1" 
 		properties="
-		type+= road; 
-		popularity= 5; 
-		stage= 1; 
+		type+=road; 
+		popularity=5; 
+		stage=1; 
 		visibility=0.1;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I6v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.1;">
 			<suspect id="dro_driver"
@@ -947,12 +958,12 @@
 	<!-- Driving with a Expired Licence (Expired after 2 Years) -->
 	<incident id="REP_SLP_DRO_LICEN4v1" 
 		properties="
-		type+= road; 
-		popularity= 3; 
-		stage= 1; 
+		type+=road; 
+		popularity=3; 
+		stage=1; 
 		visibility=0.1;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I7v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.1;">
 			<suspect id="dro_driver"
@@ -982,12 +993,12 @@
 	<!-- Driving with a Suspended Licence -->
 	<incident id="REP_SLP_DRO_LICEN5v1" 
 		properties="
-		type+= road; 
-		popularity= 5; 
-		stage= 1; 
+		type+=road; 
+		popularity=5; 
+		stage=1; 
 		visibility=0.1;
-		tag+= night{+1};
-		tag+= rain{-1};">
+		tag+=night{+1};
+		tag+=rain{-1};">
 		
 		<scene id="DRO_CAR_I8v1" background="CarBackground" properties="timeToReact=480; onMove=1; avoidPolice=0.2;">
 			<suspect id="dro_driver"
@@ -1026,11 +1037,12 @@
 	<!-- Static Site -->
 	<incident id="REP_SLP_RDT_STATIC1" 
 		properties="
-		type+= road; 
-		popularity= 1; 
-		stage= 1; 
-		tag+= night{+0.5}; 
-		tag+= rain{-0.25}; ">
+		type+=road;
+		type+=drugs;
+		popularity=1;
+		stage=1;
+		tag+=night{+0.5};
+		tag+=rain{-0.5}; ">
 		
 		<scene id="RDT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RDT_CAR_1.AAR+=rdt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RDT_CAR_1.AAR+=rdt_staticignored1;">
 			<policeWork id="work" properties="workAmount=2400; icon=SLPPOLRDT1; bill=[0.5: 1500|0.5: 3000];"  />
@@ -1046,11 +1058,12 @@
 	<!-- No Issue -->
 	<incident id="REP_SLP_RDT_NOISSUE1" 
 		properties="
-		type+= road; 
-		popularity= 15; 
-		stage= 1; 
-		tag+= night{+3}; 
-		tag+= rain{-10}; ">
+		type+=road;
+		type+=drugs;
+		popularity=15;
+		stage=1;
+		tag+=night{+3};
+		tag+=rain{-7.5}; ">
 		
 		<scene id="RDT_CAR_NI1" background="CarBackground" properties="timeToReact=500; onMove=1;">
 			<suspect id="rdt_driver"
@@ -1079,11 +1092,13 @@
 	<!-- Active THC (Cannabis) -->
 	<incident id="REP_SLP_RDT_ISSUE1v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
-		tag+= night{+1};
-		tag+= event_new_year{+1};
+		type+=road;
+		type+=drugs;
+		popularity=2;
+		stage=1;
+		tag+=night{+1};
+		tag+=event_new_year{+1};
+		tag+=rain{-1};
 		">
 		
 		<scene id="RDT_CAR_I2v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
@@ -1114,11 +1129,13 @@
 	<!-- Methylamphetamine (Speed/ice) -->
 	<incident id="REP_SLP_RDT_ISSUE2v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
-		tag+= night{+1};
-		tag+= event_new_year{+1};
+		type+=road;
+		type+=drugs;
+		popularity=2;
+		stage=1;
+		tag+=night{+1};
+		tag+=event_new_year{+1};
+		tag+=rain{-1};
 		">
 		
 		<scene id="RDT_CAR_I2v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
@@ -1149,11 +1166,13 @@
 	<!-- Methylenedioxymethylamphetamine (MDMA or 'ecstasy') -->
 	<incident id="REP_SLP_RDT_ISSUE3v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
-		tag+= night{+1};
-		tag+= event_new_year{+1};
+		type+=road;
+		type+=drugs;
+		popularity=2;
+		stage=1;
+		tag+=night{+1};
+		tag+=event_new_year{+1};
+		tag+=rain{-1};
 		">
 		
 		<scene id="RDT_CAR_I3v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
@@ -1184,11 +1203,13 @@
 	<!-- Cocaine  -->
 	<incident id="REP_SLP_RDT_ISSUE4v1" 
 		properties="
-		type+= road; 
-		popularity= 2; 
-		stage= 1; 
-		tag+= night{+1};
-		tag+= event_new_year{+1};
+		type+=road;
+		type+=drugs;
+		popularity=2;
+		stage=1;
+		tag+=night{+1};
+		tag+=event_new_year{+1};
+		tag+=rain{-1};
 		">
 		
 		<scene id="RDT_CAR_I4v1" background="CarBackground" properties="timeToReact=500; onMove=1;">
@@ -1280,11 +1301,11 @@
 	<!-- Bribery of a Commonwealth Public Official (Refused)(Non-Hostile) -->
 	<incident id="REP_SLP_BRO_BRIBE1" 
 		properties="
-		type+= crime; 
-		popularity= 0.25; 
-		stage= 1; 
+		type+=crime; 
+		popularity=0.25; 
+		stage=1; 
 		visibility=0.3;
-		tag+= night{+0.2};">
+		tag+=night{+0.2};">
 		
 		<scene id="BRO_I1v1" properties="timeToReact=300;">
 			<suspect id="bro_briber"
@@ -1333,9 +1354,9 @@
 	<!-- Unlawfully Ringing Doorbells (Adult)(Fined) -->
 	<incident id="REP_SLP_NPOA001" 
 		properties="
-		type+= crime; 
-		popularity= 0.5; 
-		stage= 1; 
+		type+=crime; 
+		popularity=0.5; 
+		stage=1; 
 		visibility=0.2;">
 		
 		<scene id="search_scene" properties="searchWork=40;
@@ -1386,9 +1407,9 @@
 	<!-- Unlawfully Ringing Doorbells (Child)(Fined) -->
 	<incident id="REP_SLP_NPOA002" 
 		properties="
-		type+= crime; 
-		popularity= 0.5; 
-		stage= 1; 
+		type+=crime; 
+		popularity=0.5; 
+		stage=1; 
 		visibility=0.2;">
 		
 		<scene id="search_scene" properties="searchWork=40;
@@ -1440,9 +1461,9 @@
 	<!-- Unlawfully Ringing Doorbells (Child)(Politely Warned) -->
 	<incident id="REP_SLP_NPOA003" 
 		properties="
-		type+= crime; 
-		popularity= 0.5; 
-		stage= 1; 
+		type+=crime; 
+		popularity=0.5; 
+		stage=1; 
 		visibility=0.2;">
 		
 		<scene id="search_scene" properties="searchWork=40;
@@ -1496,13 +1517,14 @@
 	<!-- ==================================================================================================================================================================================================== -->
 	<!-- Typical Small Grass Fire -->
 	<incident id="REP_SLP_FIRE_GEN1" 
-		properties="type+=fire;
+		properties="
+		type+=fire;
 		popularity=1;
 		visibility=1;
 		stage = 1;
 		tag+=hot{+10};
 		tag+=snow{-20};
-		tag+=rain{-10};"  >
+		tag+=rain{-20};"  >
 		
 		<scene id="FIREGEN1_I1v1" background="ParkBackground" properties="timeToReact=900;
 			opinionOnSuccess=2;
@@ -1563,7 +1585,9 @@
 	
 	<!-- ============= Rhythm of the Heart ============= -->
 	<!-- Arrhythmia (Tachycardia)(Mild) -->
-	<incident id="REP_SLP_MEDI_MISC1A" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC1A" 
+		properties="
+		type+=medical;
 		popularity=3;
 		visibility=0.4;
 		stage = 1;
@@ -1588,7 +1612,9 @@
 	</incident>
 	
 	<!-- Arrhythmia (Tachycardia)(Serious) -->
-	<incident id="REP_SLP_MEDI_MISC1B" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC1B" 
+		properties="
+		type+=medical;
 		popularity=0.5;
 		visibility=0.4;
 		stage = 1;
@@ -1614,7 +1640,9 @@
 	</incident>
 	
 	<!-- Ventricular Tachycardia -->
-	<incident id="REP_SLP_MEDI_MISC1C" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC1C" 
+		properties="
+		type+=medical;
 		popularity=0.4;
 		visibility=0.7;
 		stage = 1;
@@ -1640,7 +1668,9 @@
 	</incident>
 	
 	<!-- Ventricular Tachycardia (With Caller Present) -->
-	<incident id="REP_SLP_MEDI_MISC1D" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC1D" 
+		properties="
+		type+=medical;
 		popularity=0.25;
 		visibility=1;
 		stage = 1;
@@ -1674,7 +1704,9 @@
 	</incident>
 	
 	<!-- Arrhythmia (Bradycardia)(Mild) -->
-	<incident id="REP_SLP_MEDI_MISC2A" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC2A" 
+		properties="
+		type+=medical;
 		popularity=1;
 		visibility=0.4;
 		stage = 1;
@@ -1699,7 +1731,9 @@
 	</incident>
 	
 	<!-- Arrhythmia (Bradycardia)(Serious) -->
-	<incident id="REP_SLP_MEDI_MISC2B" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC2B" 
+		properties="
+		type+=medical;
 		popularity=0.5;
 		visibility=0.4;
 		stage = 1;
@@ -1725,7 +1759,9 @@
 	</incident>
 	
 	<!-- Palpitations (Non-Issue) -->
-	<incident id="REP_SLP_MEDI_MISC3A" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC3A" 
+		properties="
+		type+=medical;
 		popularity=3;
 		visibility=0.3;
 		stage = 1;
@@ -1750,7 +1786,9 @@
 	</incident>
 
 	<!-- Palpitations (Underlying Issue) -->
-	<incident id="REP_SLP_MEDI_MISC3B" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_MISC3B" 
+		properties="
+		type+=medical;
 		popularity=0.1;
 		visibility=0.3;
 		stage = 1;
@@ -1807,7 +1845,9 @@
 	<!-- Injury (Heavy Brusie)(Non Emergency) -->
 	
 	<!-- Injury (Burns)(First-Degree)(Non Emergency) -->
-	<incident id="REP_SLP_MEDI_IBURN1A" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_IBURN1A" 
+		properties="
+		type+=medical;
 		popularity=10;
 		visibility=0.8;
 		stage = 1;
@@ -1832,7 +1872,9 @@
 	</incident>
 	
 	<!-- Injury (Burns)(Second-Degree) -->
-	<incident id="REP_SLP_MEDI_IBURN2A" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_IBURN2A" 
+		properties="
+		type+=medical;
 		popularity=7;
 		visibility=0.9;
 		stage = 1;
@@ -1857,7 +1899,9 @@
 	</incident>
 	
 	<!-- Injury (Burns)(Third-Degree) -->
-	<incident id="REP_SLP_MEDI_IBURN3A" properties="type+=medical;
+	<incident id="REP_SLP_MEDI_IBURN3A" 
+		properties="
+		type+=medical;
 		popularity=4;
 		visibility=1;
 		stage = 1;
@@ -1883,7 +1927,10 @@
 	</incident>
 	
 	<!-- Injury (Burns)(Third-Degree)(Active Fire)(Witness) -->
-	<incident id="REP_SLP_MEDI_IBURN3B" properties="type+=medical; type+=fire;
+	<incident id="REP_SLP_MEDI_IBURN3B" 
+		properties="
+		type+=medical; 
+		type+=fire;
 		popularity=3;
 		visibility=1;
 		stage = 1;
@@ -1961,12 +2008,13 @@
 	<!-- Static Site -->
 	<incident id="REP_SLP_PTS_STATIC1" 
 		properties="
-		type+= medical; 
-		popularity= 1.5; 
-		stage= 1; 
-		tag+= night{+0.5}; 
-		tag+= event_new_year{+1.5};
-		tag+= event_protest_peacefull{+0.5};
+		type+=medical; 
+		type+=drugs;
+		popularity=1.5; 
+		stage=1; 
+		tag+=night{+0.5}; 
+		tag+=event_new_year{+1.5};
+		tag+=event_protest_peacefull{+0.5};
 		">
 		
 		<scene id="SLP_SCENE_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; SLP_SCENE_1.AAR+=pts_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-8; SLP_SCENE_1.AAR+=pts_static1ignored1;">

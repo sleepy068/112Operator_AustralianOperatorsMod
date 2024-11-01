@@ -1,27 +1,18 @@
 <Database>
 <!--
-Update v1.0.12 Build 16/01/24 | Post 
+Update v1.0.08 Build 06/10/24 | Post 
 
 Additions:
-9 New Vehicles
-- 3 Police
-- 3 Medical
-3 New Incidents
-Added Hats for Australia (Only overrides the hats for country code Australia AU)
+N/A
 
 Changes:
-Despite the vehicle field, upkeep means nothing, upkeep is always 10% of the vehicle cost so they've all been changed to 100 for simplicity.
-Removed Police caller work for medical events (I wanted it to be a optional thing from a roleplay prospective but it forces the interaction and will just be annoying).
+Tweaked some of the tags and spawn chances for various incidents so they blend better.
 
 Balance:
-AFP Toyota Land Cruiser 70S Armour increased from 0.25 to 0.35
-AU VIC Holden Commodore Ute Offroad Modifier reduced from 0.80 to 0.50
-AU VIC Holden Colorado Offroad Modifier reduced from 0.75 to 0.60
+N/A
 
 Localisation:
-Fixed up a bunch of incident descriptions to ensure the text doesn't get cut off.
-Fixed up a bunch of 
-Fixed a few After Action Report to be more accurate to the real law. 
+N/A
 
 Bug Fixes:
 N/A
