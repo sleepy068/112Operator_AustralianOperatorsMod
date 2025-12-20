@@ -263,8 +263,8 @@
 
   "incident.REP_SLP_RDT_STATIC1.REP_SLP_RDT_STATIC1": "Roadside Drug Testing",
   "incident.REP_SLP_RDT_STATIC1.description": "Police command has requested a static RDT site be deployed to this location.",
-  "incident.REP_SLP_RDT_STATIC1.aar.pts_static1": "The police processed as much traffic as they could flowing through the area, without causing traffic backlog. Testing was able to prevent those under the influence of drugs from staying on the road. Police command is satisfied with the results and has diverted funds to assist the department.",
-  "incident.REP_SLP_RDT_STATIC1.aar.pts_static1ignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside drug testing site. Command will not be happy dispatch ignored their request...",
+  "incident.REP_SLP_RDT_STATIC1.aar.rdt_static1": "The police processed as much traffic as they could flowing through the area, without causing traffic backlog. Testing was able to prevent those under the influence of drugs from staying on the road. Police command is satisfied with the results and has diverted funds to assist the department.",
+  "incident.REP_SLP_RDT_STATIC1.aar.rdt_staticignored1": "Local dispatch decided to ignore the request from police command to establish a static roadside drug testing site. Command will not be happy dispatch ignored their request...",
 
   "incident.REP_SLP_NPOA001.REP_SLP_NPOA001": "Unlawfully Ringing Doorbells",
   "incident.REP_SLP_NPOA001.description": "Dispatch has received a non emergency call that an adult in the area has been ringing door bells and running away. Code 3.",

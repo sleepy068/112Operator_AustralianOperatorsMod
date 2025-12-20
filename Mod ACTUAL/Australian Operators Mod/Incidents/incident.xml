@@ -224,7 +224,7 @@
 		tag+=rain{-0.5}; ">
 		
 		<scene id="RBT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RBT_CAR_1.AAR+=rbt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RBT_CAR_1.AAR+=rbt_staticignored1;">
-			<policeWork id="work" properties="workAmount=2400; icon=SLPPOLRBT1; bill=[0.5: 1500|0.5: 3000];"  />
+			<policeWork id="work" properties="workAmount=3000; icon=SLPPOLRBT1; bill=[0.5: 3000|0.5: 6000];"  />
 		</scene>
 		
 		<aar>
@@ -1045,7 +1045,7 @@
 		tag+=rain{-0.5}; ">
 		
 		<scene id="RDT_CAR_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; RDT_CAR_1.AAR+=rdt_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-5; RDT_CAR_1.AAR+=rdt_staticignored1;">
-			<policeWork id="work" properties="workAmount=2400; icon=SLPPOLRDT1; bill=[0.5: 1500|0.5: 3000];"  />
+			<policeWork id="work" properties="workAmount=3000; icon=SLPPOLRDT1; bill=[0.5: 3000|0.5: 6000];"  />
 		</scene>
 		
 		<aar>
@@ -2018,7 +2018,7 @@
 		">
 		
 		<scene id="SLP_SCENE_1" properties="timeToReact=40000;" actionOnEnd="opinionOnSuccess+=8; SLP_SCENE_1.AAR+=pts_static1;" actionOnIgnore="opinionOnSuccess+=8; opinionOnIgnore+=-8; SLP_SCENE_1.AAR+=pts_static1ignored1;">
-			<medicalWork id="work" properties="workAmount=2400; icon=SLPMEDPILLT1; bill=[0.5: 2250|0.4: 4000|0.1: 6500];"  />
+			<medicalWork id="work" properties="workAmount=3000; icon=SLPMEDPILLT1; bill=[0.5: 3250|0.4: 5000|0.1: 8500];"  />
 		</scene>
 		
 		<aar>
