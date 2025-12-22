@@ -197,7 +197,7 @@
   "incident.REP_SLP_MEDI_MISC2B.REP_SLP_MEDI_MISC2B": "Bradycardia (Serious)",
   "incident.REP_SLP_MEDI_MISC2B.description": "A person is suffering from serious Arrhythmia, specifically Bradycardia. Bradycardia is a slower than normal heart rate. A patient with bradycardia has a heartbeat fewer than 60 times a minute. Immediate medical attention is required. Code 1.",
   "incident.REP_SLP_MEDI_MISC2B.patient.injured": "Patient",
-  "incident.REP_SLP_MEDI_MISC2B.aar.medi_reportmisc2b": "Paramedics assessed the situation and assisted the patient. Hospitalisation wasn't deemed necessary and the issue does not appear to be problematic. Paramedics made it clear that the patient should visit the doctor as soon as they can just to be on the safe side and call emergency services if the issue gets worse or they suffer additional symptoms such as fainting or breathing difficulties.",
+  "incident.REP_SLP_MEDI_MISC2B.aar.medi_reportmisc2b": "Paramedics assessed the situation and assisted the patient. Hospitalisation was required and urgently, the patient was suffering from severe underlying issues that they may not have reported to dispatch. If paramedics had not arrived, the patient may have died.",
   "incident.REP_SLP_MEDI_MISC2B.aar.medi_reportmisc2bignore": "Local dispatch decided to ignore the medical emergency and redirected medical resources elsewhere. Fortunately the incident was not life threatening and the patient was okay without medical assistance but responding in these situations is highly recommended, if the situation was more serious, the patient could have been in trouble.",
 
   "incident.REP_SLP_MEDI_MISC1D.REP_SLP_MEDI_MISC1D": "Ventricular Tachycardia",
