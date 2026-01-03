@@ -49,7 +49,7 @@
 	<!-- AU NSW Ford Ranger -->
 	<Vehicletype id="SLP_AU_POL_FordRanger" type="POLICE" bonuses="SEARCH=0.25" price="68000" visibility="0.8" armour="0.2" maxSpeed="140" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.75" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
-    <!-- AU NSW Ford Hilux -->
+    <!-- AU NSW Toyota Hilux -->
     <Vehicletype id="SLP_AU_POL_NSW_FordHilux" type="POLICE" bonuses="SEARCH=0.25" price="70000" visibility="0.8" armour="0.17" maxSpeed="148" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.70" trafficSpeedModif="0" teammembersSeats="4" transportSeats="2" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="13" unlockOnDuty="1" onsiteModel="ve_polvan"/>
 
 	<!-- AU VIC Holden Colorado -->
@@ -83,7 +83,7 @@
 	<Vehicletype id="SLP_AU_POL_TAS_Bearcat" type="POLICE" bonuses="NONE" price="155000" visibility="0.8" armour="0.9" maxSpeed="100" acceleration="4" immobilizedBy="NONE" offroadSpeedModif="0.40" trafficSpeedModif="0" teammembersSeats="4" transportSeats="4" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="10" unlockOnDuty="1" onsiteModel="ve_swatvan"/>
     
 	<!-- AU Unmarked Honda Civic 2017  -->
-	<Vehicletype id="SLP_AU_POL_HondaCivic2017UC" type="POLICE" bonuses="NONE" price="37000" visibility="0" armour="0.05" maxSpeed="140" acceleration="6" immobilizedBy="NONE" offroadSpeedModif="0.20" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="17" unlockOnDuty="1" onsiteModel="ve_polcar"/>
+	<Vehicletype id="SLP_AU_POL_HondaCivic2017UC" type="POLICE" bonuses="NONE" price="37000" visibility="0" armour="0.05" maxSpeed="140" acceleration="6" immobilizedBy="NONE" offroadSpeedModif="0.20" trafficSpeedModif="0" teammembersSeats="2" transportSeats="1" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="false" chaseProficiency="17" unlockOnDuty="1" onsiteModel="ve_unmarked"/>
     
 	<!-- ****************** Secondary Services ****************** -->
 	
@@ -98,7 +98,7 @@
 
     <!-- ****************** Motorbike ****************** -->
 	<!-- AU NSW Yamaha FJR1300AE -->
-	<Vehicletype id="SLP_AU_AMB_NSW_FJR1300AE" type="MEDICAL" bonuses="NONE" price="19960" visibility="0.60" armour="0" maxSpeed="180" acceleration="6" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_polbike"/>
+	<Vehicletype id="SLP_AU_AMB_NSW_FJR1300AE" type="MEDICAL" bonuses="NONE" price="19960" visibility="0.60" armour="0" maxSpeed="180" acceleration="6" immobilizedBy="Rain=7,Snow=5" offroadSpeedModif="0.25" trafficSpeedModif="0.5" teammembersSeats="2" transportSeats="0" upkeep="100" terrain="road" patrols="true" spawnChance="1" allDrive="true" chaseProficiency="20" unlockOnDuty="1" onsiteModel="ve_medbike"/>
     
 	<!-- ****************** Air ****************** -->
 	
